@@ -1,0 +1,4315 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>عشق —Love</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;900&family=Playfair+Display:ital,wght@0,600;1,500&display=swap');
+
+  /* ==================== RESET ==================== */
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  /* ==================== THEMES ==================== */
+  :root {
+    --bg: #fff7f4; --bg2: #ffe9ee; --bg3: #ffd1dc;
+    --card: #ffffff; --card2: #fdf2f5;
+    --text: #3d1828; --text-soft: #7a4a5c;
+    --primary: #e94b6f; --primary-dark: #b8234a; --primary-light: #ff8aa8;
+    --accent: #d4a373; --accent-dark: #b8860b;
+    --border: #ffd1dc; --border-soft: #ffe9ee;
+    --shadow-sm: 0 4px 15px rgba(74,30,46,0.06);
+    --shadow: 0 12px 40px rgba(74,30,46,0.10);
+    --shadow-lg: 0 25px 70px rgba(74,30,46,0.18);
+    --glow: 0 0 40px rgba(233,75,111,0.35);
+    --gradient: linear-gradient(135deg, #fff7f4 0%, #ffe9ee 50%, #ffd1dc 100%);
+    --gradient-primary: linear-gradient(135deg, #e94b6f, #b8234a);
+    --gradient-accent: linear-gradient(135deg, #d4a373, #b8860b);
+    --radius-sm: 12px; --radius: 18px; --radius-lg: 26px; --radius-xl: 34px;
+    --trans-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    --trans: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    --trans-bounce: 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  [data-theme="dark"] {
+    --bg: #0d0810; --bg2: #160c1a; --bg3: #1f0f25;
+    --card: #1c1120; --card2: #251530;
+    --text: #f5e6d3; --text-soft: #b8a5b0;
+    --primary: #ff6b9d; --primary-dark: #e94b6f; --primary-light: #ffb3d1;
+    --accent: #ffd700; --accent-dark: #d4a373;
+    --border: #3a2530; --border-soft: #2a1a20;
+    --shadow-sm: 0 4px 15px rgba(0,0,0,0.3);
+    --shadow: 0 12px 40px rgba(0,0,0,0.5);
+    --shadow-lg: 0 25px 70px rgba(0,0,0,0.7);
+    --glow: 0 0 50px rgba(255,107,157,0.5);
+    --gradient: linear-gradient(135deg, #0d0810 0%, #160c1a 50%, #2a0f25 100%);
+    --gradient-primary: linear-gradient(135deg, #ff6b9d, #e94b6f);
+  }
+
+  [data-theme="ocean"] {
+    --bg: #eff8ff; --bg2: #d6ebf5; --bg3: #b3d9f0;
+    --card: #ffffff; --card2: #f0f9ff;
+    --text: #0f2a3a; --text-soft: #4a6b7a;
+    --primary: #3b82c4; --primary-dark: #1e5a99; --primary-light: #7ab8e8;
+    --accent: #f4a261; --accent-dark: #d97706;
+    --border: #b3d9f0; --border-soft: #d6ebf5;
+    --shadow: 0 12px 40px rgba(26,58,74,0.10);
+    --shadow-lg: 0 25px 70px rgba(26,58,74,0.18);
+    --glow: 0 0 40px rgba(59,130,196,0.35);
+    --gradient: linear-gradient(135deg, #eff8ff, #d6ebf5, #b3d9f0);
+    --gradient-primary: linear-gradient(135deg, #3b82c4, #1e5a99);
+  }
+
+  [data-theme="forest"] {
+    --bg: #f3faf3; --bg2: #dff0df; --bg3: #c0e0c0;
+    --card: #ffffff; --card2: #f3faf3;
+    --text: #1a3a1a; --text-soft: #4a6b4a;
+    --primary: #2d8b4a; --primary-dark: #1a5a30; --primary-light: #6bc080;
+    --accent: #d4a373; --accent-dark: #b8860b;
+    --border: #c0e0c0; --border-soft: #dff0df;
+    --shadow: 0 12px 40px rgba(30,58,30,0.10);
+    --shadow-lg: 0 25px 70px rgba(30,58,30,0.18);
+    --glow: 0 0 40px rgba(45,139,74,0.35);
+    --gradient: linear-gradient(135deg, #f3faf3, #dff0df, #c0e0c0);
+    --gradient-primary: linear-gradient(135deg, #2d8b4a, #1a5a30);
+  }
+
+  [data-theme="sunset"] {
+    --bg: #fff5eb; --bg2: #ffe4c8; --bg3: #ffd0a0;
+    --card: #ffffff; --card2: #fff8f0;
+    --text: #4a2210; --text-soft: #7a4a2a;
+    --primary: #f97316; --primary-dark: #c2410c; --primary-light: #ffa95e;
+    --accent: #e94b6f; --accent-dark: #b8234a;
+    --border: #ffd4a8; --border-soft: #ffe4c8;
+    --shadow: 0 12px 40px rgba(74,42,26,0.10);
+    --shadow-lg: 0 25px 70px rgba(74,42,26,0.18);
+    --glow: 0 0 40px rgba(249,115,22,0.35);
+    --gradient: linear-gradient(135deg, #fff5eb, #ffe4c8, #ffd0a0);
+    --gradient-primary: linear-gradient(135deg, #f97316, #c2410c);
+  }
+
+  [data-theme="lavender"] {
+    --bg: #f8f5ff; --bg2: #ece3f8; --bg3: #d8c8f0;
+    --card: #ffffff; --card2: #faf7ff;
+    --text: #2a1a3a; --text-soft: #6a5a7a;
+    --primary: #9b6cd4; --primary-dark: #7040b0; --primary-light: #c2a0e8;
+    --accent: #e94b6f; --accent-dark: #b8234a;
+    --border: #d8c8f0; --border-soft: #ece3f8;
+    --shadow: 0 12px 40px rgba(58,42,74,0.10);
+    --shadow-lg: 0 25px 70px rgba(58,42,74,0.18);
+    --glow: 0 0 40px rgba(155,108,212,0.4);
+    --gradient: linear-gradient(135deg, #f8f5ff, #ece3f8, #d8c8f0);
+    --gradient-primary: linear-gradient(135deg, #9b6cd4, #7040b0);
+  }
+
+  [data-theme="black-gold"] {
+    --bg: #050505; --bg2: #0f0f0f; --bg3: #1a1a1a;
+    --card: #131313; --card2: #1c1c1c;
+    --text: #f0e6d0; --text-soft: #a09070;
+    --primary: #d4a373; --primary-dark: #b8860b; --primary-light: #f0c890;
+    --accent: #ffd700; --accent-dark: #d4a373;
+    --border: #3a3020; --border-soft: #2a2010;
+    --shadow-sm: 0 4px 15px rgba(0,0,0,0.5);
+    --shadow: 0 12px 40px rgba(0,0,0,0.7);
+    --shadow-lg: 0 25px 70px rgba(0,0,0,0.9);
+    --glow: 0 0 50px rgba(212,163,115,0.5);
+    --gradient: linear-gradient(135deg, #050505, #0f0f0f, #1a1a1a);
+    --gradient-primary: linear-gradient(135deg, #d4a373, #b8860b);
+  }
+
+  [data-theme="pink-dream"] {
+    --bg: #fff0f7; --bg2: #ffd9eb; --bg3: #ffc0e0;
+    --card: #ffffff; --card2: #fff5fa;
+    --text: #4a1a3a; --text-soft: #7a4a6a;
+    --primary: #ff4fa3; --primary-dark: #cc1670; --primary-light: #ff8ac2;
+    --accent: #b06cd4; --accent-dark: #8b40b0;
+    --border: #ffc0e0; --border-soft: #ffd9eb;
+    --shadow: 0 12px 40px rgba(74,26,58,0.10);
+    --shadow-lg: 0 25px 70px rgba(74,26,58,0.20);
+    --glow: 0 0 40px rgba(255,79,163,0.4);
+    --gradient: linear-gradient(135deg, #fff0f7, #ffd9eb, #ffc0e0);
+    --gradient-primary: linear-gradient(135deg, #ff4fa3, #cc1670);
+  }
+
+  /* ==================== BASE ==================== */
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Vazirmatn', sans-serif;
+    background: var(--bg); color: var(--text);
+    overflow-x: hidden; line-height: 1.8;
+    transition: background 0.5s ease, color 0.5s ease;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+  }
+  body.no-scroll { overflow: hidden; }
+
+  /* ==================== BACKGROUND ANIMATIONS ==================== */
+  .bg-hearts {
+    position: fixed; inset: 0;
+    pointer-events: none; z-index: 0;
+    overflow: hidden;
+  }
+  .bg-heart {
+    position: absolute;
+    color: var(--primary);
+    opacity: 0;
+    animation: floatUp linear infinite;
+    will-change: transform, opacity;
+    filter: blur(0.4px);
+  }
+  @keyframes floatUp {
+    0% { transform: translateY(110vh) rotate(0deg) scale(0.6); opacity: 0; }
+    10% { opacity: 0.15; }
+    20% { transform: translateY(80vh) rotate(72deg) scale(0.8); }
+    50% { transform: translateY(50vh) rotate(180deg) scale(1); opacity: 0.18; }
+    80% { transform: translateY(20vh) rotate(288deg) scale(0.9); opacity: 0.12; }
+    90% { opacity: 0.08; }
+    100% { transform: translateY(-10vh) rotate(360deg) scale(0.6); opacity: 0; }
+  }
+
+  /* ==================== SPLASH ==================== */
+  #splash {
+    position: fixed; inset: 0; z-index: 9999;
+    background: var(--gradient);
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    padding: 30px 20px; text-align: center;
+    transition: opacity 0.7s ease, visibility 0.7s ease;
+  }
+  #splash.hide { opacity: 0; visibility: hidden; pointer-events: none; }
+
+  .splash-inner {
+    animation: splashIn 0.9s cubic-bezier(0.34, 1.56, 0.64, 1);
+    max-width: 520px; width: 100%;
+  }
+  @keyframes splashIn {
+    0% { opacity: 0; transform: scale(0.85) translateY(30px); }
+    100% { opacity: 1; transform: scale(1) translateY(0); }
+  }
+
+  .splash-heart {
+    width: 90px; height: 90px;
+    background: var(--gradient-primary);
+    position: relative; transform: rotate(-45deg);
+    margin: 0 auto 55px;
+    animation: heartbeat 1.4s infinite;
+    box-shadow: var(--glow), 0 0 80px rgba(233,75,111,0.5);
+    border-radius: 4px;
+  }
+  .splash-heart::before, .splash-heart::after {
+    content: ''; width: 90px; height: 90px;
+    background: var(--gradient-primary);
+    border-radius: 50%; position: absolute;
+  }
+  .splash-heart::before { top: -45px; left: 0; }
+  .splash-heart::after { top: 0; left: 45px; }
+
+  @keyframes heartbeat {
+    0%, 100% { transform: rotate(-45deg) scale(1); }
+    15% { transform: rotate(-45deg) scale(1.18); }
+    30% { transform: rotate(-45deg) scale(1); }
+    45% { transform: rotate(-45deg) scale(1.12); }
+    60% { transform: rotate(-45deg) scale(1); }
+  }
+
+  .splash h1 {
+    font-size: clamp(1.6rem, 4.5vw, 2.5rem);
+    color: var(--primary-dark); margin-bottom: 12px;
+    font-weight: 900; letter-spacing: -0.5px;
+    animation: fadeInUp 0.8s 0.3s both;
+  }
+  .splash .q-sub {
+    color: var(--text-soft); font-size: 1.05rem;
+    margin-bottom: 42px; font-weight: 500;
+    animation: fadeInUp 0.8s 0.5s both;
+  }
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .splash-buttons {
+    display: flex; gap: 16px; flex-wrap: wrap;
+    justify-content: center;
+    animation: fadeInUp 0.8s 0.7s both;
+  }
+  .splash-btn {
+    padding: 20px 42px; border-radius: var(--radius);
+    border: 3px solid var(--primary);
+    background: var(--card); color: var(--primary);
+    font-family: inherit; font-size: 1.1rem;
+    font-weight: 900; cursor: pointer;
+    transition: all var(--trans-bounce);
+    min-width: 180px;
+    box-shadow: var(--shadow);
+    position: relative; overflow: hidden;
+  }
+  .splash-btn::before {
+    content: ''; position: absolute;
+    inset: 0; background: var(--gradient-primary);
+    transform: translateY(101%); transition: transform var(--trans);
+    z-index: -1;
+  }
+  .splash-btn:hover {
+    color: white; border-color: transparent;
+    transform: translateY(-6px) scale(1.04);
+    box-shadow: var(--shadow-lg), var(--glow);
+  }
+  .splash-btn:hover::before { transform: translateY(0); }
+  .splash-btn.single { border-color: var(--accent); color: var(--accent-dark); }
+  .splash-btn.single::before { background: var(--gradient-accent); }
+  .splash-btn.single:hover { color: white; border-color: transparent; }
+
+  /* ==================== TOPBAR ==================== */
+  .topbar {
+    position: sticky; top: 0; z-index: 100;
+    background: color-mix(in srgb, var(--card) 92%, transparent);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border-soft);
+    padding: 12px 22px;
+    display: flex; align-items: center;
+    justify-content: space-between;
+    box-shadow: var(--shadow-sm);
+    transition: all var(--trans);
+  }
+  .logo {
+    font-size: 1.25rem; font-weight: 900;
+    color: var(--primary);
+    display: flex; align-items: center; gap: 10px;
+    cursor: pointer; transition: all var(--trans-fast);
+  }
+  .logo:hover { transform: scale(1.03); }
+  .logo-heart {
+    display: inline-block; width: 18px; height: 18px;
+    background: var(--gradient-primary);
+    transform: rotate(-45deg); position: relative;
+    animation: logoHeartBeat 2s infinite;
+  }
+  @keyframes logoHeartBeat {
+    0%, 100% { transform: rotate(-45deg) scale(1); }
+    50% { transform: rotate(-45deg) scale(1.15); }
+  }
+  .logo-heart::before, .logo-heart::after {
+    content: ''; width: 18px; height: 18px;
+    background: var(--gradient-primary);
+    border-radius: 50%; position: absolute;
+  }
+  .logo-heart::before { top: -9px; left: 0; }
+  .logo-heart::after { top: 0; left: 9px; }
+
+  .topbar-right { display: flex; align-items: center; gap: 10px; }
+  .user-badge {
+    display: flex; align-items: center; gap: 9px;
+    background: var(--bg2); padding: 6px 14px 6px 6px;
+    border-radius: 50px;
+    border: 2px solid var(--border);
+    color: var(--text); font-weight: 700;
+    font-size: 0.85rem; cursor: pointer;
+    transition: all var(--trans);
+  }
+  .user-badge:hover {
+    border-color: var(--primary);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-sm);
+  }
+  .user-avatar {
+    width: 30px; height: 30px; border-radius: 50%;
+    background: var(--gradient-primary);
+    color: white;
+    display: flex; align-items: center;
+    justify-content: center;
+    font-weight: 900; font-size: 0.85rem;
+    box-shadow: 0 0 15px rgba(233,75,111,0.4);
+  }
+
+  .btn-icon {
+    width: 40px; height: 40px; border-radius: 50%;
+    border: 2px solid var(--border);
+    background: var(--card); color: var(--primary);
+    cursor: pointer; font-size: 1.05rem;
+    display: flex; align-items: center;
+    justify-content: center;
+    transition: all var(--trans-bounce);
+    font-family: inherit; font-weight: 700;
+    position: relative; overflow: hidden;
+  }
+  .btn-icon:hover {
+    background: var(--primary); color: white;
+    border-color: var(--primary);
+    transform: scale(1.12) rotate(8deg);
+    box-shadow: var(--glow);
+  }
+  .btn-icon:active { transform: scale(0.95); }
+
+  /* ==================== NAV MENU ==================== */
+  .nav-menu {
+    position: fixed; top: 0; right: -360px;
+    width: 340px; height: 100vh;
+    background: var(--card); z-index: 200;
+    padding: 90px 25px 30px;
+    box-shadow: -20px 0 60px var(--shadow-lg);
+    transition: right 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    border-left: 2px solid var(--border);
+    overflow-y: auto;
+  }
+  .nav-menu.open { right: 0; }
+  .nav-menu h3 {
+    color: var(--primary); margin-bottom: 20px;
+    font-size: 1.15rem; font-weight: 900;
+    padding-bottom: 15px;
+    border-bottom: 2px solid var(--border-soft);
+  }
+  .nav-link {
+    display: flex; align-items: center; gap: 13px;
+    padding: 13px 15px; color: var(--text);
+    text-decoration: none; border-radius: var(--radius-sm);
+    margin-bottom: 6px; transition: all var(--trans);
+    font-weight: 500; cursor: pointer;
+    border: none; background: none;
+    width: 100%; text-align: right;
+    font-family: inherit; font-size: 0.96rem;
+    position: relative; overflow: hidden;
+  }
+  .nav-link::before {
+    content: ''; position: absolute;
+    right: 0; top: 0; width: 3px; height: 100%;
+    background: var(--primary);
+    transform: scaleY(0);
+    transition: transform var(--trans);
+  }
+  .nav-link:hover {
+    background: var(--bg2); color: var(--primary);
+    transform: translateX(-6px);
+  }
+  .nav-link:hover::before { transform: scaleY(1); }
+  .nav-link .ic {
+    color: var(--primary);
+    font-weight: 900; width: 22px;
+    display: flex; align-items: center;
+    justify-content: center; font-size: 1.1rem;
+  }
+
+  .overlay {
+    position: fixed; inset: 0;
+    background: rgba(0,0,0,0.55);
+    backdrop-filter: blur(4px);
+    z-index: 150;
+    opacity: 0; pointer-events: none;
+    transition: opacity 0.4s ease;
+  }
+  .overlay.open { opacity: 1; pointer-events: auto; }
+
+  /* ==================== HEADER ==================== */
+  header {
+    min-height: 82vh;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    text-align: center; padding: 60px 20px;
+    background: var(--gradient);
+    position: relative; overflow: hidden;
+  }
+  header::before, header::after {
+    content: ''; position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+  }
+  header::before {
+    top: -40%; right: -15%;
+    width: 650px; height: 650px;
+    background: radial-gradient(circle, var(--primary), transparent 65%);
+    opacity: 0.18;
+    animation: floatSlow 12s infinite ease-in-out;
+  }
+  header::after {
+    bottom: -30%; left: -12%;
+    width: 550px; height: 550px;
+    background: radial-gradient(circle, var(--accent), transparent 65%);
+    opacity: 0.15;
+    animation: floatSlow 15s infinite ease-in-out reverse;
+  }
+  @keyframes floatSlow {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(-30px, 30px) scale(1.08); }
+    66% { transform: translate(30px, -20px) scale(0.95); }
+  }
+
+  .header-content {
+    position: relative; z-index: 2;
+    animation: headerIn 1s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  @keyframes headerIn {
+    from { opacity: 0; transform: translateY(40px) scale(0.95); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+  }
+
+  .main-heart {
+    width: 85px; height: 85px;
+    background: var(--gradient-primary);
+    position: relative; transform: rotate(-45deg);
+    margin: 0 auto 45px;
+    animation: heartbeat 1.4s infinite;
+    box-shadow: var(--glow), 0 0 90px rgba(233,75,111,0.6);
+    border-radius: 4px;
+  }
+  .main-heart::before, .main-heart::after {
+    content: ''; width: 85px; height: 85px;
+    background: var(--gradient-primary);
+    border-radius: 50%; position: absolute;
+  }
+  .main-heart::before { top: -42.5px; left: 0; }
+  .main-heart::after { top: 0; left: 42.5px; }
+
+  header h1 {
+    font-size: clamp(2rem, 6vw, 4rem);
+    font-weight: 900; color: var(--primary-dark);
+    margin-bottom: 15px; letter-spacing: -1.5px;
+    animation: fadeInUp 0.9s 0.3s both;
+  }
+  header .sub {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: clamp(0.95rem, 2vw, 1.25rem);
+    color: var(--text-soft);
+    margin-bottom: 32px;
+    animation: fadeInUp 0.9s 0.5s both;
+  }
+
+  .btn-main {
+    display: inline-block; padding: 15px 44px;
+    background: var(--gradient-primary);
+    color: white; border: none;
+    border-radius: 50px;
+    font-family: inherit; font-size: 1.05rem;
+    font-weight: 700; cursor: pointer;
+    text-decoration: none;
+    transition: all var(--trans-bounce);
+    box-shadow: 0 12px 35px rgba(233,75,111,0.35);
+    position: relative; overflow: hidden;
+    animation: fadeInUp 0.9s 0.7s both;
+  }
+  .btn-main::before {
+    content: ''; position: absolute;
+    top: 0; left: -100%; width: 100%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: left 0.6s ease;
+  }
+  .btn-main:hover {
+    transform: translateY(-4px) scale(1.04);
+    box-shadow: 0 20px 50px rgba(233,75,111,0.5), var(--glow);
+  }
+  .btn-main:hover::before { left: 100%; }
+
+  /* ==================== SECTIONS ==================== */
+  section {
+    padding: 75px 22px;
+    max-width: 1150px;
+    margin: 0 auto;
+    position: relative; z-index: 1;
+    scroll-margin-top: 80px;
+  }
+  .section-title {
+    font-size: clamp(1.6rem, 3.8vw, 2.3rem);
+    font-weight: 900; color: var(--primary-dark);
+    text-align: center; margin-bottom: 12px;
+    letter-spacing: -0.5px;
+    position: relative; display: block;
+  }
+  .section-title::after {
+    content: ''; display: block;
+    width: 60px; height: 4px;
+    background: var(--gradient-primary);
+    border-radius: 4px;
+    margin: 15px auto 0;
+    animation: expandLine 0.8s ease;
+  }
+  @keyframes expandLine {
+    from { width: 0; }
+    to { width: 60px; }
+  }
+  .section-sub {
+    text-align: center; color: var(--text-soft);
+    margin-bottom: 45px; font-size: 0.98rem;
+  }
+
+  /* ==================== MOOD ==================== */
+  .mood-card {
+    background: var(--card); border-radius: var(--radius-lg);
+    padding: 50px 35px; text-align: center;
+    box-shadow: var(--shadow);
+    border: 2px solid var(--border-soft);
+    max-width: 720px; margin: 0 auto;
+    position: relative; overflow: hidden;
+    transition: all var(--trans);
+  }
+  .mood-card::before {
+    content: ''; position: absolute;
+    top: -120px; left: -120px;
+    width: 340px; height: 340px;
+    background: radial-gradient(circle, var(--primary), transparent 70%);
+    opacity: 0.1; border-radius: 50%;
+    animation: floatSlow 10s infinite;
+  }
+  .mood-title {
+    font-size: 1.35rem; font-weight: 900;
+    color: var(--primary-dark); margin-bottom: 10px;
+    position: relative;
+  }
+  .mood-desc {
+    color: var(--text-soft); margin-bottom: 30px;
+    position: relative;
+  }
+
+  .mood-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 12px; margin-bottom: 25px;
+    position: relative;
+  }
+  .mood-opt {
+    padding: 18px 14px;
+    border-radius: var(--radius);
+    border: 2px solid var(--border);
+    background: var(--bg2); cursor: pointer;
+    font-family: inherit; font-size: 0.92rem;
+    font-weight: 700; color: var(--text);
+    transition: all var(--trans-bounce);
+    position: relative; overflow: hidden;
+  }
+  .mood-opt::before {
+    content: ''; position: absolute;
+    inset: 0; background: var(--gradient-primary);
+    transform: scale(0); border-radius: 50%;
+    transition: transform 0.5s ease;
+    z-index: -1;
+  }
+  .mood-opt:hover {
+    border-color: var(--primary);
+    transform: translateY(-4px) scale(1.03);
+    box-shadow: var(--shadow-sm);
+  }
+  .mood-opt.selected {
+    background: var(--gradient-primary);
+    color: white; border-color: transparent;
+    box-shadow: var(--glow);
+    transform: scale(1.05);
+  }
+  .mood-opt.selected::before { transform: scale(2); }
+
+  .mood-result {
+    background: linear-gradient(135deg, var(--bg2), var(--card));
+    border-radius: var(--radius);
+    padding: 30px 26px;
+    border: 2px dashed var(--primary);
+    margin-top: 25px;
+    display: none;
+    position: relative;
+  }
+  .mood-result.show {
+    display: block;
+    animation: resultIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  @keyframes resultIn {
+    from { opacity: 0; transform: scale(0.9) translateY(15px); }
+    to { opacity: 1; transform: scale(1) translateY(0); }
+  }
+  .mood-result .mr-title {
+    font-size: 1.1rem; font-weight: 900;
+    color: var(--primary-dark); margin-bottom: 12px;
+  }
+  .mood-result .mr-text {
+    font-size: 1.05rem; color: var(--text);
+    line-height: 2; margin-bottom: 15px;
+  }
+  .mood-result .mr-tip {
+    font-size: 0.9rem; color: var(--text-soft);
+    padding-top: 15px; border-top: 1px dashed var(--border);
+  }
+
+  /* ==================== SINGLES ==================== */
+  .singles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 22px;
+  }
+  .single-card {
+    background: var(--card); border-radius: var(--radius-lg);
+    padding: 26px 22px;
+    box-shadow: var(--shadow-sm);
+    border: 2px solid var(--border-soft);
+    transition: all var(--trans-bounce);
+    position: relative; overflow: hidden;
+    animation: cardIn 0.6s ease backwards;
+  }
+  .single-card:nth-child(1) { animation-delay: 0.05s; }
+  .single-card:nth-child(2) { animation-delay: 0.1s; }
+  .single-card:nth-child(3) { animation-delay: 0.15s; }
+  .single-card:nth-child(4) { animation-delay: 0.2s; }
+  .single-card:nth-child(5) { animation-delay: 0.25s; }
+  .single-card:nth-child(6) { animation-delay: 0.3s; }
+  @keyframes cardIn {
+    from { opacity: 0; transform: translateY(25px) scale(0.95); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+  }
+  .single-card::before {
+    content: ''; position: absolute;
+    top: 0; left: 0; right: 0; height: 4px;
+    background: var(--gradient-primary);
+    transform: scaleX(0); transform-origin: right;
+    transition: transform var(--trans);
+  }
+  .single-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    border-color: var(--primary);
+    box-shadow: var(--shadow-lg), 0 0 0 4px var(--border-soft);
+  }
+  .single-card:hover::before { transform: scaleX(1); }
+
+  .single-card .avatar {
+    width: 92px; height: 92px; border-radius: 50%;
+    background: var(--gradient-primary);
+    margin: 0 auto 16px;
+    display: flex; align-items: center;
+    justify-content: center; overflow: hidden;
+    border: 3px solid var(--card);
+    box-shadow: 0 0 0 3px var(--primary), 0 8px 25px rgba(233,75,111,0.25);
+    color: white; font-size: 2rem; font-weight: 900;
+    transition: all var(--trans-bounce);
+  }
+  .single-card:hover .avatar {
+    transform: scale(1.08) rotate(-5deg);
+    box-shadow: 0 0 0 3px var(--primary), 0 12px 40px rgba(233,75,111,0.5);
+  }
+  .single-card .avatar img {
+    width: 100%; height: 100%; object-fit: cover;
+  }
+  .single-card .name {
+    text-align: center; font-size: 1.15rem;
+    font-weight: 900; color: var(--primary-dark);
+    margin-bottom: 8px;
+  }
+  .single-card .meta-row {
+    display: flex; justify-content: center;
+    gap: 7px; margin-bottom: 15px; flex-wrap: wrap;
+  }
+  .badge {
+    padding: 4px 12px; border-radius: 50px;
+    font-size: 0.75rem; font-weight: 700;
+    background: var(--bg2); color: var(--primary-dark);
+    border: 1px solid var(--border);
+    transition: all var(--trans-fast);
+  }
+  .badge.male { background: #dbeafe; color: #1e5a99; border-color: #b3d9f0; }
+  .badge.female { background: #fce7f3; color: #b8234a; border-color: #ffd1dc; }
+  [data-theme="dark"] .badge.male { background: #1e3a5f; color: #93c5fd; border-color: #3b82c4; }
+  [data-theme="dark"] .badge.female { background: #4a1a3a; color: #ffb3d1; border-color: #e94b6f; }
+
+  .single-card .info-line {
+    display: flex; align-items: center;
+    gap: 8px; font-size: 0.86rem;
+    color: var(--text-soft); padding: 7px 0;
+    border-bottom: 1px dashed var(--border-soft);
+  }
+  .single-card .info-line:last-of-type { border-bottom: none; }
+  .single-card .info-line .lbl {
+    font-weight: 700; color: var(--text);
+    min-width: 48px; font-size: 0.83rem;
+  }
+  .single-card .info-line .val {
+    flex: 1; word-break: break-word;
+  }
+
+  .single-card .bio {
+    margin-top: 12px; padding-top: 12px;
+    border-top: 1px dashed var(--border);
+    font-size: 0.87rem; color: var(--text-soft);
+    line-height: 1.8;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  /* ==================== FORMS ==================== */
+  .form-box {
+    background: var(--card);
+    border-radius: var(--radius-lg);
+    padding: 42px 36px;
+    box-shadow: var(--shadow);
+    border: 2px solid var(--border-soft);
+    max-width: 580px; margin: 0 auto;
+    position: relative; overflow: hidden;
+    animation: formIn 0.6s ease;
+  }
+  @keyframes formIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .form-box::before {
+    content: ''; position: absolute;
+    top: 0; left: 0; right: 0; height: 5px;
+    background: var(--gradient-primary);
+  }
+  .form-box h3 {
+    color: var(--primary-dark); font-size: 1.4rem;
+    margin-bottom: 8px; text-align: center;
+    font-weight: 900;
+  }
+  .form-box .form-sub {
+    color: var(--text-soft); font-size: 0.92rem;
+    text-align: center; margin-bottom: 28px;
+  }
+  .form-group { margin-bottom: 16px; }
+  .form-group label {
+    display: block; margin-bottom: 8px;
+    color: var(--text); font-weight: 700;
+    font-size: 0.9rem;
+  }
+  .form-input, .form-select, .form-textarea {
+    width: 100%; padding: 14px 16px;
+    border-radius: var(--radius-sm);
+    border: 2px solid var(--border-soft);
+    background: var(--bg); color: var(--text);
+    font-family: inherit; font-size: 0.95rem;
+    transition: all var(--trans);
+  }
+  .form-input:focus, .form-select:focus, .form-textarea:focus {
+    outline: none; border-color: var(--primary);
+    box-shadow: 0 0 0 4px rgba(233,75,111,0.12);
+    transform: translateY(-1px);
+  }
+  .form-textarea {
+    resize: vertical; min-height: 95px;
+    line-height: 1.8;
+  }
+  .form-row-2 {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  @media (max-width: 500px) { .form-row-2 { grid-template-columns: 1fr; } }
+
+  .btn-form {
+    width: 100%; padding: 15px;
+    border-radius: var(--radius);
+    border: none; background: var(--gradient-primary);
+    color: white; font-family: inherit;
+    font-size: 1.02rem; font-weight: 700;
+    cursor: pointer; transition: all var(--trans-bounce);
+    margin-top: 10px;
+    box-shadow: 0 10px 25px rgba(233,75,111,0.3);
+    position: relative; overflow: hidden;
+  }
+  .btn-form::before {
+    content: ''; position: absolute;
+    top: 0; left: -100%; width: 100%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
+    transition: left 0.6s ease;
+  }
+  .btn-form:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 15px 40px rgba(233,75,111,0.5), var(--glow);
+  }
+  .btn-form:hover::before { left: 100%; }
+  .btn-form:active { transform: scale(0.98); }
+
+  .btn-form.secondary {
+    background: transparent; color: var(--primary);
+    border: 2px solid var(--primary);
+    box-shadow: none;
+  }
+  .btn-form.secondary:hover {
+    background: var(--primary); color: white;
+  }
+
+  .form-switch {
+    text-align: center; margin-top: 18px;
+    font-size: 0.9rem; color: var(--text-soft);
+  }
+  .form-switch a {
+    color: var(--primary); font-weight: 700;
+    cursor: pointer; text-decoration: underline;
+    transition: all var(--trans-fast);
+  }
+  .form-switch a:hover { color: var(--primary-dark); }
+
+  .form-error {
+    color: #ef4444; font-size: 0.85rem;
+    text-align: center; margin-top: 10px;
+    min-height: 18px; font-weight: 700;
+  }
+  .form-success {
+    color: #10b981; font-size: 0.85rem;
+    text-align: center; margin-top: 10px;
+    min-height: 18px; font-weight: 700;
+  }
+
+  /* ==================== TABS ==================== */
+  .tabs {
+    display: flex; gap: 8px;
+    justify-content: center; flex-wrap: wrap;
+    margin-bottom: 32px;
+    padding: 6px; border-radius: 50px;
+    background: var(--bg2);
+    max-width: fit-content; margin-left: auto; margin-right: auto;
+    border: 2px solid var(--border-soft);
+  }
+  .tab {
+    padding: 11px 22px; border-radius: 50px;
+    border: none; background: transparent;
+    color: var(--text); cursor: pointer;
+    font-family: inherit; font-size: 0.9rem;
+    font-weight: 700; transition: all var(--trans);
+    position: relative;
+  }
+  .tab.active {
+    background: var(--gradient-primary);
+    color: white;
+    box-shadow: 0 6px 20px rgba(233,75,111,0.35);
+    transform: scale(1.03);
+  }
+  .tab:not(.active):hover {
+    background: var(--card);
+    color: var(--primary);
+  }
+
+  .tab-panel { display: none; }
+  .tab-panel.active {
+    display: block;
+    animation: tabIn 0.5s ease;
+  }
+  @keyframes tabIn {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ==================== GAMES ==================== */
+  .game-panel {
+    display: none; background: var(--card);
+    border-radius: var(--radius-lg);
+    padding: 42px 32px;
+    box-shadow: var(--shadow);
+    border: 2px solid var(--border-soft);
+    text-align: center;
+    position: relative; overflow: hidden;
+  }
+  .game-panel::before {
+    content: ''; position: absolute;
+    top: -100px; right: -100px;
+    width: 300px; height: 300px;
+    background: radial-gradient(circle, var(--primary), transparent 70%);
+    opacity: 0.08; border-radius: 50%;
+  }
+  .game-panel.active {
+    display: block;
+    animation: tabIn 0.5s ease;
+  }
+  .game-panel h3 {
+    font-size: 1.35rem; color: var(--primary-dark);
+    margin-bottom: 8px; font-weight: 900;
+    position: relative;
+  }
+  .game-panel .game-hint {
+    color: var(--text-soft); margin-bottom: 26px;
+    font-size: 0.92rem; position: relative;
+  }
+
+  /* RPS */
+  .rps-choices {
+    display: flex; justify-content: center;
+    gap: 14px; flex-wrap: wrap;
+    margin-bottom: 25px;
+  }
+  .rps-btn {
+    width: 100px; height: 100px;
+    border-radius: var(--radius);
+    border: 2px solid var(--border);
+    background: var(--bg2); cursor: pointer;
+    font-size: 2.2rem;
+    transition: all var(--trans-bounce);
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    gap: 4px; font-family: inherit;
+    color: var(--text); position: relative;
+    overflow: hidden;
+  }
+  .rps-btn::before {
+    content: ''; position: absolute;
+    inset: 0; background: var(--gradient-primary);
+    transform: translateY(100%);
+    transition: transform var(--trans);
+    z-index: 0;
+  }
+  .rps-btn > * { position: relative; z-index: 1; }
+  .rps-btn:hover {
+    transform: translateY(-6px) scale(1.05);
+    border-color: transparent;
+    color: white;
+    box-shadow: var(--glow);
+  }
+  .rps-btn:hover::before { transform: translateY(0); }
+  .rps-btn span.lbl { font-size: 0.72rem; font-weight: 700; }
+
+  .rps-result {
+    background: var(--bg2);
+    border-radius: var(--radius);
+    padding: 24px; margin-top: 18px;
+    min-height: 100px;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    gap: 8px;
+    border: 2px solid var(--border-soft);
+  }
+  .rps-battle {
+    font-size: 1rem; color: var(--text-soft);
+  }
+  .rps-outcome {
+    font-size: 1.4rem; font-weight: 900;
+    color: var(--primary-dark);
+    animation: popIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  @keyframes popIn {
+    from { opacity: 0; transform: scale(0.5); }
+    to { opacity: 1; transform: scale(1); }
+  }
+
+  .score-row {
+    display: flex; justify-content: center;
+    gap: 14px; margin-top: 18px; flex-wrap: wrap;
+  }
+  .score-box {
+    background: var(--bg2); padding: 16px 28px;
+    border-radius: var(--radius); min-width: 95px;
+    border: 2px solid var(--border-soft);
+    transition: all var(--trans-bounce);
+  }
+  .score-box:hover { transform: translateY(-3px); }
+  .score-box .n {
+    font-size: 1.7rem; font-weight: 900;
+    color: var(--primary); line-height: 1;
+  }
+  .score-box .l {
+    font-size: 0.8rem; color: var(--text-soft);
+    margin-top: 4px;
+  }
+
+  /* Guess */
+  .guess-input {
+    display: flex; gap: 10px;
+    justify-content: center;
+    max-width: 380px; margin: 0 auto 18px;
+  }
+  .guess-input input {
+    flex: 1; padding: 14px 18px;
+    border-radius: var(--radius);
+    border: 2px solid var(--border-soft);
+    background: var(--bg); color: var(--text);
+    font-family: inherit; font-size: 1.05rem;
+    text-align: center; font-weight: 700;
+    transition: all var(--trans);
+  }
+  .guess-input input:focus {
+    outline: none; border-color: var(--primary);
+    box-shadow: 0 0 0 4px rgba(233,75,111,0.12);
+  }
+  .guess-input button {
+    padding: 14px 28px;
+    border-radius: var(--radius);
+    border: none; background: var(--gradient-primary);
+    color: white; font-family: inherit;
+    font-weight: 700; cursor: pointer;
+    font-size: 0.95rem;
+    transition: all var(--trans-bounce);
+  }
+  .guess-input button:hover {
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 10px 25px rgba(233,75,111,0.4);
+  }
+
+  .guess-feedback {
+    font-size: 1.15rem; font-weight: 700;
+    color: var(--primary-dark);
+    min-height: 28px; margin-bottom: 18px;
+    animation: popIn 0.4s ease;
+  }
+  .guess-history {
+    display: flex; flex-wrap: wrap;
+    gap: 8px; justify-content: center;
+    margin-top: 18px;
+  }
+  .guess-chip {
+    padding: 7px 15px; border-radius: var(--radius-sm);
+    background: var(--bg2); font-weight: 700;
+    font-size: 0.88rem; color: var(--text);
+    border: 2px solid var(--border-soft);
+    animation: popIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    transition: all var(--trans-fast);
+  }
+  .guess-chip.high { border-color: #f59e0b; color: #f59e0b; background: #fef3c7; }
+  .guess-chip.low { border-color: #3b82f6; color: #3b82f6; background: #dbeafe; }
+  .guess-chip.win {
+    border-color: var(--primary);
+    background: var(--gradient-primary);
+    color: white;
+    animation: winPulse 1s infinite;
+  }
+  @keyframes winPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.08); }
+  }
+
+  /* Memory */
+  .memory-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 10px; max-width: 500px;
+    margin: 0 auto 18px;
+  }
+  .memory-card {
+    aspect-ratio: 1; border-radius: var(--radius);
+    background: var(--gradient-primary);
+    cursor: pointer;
+    display: flex; align-items: center;
+    justify-content: center; font-size: 1.9rem;
+    color: white;
+    transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+    border: 2px solid var(--card);
+    user-select: none;
+    transform-style: preserve-3d;
+    position: relative;
+    box-shadow: 0 6px 20px rgba(233,75,111,0.25);
+  }
+  .memory-card:hover:not(.flipped):not(.matched) {
+    transform: translateY(-4px) scale(1.03);
+    box-shadow: 0 12px 30px rgba(233,75,111,0.4);
+  }
+  .memory-card.flipped {
+    background: var(--bg2);
+    color: var(--primary-dark);
+    transform: rotateY(180deg);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  }
+  .memory-card.matched {
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: white;
+    cursor: default;
+    transform: rotateY(180deg) scale(1.05);
+    box-shadow: 0 0 30px rgba(16,185,129,0.6);
+    animation: matchPulse 0.6s ease;
+  }
+  @keyframes matchPulse {
+    0% { transform: rotateY(180deg) scale(1); }
+    50% { transform: rotateY(180deg) scale(1.15); }
+    100% { transform: rotateY(180deg) scale(1.05); }
+  }
+  .memory-status {
+    font-size: 1.05rem; font-weight: 700;
+    color: var(--primary-dark); margin-top: 12px;
+  }
+
+  /* TTT */
+  .ttt-board {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 10px; max-width: 330px;
+    margin: 0 auto 18px;
+  }
+  .ttt-cell {
+    aspect-ratio: 1; background: var(--bg2);
+    border-radius: var(--radius);
+    border: 2px solid var(--border-soft);
+    cursor: pointer; font-size: 2.3rem;
+    font-weight: 900; color: var(--primary-dark);
+    display: flex; align-items: center;
+    justify-content: center;
+    transition: all var(--trans-bounce);
+    font-family: inherit;
+    position: relative; overflow: hidden;
+  }
+  .ttt-cell:hover:not(.taken) {
+    background: var(--bg3);
+    transform: scale(1.06);
+    border-color: var(--primary);
+    box-shadow: 0 0 20px rgba(233,75,111,0.3);
+  }
+  .ttt-cell.taken { cursor: not-allowed; }
+  .ttt-cell.taken:hover { transform: none; }
+  .ttt-cell.win {
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: white;
+    animation: winPulse 1s infinite;
+    box-shadow: 0 0 30px rgba(16,185,129,0.6);
+  }
+  .ttt-status {
+    font-size: 1.15rem; font-weight: 700;
+    color: var(--primary-dark);
+    margin-top: 12px; min-height: 28px;
+  }
+
+  /* Speed Quiz */
+  .speed-timer {
+    font-size: 2rem; font-weight: 900;
+    color: var(--primary); margin-bottom: 12px;
+    transition: all var(--trans-fast);
+    display: inline-block;
+  }
+  .speed-timer.warning {
+    color: #ef4444;
+    animation: timerPulse 0.5s infinite;
+  }
+  @keyframes timerPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+  }
+  .speed-quiz-q {
+    font-size: 1.2rem; font-weight: 700;
+    color: var(--text); margin-bottom: 22px;
+    min-height: 55px;
+  }
+  .speed-quiz-opts {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 10px; max-width: 560px;
+    margin: 0 auto;
+  }
+  @media (max-width: 500px) {
+    .speed-quiz-opts { grid-template-columns: 1fr; }
+  }
+  .speed-opt {
+    padding: 15px 18px;
+    border-radius: var(--radius);
+    border: 2px solid var(--border-soft);
+    background: var(--bg2); color: var(--text);
+    font-family: inherit; font-weight: 700;
+    cursor: pointer; transition: all var(--trans);
+    font-size: 0.95rem;
+  }
+  .speed-opt:hover {
+    background: var(--gradient-primary);
+    color: white;
+    border-color: transparent;
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-sm);
+  }
+  .speed-opt.correct {
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: white; border-color: transparent;
+    animation: correctPulse 0.5s ease;
+  }
+  .speed-opt.wrong {
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+    color: white; border-color: transparent;
+    animation: shake 0.4s ease;
+  }
+  @keyframes correctPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.08); }
+    100% { transform: scale(1); }
+  }
+  @keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-6px); }
+    75% { transform: translateX(6px); }
+  }
+  .speed-status {
+    font-size: 1.15rem; font-weight: 700;
+    color: var(--primary-dark);
+    margin-top: 18px; min-height: 28px;
+  }
+
+  /* ==================== LOVE QUIZ ==================== */
+  .quiz-box {
+    background: var(--card);
+    border-radius: var(--radius-lg);
+    padding: 45px 38px;
+    box-shadow: var(--shadow);
+    border: 2px solid var(--border-soft);
+    position: relative; overflow: hidden;
+  }
+  .quiz-box::before {
+    content: ''; position: absolute;
+    top: -100px; left: -100px;
+    width: 300px; height: 300px;
+    background: radial-gradient(circle, var(--primary), transparent 70%);
+    opacity: 0.08; border-radius: 50%;
+  }
+
+  .quiz-progress {
+    height: 10px; background: var(--bg2);
+    border-radius: 10px; overflow: hidden;
+    margin-bottom: 32px;
+    position: relative;
+  }
+  .quiz-progress-bar {
+    height: 100%; background: var(--gradient-primary);
+    width: 0%; transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(233,75,111,0.5);
+    position: relative;
+  }
+  .quiz-progress-bar::after {
+    content: ''; position: absolute;
+    top: 0; right: 0;
+    width: 30px; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.5));
+    animation: progressShine 2s infinite;
+  }
+  @keyframes progressShine {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-300px); }
+  }
+
+  .quiz-step { display: none; position: relative; }
+  .quiz-step.active {
+    display: block;
+    animation: quizStepIn 0.5s ease;
+  }
+  @keyframes quizStepIn {
+    from { opacity: 0; transform: translateX(30px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+
+  .question-num {
+    font-size: 0.85rem; color: var(--primary);
+    font-weight: 700; margin-bottom: 10px;
+    letter-spacing: 1px;
+  }
+  .question-text {
+    font-size: 1.28rem; font-weight: 700;
+    color: var(--text); margin-bottom: 26px;
+    line-height: 1.7;
+  }
+  .options { display: grid; gap: 12px; }
+  .option {
+    padding: 18px 22px;
+    background: var(--bg2);
+    border: 2px solid transparent;
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: all var(--trans-bounce);
+    font-size: 0.98rem;
+    font-family: inherit;
+    text-align: right;
+    color: var(--text);
+    display: flex; align-items: center;
+    gap: 15px;
+    position: relative; overflow: hidden;
+  }
+  .option::before {
+    content: ''; position: absolute;
+    right: 0; top: 0; width: 4px; height: 100%;
+    background: var(--primary);
+    transform: scaleY(0);
+    transition: transform var(--trans);
+  }
+  .option:hover {
+    border-color: var(--primary);
+    background: var(--card);
+    transform: translateX(-6px);
+    box-shadow: var(--shadow-sm);
+  }
+  .option:hover::before { transform: scaleY(1); }
+  .option.selected {
+    background: var(--gradient-primary);
+    color: white;
+    border-color: transparent;
+    box-shadow: 0 10px 30px rgba(233,75,111,0.35);
+    transform: translateX(-6px);
+    animation: popIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  .option-letter {
+    width: 34px; height: 34px;
+    border-radius: 50%; background: var(--card);
+    color: var(--primary-dark);
+    display: flex; align-items: center;
+    justify-content: center;
+    font-weight: 900; flex-shrink: 0;
+    transition: all var(--trans-fast);
+    border: 2px solid var(--border);
+  }
+  .option.selected .option-letter {
+    background: white; color: var(--primary);
+    border-color: white;
+    transform: rotate(360deg);
+  }
+
+  .quiz-nav {
+    display: flex; justify-content: space-between;
+    margin-top: 32px; gap: 15px;
+    position: relative;
+  }
+  .btn-quiz {
+    padding: 13px 34px;
+    border-radius: 50px;
+    border: none; font-family: inherit;
+    font-size: 0.98rem; font-weight: 700;
+    cursor: pointer; transition: all var(--trans-bounce);
+  }
+  .btn-next {
+    background: var(--gradient-primary);
+    color: white;
+    box-shadow: 0 10px 25px rgba(233,75,111,0.3);
+  }
+  .btn-next:hover:not(:disabled) {
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 15px 40px rgba(233,75,111,0.5), var(--glow);
+  }
+  .btn-next:disabled {
+    opacity: 0.4; cursor: not-allowed;
+    transform: none !important;
+  }
+  .btn-back {
+    background: transparent;
+    color: var(--primary);
+    border: 2px solid var(--primary);
+  }
+  .btn-back:hover {
+    background: var(--primary); color: white;
+    transform: translateY(-3px);
+  }
+
+  .quiz-result {
+    display: none; text-align: center;
+    padding: 30px 20px;
+    position: relative;
+  }
+  .quiz-result.active {
+    display: block;
+    animation: resultIn 0.7s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  .result-score {
+    font-size: 5rem; font-weight: 900;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1; margin-bottom: 12px;
+    animation: popIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  .result-label {
+    font-size: 1.35rem; font-weight: 900;
+    color: var(--primary-dark);
+    margin-bottom: 20px;
+  }
+  .result-message {
+    font-size: 1.02rem; color: var(--text-soft);
+    max-width: 500px; margin: 0 auto 30px;
+    line-height: 1.9;
+  }
+
+  /* ==================== MESSAGE GENERATOR ==================== */
+  .generator {
+    background: var(--gradient-primary);
+    border-radius: var(--radius-lg);
+    padding: 55px 40px;
+    text-align: center; color: white;
+    box-shadow: 0 30px 80px rgba(233,75,111,0.35);
+    position: relative; overflow: hidden;
+  }
+  .generator::before, .generator::after {
+    content: ''; position: absolute;
+    border-radius: 50%; pointer-events: none;
+  }
+  .generator::before {
+    top: -80px; right: -80px;
+    width: 280px; height: 280px;
+    background: radial-gradient(circle, rgba(255,255,255,0.2), transparent 70%);
+    animation: floatSlow 8s infinite;
+  }
+  .generator::after {
+    bottom: -100px; left: -100px;
+    width: 320px; height: 320px;
+    background: radial-gradient(circle, rgba(255,255,255,0.15), transparent 70%);
+    animation: floatSlow 12s infinite reverse;
+  }
+  .generator h2 {
+    font-size: clamp(1.4rem, 3.5vw, 2.1rem);
+    margin-bottom: 12px; font-weight: 900;
+    position: relative; z-index: 1;
+  }
+  .generator .intro {
+    opacity: 0.9; margin-bottom: 30px;
+    position: relative; z-index: 1;
+  }
+
+  .message-display {
+    background: rgba(255,255,255,0.18);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1.5px solid rgba(255,255,255,0.3);
+    border-radius: var(--radius);
+    padding: 38px 28px;
+    margin-bottom: 26px;
+    min-height: 140px;
+    display: flex; align-items: center;
+    justify-content: center;
+    font-size: 1.15rem; line-height: 2;
+    transition: all 0.4s ease;
+    position: relative; z-index: 1;
+    box-shadow: inset 0 0 40px rgba(255,255,255,0.1);
+  }
+  .message-display.changing {
+    opacity: 0.3;
+    transform: scale(0.97) rotate(-0.5deg);
+  }
+
+  .btn-generate {
+    background: white;
+    color: var(--primary-dark);
+    padding: 15px 42px;
+    border-radius: 50px; border: none;
+    font-family: inherit; font-size: 1rem;
+    font-weight: 700; cursor: pointer;
+    transition: all var(--trans-bounce);
+    position: relative; z-index: 1;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  }
+  .btn-generate:hover {
+    transform: translateY(-4px) scale(1.04);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+  }
+  .btn-generate:active { transform: scale(0.97); }
+
+  /* ==================== COUNTER ==================== */
+  .counter-box {
+    text-align: center;
+    background: var(--card);
+    border-radius: var(--radius-lg);
+    padding: 48px 30px;
+    box-shadow: var(--shadow);
+    border: 2px dashed var(--border);
+    position: relative; overflow: hidden;
+  }
+  .counter-box h3 {
+    font-size: 1.3rem; color: var(--primary-dark);
+    margin-bottom: 10px; font-weight: 900;
+  }
+  .counter-box .hint {
+    color: var(--text-soft); margin-bottom: 32px;
+    font-size: 0.94rem;
+  }
+  .love-counter {
+    display: flex; justify-content: center;
+    gap: 20px; flex-wrap: wrap;
+    margin-bottom: 30px;
+  }
+  .counter-item {
+    background: var(--bg2);
+    border-radius: var(--radius);
+    padding: 24px 20px; min-width: 115px;
+    border: 2px solid var(--border-soft);
+    transition: all var(--trans-bounce);
+  }
+  .counter-item:hover {
+    transform: translateY(-5px) scale(1.03);
+    box-shadow: var(--shadow-sm);
+    border-color: var(--primary);
+  }
+  .counter-num {
+    font-size: 2.3rem; font-weight: 900;
+    color: var(--primary); line-height: 1;
+    transition: all var(--trans-fast);
+    display: inline-block;
+  }
+  .counter-num.pop {
+    animation: numberPop 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  @keyframes numberPop {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.4); color: var(--primary-dark); }
+    100% { transform: scale(1); }
+  }
+  .counter-lbl {
+    font-size: 0.85rem; color: var(--text-soft);
+    margin-top: 8px;
+  }
+  .btn-heart {
+    background: var(--gradient-primary);
+    color: white; padding: 16px 40px;
+    border-radius: 50px; border: none;
+    font-family: inherit; font-size: 1rem;
+    font-weight: 700; cursor: pointer;
+    transition: all var(--trans-bounce);
+    box-shadow: 0 12px 30px rgba(233,75,111,0.35);
+  }
+  .btn-heart:hover {
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 20px 45px rgba(233,75,111,0.5), var(--glow);
+  }
+  .btn-heart:active { transform: scale(0.96); }
+
+  /* ==================== NOTES ==================== */
+  .note-area {
+    background: var(--card);
+    border-radius: var(--radius-lg);
+    padding: 38px 32px;
+    box-shadow: var(--shadow);
+    border: 2px solid var(--border-soft);
+  }
+  .note-area textarea {
+    width: 100%; min-height: 140px;
+    padding: 18px; border-radius: var(--radius);
+    border: 2px solid var(--border-soft);
+    background: var(--bg); color: var(--text);
+    font-family: inherit; font-size: 1rem;
+    resize: vertical; line-height: 1.9;
+    margin-bottom: 15px;
+    transition: all var(--trans);
+  }
+  .note-area textarea:focus {
+    outline: none; border-color: var(--primary);
+    box-shadow: 0 0 0 4px rgba(233,75,111,0.12);
+  }
+  .notes-list {
+    display: flex; flex-direction: column;
+    gap: 12px; margin-top: 25px;
+  }
+  .note-item {
+    background: linear-gradient(135deg, var(--bg2), var(--card));
+    padding: 18px 22px;
+    border-radius: var(--radius);
+    border-right: 4px solid var(--primary);
+    display: flex; justify-content: space-between;
+    align-items: flex-start; gap: 12px;
+    animation: cardIn 0.5s ease;
+    transition: all var(--trans);
+    box-shadow: var(--shadow-sm);
+  }
+  .note-item:hover {
+    transform: translateX(-5px);
+    box-shadow: var(--shadow);
+  }
+  .note-item .note-txt {
+    flex: 1; color: var(--text);
+    font-size: 0.98rem; line-height: 1.8;
+    word-break: break-word;
+  }
+  .note-item .note-date {
+    font-size: 0.75rem; color: var(--text-soft);
+    margin-top: 8px;
+  }
+  .note-item .del-btn {
+    background: #ef4444; color: white;
+    border: none; border-radius: var(--radius-sm);
+    padding: 7px 14px; cursor: pointer;
+    font-family: inherit; font-weight: 700;
+    font-size: 0.8rem; flex-shrink: 0;
+    transition: all var(--trans-fast);
+  }
+  .note-item .del-btn:hover {
+    background: #b91c1c;
+    transform: scale(1.05);
+  }
+
+  /* ==================== QUICK QUESTIONS ==================== */
+  .quick-questions {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 22px;
+  }
+  .q-card {
+    background: var(--card);
+    border-radius: var(--radius-lg);
+    padding: 30px 24px;
+    box-shadow: var(--shadow-sm);
+    border: 2px solid var(--border-soft);
+    text-align: center;
+    transition: all var(--trans-bounce);
+    position: relative; overflow: hidden;
+  }
+  .q-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow);
+    border-color: var(--primary);
+  }
+  .q-card .q-text {
+    font-size: 1.05rem; font-weight: 700;
+    color: var(--text); margin-bottom: 18px;
+    min-height: 55px;
+    display: flex; align-items: center;
+    justify-content: center;
+  }
+  .q-buttons {
+    display: flex; gap: 10px;
+    justify-content: center;
+  }
+  .q-btn {
+    flex: 1; padding: 12px;
+    border-radius: var(--radius-sm);
+    border: 2px solid var(--primary);
+    background: transparent; color: var(--primary);
+    font-family: inherit; font-weight: 700;
+    cursor: pointer; transition: all var(--trans);
+    font-size: 0.9rem;
+  }
+  .q-btn:hover {
+    background: var(--gradient-primary);
+    color: white; border-color: transparent;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(233,75,111,0.3);
+  }
+  .q-result {
+    margin-top: 12px; font-size: 0.88rem;
+    color: var(--primary-dark); font-weight: 700;
+    min-height: 20px; opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+  .q-result.show { opacity: 1; animation: popIn 0.4s ease; }
+
+  /* ==================== LOVE CARD TIPS ==================== */
+  .love-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(255px, 1fr));
+    gap: 22px;
+  }
+  .love-card {
+    background: var(--card);
+    border-radius: var(--radius-lg);
+    padding: 32px 26px;
+    box-shadow: var(--shadow-sm);
+    border: 2px solid transparent;
+    transition: all var(--trans-bounce);
+    position: relative; overflow: hidden;
+  }
+  .love-card::before {
+    content: ''; position: absolute;
+    top: 0; right: 0; width: 100%; height: 4px;
+    background: var(--gradient-primary);
+    transform: scaleX(0); transform-origin: right;
+    transition: transform var(--trans);
+  }
+  .love-card:hover::before { transform: scaleX(1); }
+  .love-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--border);
+    box-shadow: var(--shadow-lg);
+  }
+  .card-icon {
+    width: 55px; height: 55px;
+    border-radius: var(--radius);
+    background: var(--gradient-primary);
+    display: flex; align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    font-size: 1.5rem; color: white;
+    font-weight: 900;
+    font-family: 'Playfair Display', serif;
+    transition: all var(--trans-bounce);
+    box-shadow: 0 8px 20px rgba(233,75,111,0.3);
+  }
+  .love-card:hover .card-icon {
+    transform: rotate(-8deg) scale(1.1);
+    box-shadow: 0 12px 35px rgba(233,75,111,0.5);
+  }
+  .love-card h3 {
+    font-size: 1.15rem; color: var(--primary-dark);
+    margin-bottom: 10px; font-weight: 900;
+  }
+  .love-card p {
+    color: var(--text-soft); font-size: 0.94rem;
+    line-height: 1.9;
+  }
+
+  /* ==================== FINAL NOTE ==================== */
+  .love-note-final {
+    background: linear-gradient(135deg, var(--bg2), var(--card));
+    border-radius: var(--radius-xl);
+    padding: 60px 40px;
+    text-align: center;
+    border: 2px solid var(--border-soft);
+    position: relative; overflow: hidden;
+  }
+  .love-note-final::before {
+    content: '“'; position: absolute;
+    top: 15px; right: 30px;
+    font-family: 'Playfair Display', serif;
+    font-size: 8rem; color: var(--border);
+    line-height: 1; opacity: 0.6;
+  }
+  .love-note-final p {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: clamp(1.05rem, 2.3vw, 1.4rem);
+    color: var(--text); line-height: 2.2;
+    max-width: 700px; margin: 0 auto;
+    position: relative; z-index: 1;
+  }
+  .love-note-final .signature {
+    margin-top: 28px;
+    font-family: 'Vazirmatn', sans-serif;
+    font-style: normal;
+    font-size: 0.92rem;
+    color: var(--primary); font-weight: 700;
+    position: relative; z-index: 1;
+  }
+
+  /* ==================== FOOTER ==================== */
+  footer {
+    background: var(--card);
+    color: var(--text-soft);
+    text-align: center;
+    padding: 50px 20px;
+    margin-top: 60px;
+    border-top: 1px solid var(--border-soft);
+    position: relative; z-index: 1;
+  }
+  footer .foot-heart {
+    font-size: 1.9rem; color: var(--primary);
+    margin-bottom: 12px; display: inline-block;
+    animation: heartbeat 1.4s infinite;
+  }
+  footer p { font-size: 0.92rem; }
+
+  /* ==================== FAB (+) ==================== */
+  .fab-plus {
+    position: fixed; bottom: 30px; left: 30px;
+    width: 62px; height: 62px; border-radius: 50%;
+    background: var(--gradient-primary);
+    color: white; border: none;
+    font-size: 2rem; font-weight: 300;
+    cursor: pointer;
+    box-shadow: 0 12px 35px rgba(233,75,111,0.45), var(--glow);
+    z-index: 90;
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    display: flex; align-items: center;
+    justify-content: center; line-height: 1;
+    font-family: inherit;
+    will-change: transform;
+  }
+  .fab-plus::before {
+    content: ''; position: absolute;
+    inset: -6px; border-radius: 50%;
+    border: 2px solid var(--primary);
+    opacity: 0; animation: fabRing 2s infinite;
+  }
+  @keyframes fabRing {
+    0% { transform: scale(1); opacity: 0.6; }
+    100% { transform: scale(1.4); opacity: 0; }
+  }
+  .fab-plus:hover {
+    transform: scale(1.15) rotate(90deg);
+    box-shadow: 0 20px 60px rgba(233,75,111,0.6), 0 0 80px rgba(233,75,111,0.8);
+  }
+  .fab-plus.open {
+    transform: rotate(135deg) scale(1.05);
+    background: var(--primary-dark);
+  }
+  .fab-plus:active { transform: scale(0.92); }
+
+  .fab-menu {
+    position: fixed; bottom: 105px; left: 30px;
+    z-index: 90; display: flex;
+    flex-direction: column; gap: 12px;
+    opacity: 0; pointer-events: none;
+    transform: translateY(20px) scale(0.9);
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  .fab-menu.open {
+    opacity: 1; pointer-events: auto;
+    transform: translateY(0) scale(1);
+  }
+  .fab-item {
+    display: flex; align-items: center; gap: 12px;
+    background: var(--card);
+    padding: 13px 20px 13px 15px;
+    border-radius: 50px;
+    box-shadow: var(--shadow);
+    cursor: pointer;
+    border: 2px solid var(--border-soft);
+    transition: all var(--trans-bounce);
+    font-family: inherit; color: var(--text);
+    font-weight: 700; font-size: 0.94rem;
+    white-space: nowrap;
+    animation: fabItemIn 0.4s backwards;
+  }
+  .fab-menu.open .fab-item:nth-child(1) { animation-delay: 0.05s; }
+  .fab-menu.open .fab-item:nth-child(2) { animation-delay: 0.1s; }
+  .fab-menu.open .fab-item:nth-child(3) { animation-delay: 0.15s; }
+  .fab-menu.open .fab-item:nth-child(4) { animation-delay: 0.2s; }
+  .fab-menu.open .fab-item:nth-child(5) { animation-delay: 0.25s; }
+  @keyframes fabItemIn {
+    from { opacity: 0; transform: translateX(-20px) scale(0.8); }
+    to { opacity: 1; transform: translateX(0) scale(1); }
+  }
+  .fab-item:hover {
+    background: var(--gradient-primary);
+    color: white; border-color: transparent;
+    transform: translateX(8px) scale(1.03);
+    box-shadow: 0 12px 35px rgba(233,75,111,0.4);
+  }
+  .fab-item .ic {
+    width: 32px; height: 32px;
+    border-radius: 50%;
+    background: var(--bg2);
+    display: flex; align-items: center;
+    justify-content: center; font-size: 0.95rem;
+    color: var(--primary); font-weight: 900;
+    transition: all var(--trans);
+  }
+  .fab-item:hover .ic {
+    background: rgba(255,255,255,0.25);
+    color: white;
+    transform: rotate(-15deg);
+  }
+
+  /* ==================== ADMIN PANEL ==================== */
+  .admin-overlay {
+    position: fixed; inset: 0;
+    background: rgba(0,0,0,0.75);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 500;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    animation: fadeIn 0.3s ease;
+  }
+  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+  .admin-overlay.open { display: flex; }
+
+  .admin-panel {
+    background: var(--card);
+    border-radius: var(--radius-lg);
+    width: 100%; max-width: 720px;
+    max-height: 92vh; overflow-y: auto;
+    padding: 45px 38px;
+    border: 2px solid var(--primary);
+    box-shadow: 0 30px 100px rgba(0,0,0,0.5), 0 0 80px rgba(233,75,111,0.3);
+    position: relative;
+    animation: panelIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  @keyframes panelIn {
+    from { opacity: 0; transform: scale(0.9) translateY(30px); }
+    to { opacity: 1; transform: scale(1) translateY(0); }
+  }
+  .admin-panel::-webkit-scrollbar { width: 8px; }
+  .admin-panel::-webkit-scrollbar-track { background: var(--bg2); border-radius: 10px; }
+  .admin-panel::-webkit-scrollbar-thumb {
+    background: var(--gradient-primary);
+    border-radius: 10px;
+  }
+
+  .admin-close {
+    position: absolute; top: 18px; left: 18px;
+    width: 38px; height: 38px;
+    border-radius: 50%;
+    background: var(--bg2); border: none;
+    cursor: pointer; font-size: 1.2rem;
+    color: var(--primary-dark);
+    font-weight: 900; font-family: inherit;
+    transition: all var(--trans-bounce);
+    display: flex; align-items: center;
+    justify-content: center;
+  }
+  .admin-close:hover {
+    background: #ef4444; color: white;
+    transform: rotate(90deg) scale(1.1);
+  }
+
+  .admin-panel h2 {
+    color: var(--primary-dark);
+    font-size: 1.55rem; margin-bottom: 8px;
+    display: flex; align-items: center;
+    gap: 12px; font-weight: 900;
+  }
+  .admin-badge {
+    background: var(--gradient-primary);
+    color: white; font-size: 0.68rem;
+    padding: 5px 12px; border-radius: 50px;
+    font-weight: 700; letter-spacing: 1px;
+  }
+  .admin-sub {
+    color: var(--text-soft); font-size: 0.92rem;
+    margin-bottom: 28px;
+  }
+
+  .admin-login { text-align: center; padding: 15px 0; }
+  .admin-login input {
+    width: 100%; max-width: 320px;
+    padding: 15px 20px;
+    border-radius: var(--radius);
+    border: 2px solid var(--border-soft);
+    background: var(--bg); color: var(--text);
+    font-family: inherit; font-size: 1rem;
+    text-align: center; margin-bottom: 15px;
+    font-weight: 700; letter-spacing: 3px;
+    transition: all var(--trans);
+  }
+  .admin-login input:focus {
+    outline: none; border-color: var(--primary);
+    box-shadow: 0 0 0 4px rgba(233,75,111,0.12);
+  }
+  .admin-error {
+    color: #ef4444; font-size: 0.88rem;
+    font-weight: 700; margin-top: 10px;
+    min-height: 20px;
+    animation: shake 0.4s ease;
+  }
+
+  .admin-content { display: none; }
+  .admin-content.show { display: block; animation: tabIn 0.5s ease; }
+
+  .admin-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 12px; margin-bottom: 30px;
+  }
+  .admin-stat {
+    background: var(--bg2);
+    border-radius: var(--radius);
+    padding: 20px 15px; text-align: center;
+    border: 2px solid var(--border-soft);
+    transition: all var(--trans-bounce);
+  }
+  .admin-stat:hover {
+    transform: translateY(-4px);
+    border-color: var(--primary);
+    box-shadow: var(--shadow-sm);
+  }
+  .admin-stat .n {
+    font-size: 1.8rem; font-weight: 900;
+    color: var(--primary); line-height: 1;
+  }
+  .admin-stat .l {
+    font-size: 0.78rem; color: var(--text-soft);
+    margin-top: 6px;
+  }
+
+  .admin-section {
+    margin-bottom: 26px;
+    padding-bottom: 26px;
+    border-bottom: 1px dashed var(--border-soft);
+  }
+  .admin-section:last-child {
+    border-bottom: none; padding-bottom: 0;
+  }
+  .admin-section h3 {
+    color: var(--primary-dark);
+    font-size: 1.08rem; margin-bottom: 15px;
+    font-weight: 900;
+    display: flex; align-items: center;
+    gap: 8px;
+  }
+
+  .admin-input {
+    width: 100%; padding: 13px 16px;
+    border-radius: var(--radius-sm);
+    border: 2px solid var(--border-soft);
+    background: var(--bg); color: var(--text);
+    font-family: inherit; font-size: 0.94rem;
+    margin-bottom: 10px;
+    transition: all var(--trans);
+  }
+  .admin-input:focus {
+    outline: none; border-color: var(--primary);
+    box-shadow: 0 0 0 4px rgba(233,75,111,0.12);
+  }
+  textarea.admin-input {
+    resize: vertical; min-height: 70px;
+    line-height: 1.8;
+  }
+
+  .admin-btn {
+    padding: 12px 26px;
+    border-radius: var(--radius-sm);
+    border: none; background: var(--gradient-primary);
+    color: white; font-family: inherit;
+    font-weight: 700; cursor: pointer;
+    font-size: 0.94rem;
+    transition: all var(--trans-bounce);
+    box-shadow: 0 8px 20px rgba(233,75,111,0.25);
+  }
+  .admin-btn:hover {
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 12px 30px rgba(233,75,111,0.4);
+  }
+  .admin-btn.danger {
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+    box-shadow: 0 8px 20px rgba(239,68,68,0.25);
+  }
+  .admin-btn.danger:hover {
+    box-shadow: 0 12px 30px rgba(239,68,68,0.4);
+  }
+  .admin-btn.secondary {
+    background: var(--bg2); color: var(--primary-dark);
+    box-shadow: none;
+    border: 2px solid var(--border);
+  }
+
+  .admin-list {
+    display: flex; flex-direction: column;
+    gap: 10px; margin-top: 15px;
+    max-height: 240px; overflow-y: auto;
+    padding-right: 4px;
+  }
+  .admin-list::-webkit-scrollbar { width: 6px; }
+  .admin-list::-webkit-scrollbar-thumb {
+    background: var(--border); border-radius: 3px;
+  }
+  .admin-list-item {
+    background: var(--bg2);
+    padding: 13px 16px;
+    border-radius: var(--radius-sm);
+    display: flex;
+    justify-content: space-between;
+    align-items: center; gap: 10px;
+    font-size: 0.88rem;
+    border: 2px solid var(--border-soft);
+    transition: all var(--trans-fast);
+    animation: cardIn 0.4s ease;
+  }
+  .admin-list-item:hover {
+    border-color: var(--primary);
+    transform: translateX(-3px);
+  }
+  .admin-list-item .txt {
+    flex: 1; word-break: break-word;
+    color: var(--text);
+  }
+  .admin-list-item .del {
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+    color: white; border: none;
+    border-radius: var(--radius-sm);
+    padding: 6px 13px;
+    cursor: pointer; font-family: inherit;
+    font-weight: 700; font-size: 0.78rem;
+    transition: all var(--trans-fast);
+  }
+  .admin-list-item .del:hover {
+    transform: scale(1.08);
+  }
+
+  /* Theme Picker */
+  .theme-picker {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(105px, 1fr));
+    gap: 10px;
+  }
+  .theme-opt {
+    padding: 16px 12px;
+    border-radius: var(--radius);
+    border: 3px solid transparent;
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: 700; font-size: 0.83rem;
+    transition: all var(--trans-bounce);
+    color: white;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.4);
+    position: relative;
+    overflow: hidden;
+  }
+  .theme-opt::after {
+    content: ''; position: absolute;
+    inset: 0; border: 3px solid transparent;
+    border-radius: var(--radius);
+    transition: all var(--trans);
+  }
+  .theme-opt:hover {
+    transform: scale(1.06) translateY(-3px);
+    box-shadow: var(--shadow);
+  }
+  .theme-opt.active {
+    border-color: var(--primary);
+    transform: scale(1.05);
+    box-shadow: 0 0 0 3px var(--primary), var(--shadow);
+  }
+  .theme-opt.active::after {
+    border-color: rgba(255,255,255,0.5);
+  }
+
+  .theme-opt[data-theme="light"] { background: linear-gradient(135deg, #fff7f4, #e94b6f); color: #4a1e2e; text-shadow: none; }
+  .theme-opt[data-theme="dark"] { background: linear-gradient(135deg, #1a0f1c, #ff6b9d); }
+  .theme-opt[data-theme="ocean"] { background: linear-gradient(135deg, #3b82c4, #f4a261); }
+  .theme-opt[data-theme="forest"] { background: linear-gradient(135deg, #2d8b4a, #d4a373); }
+  .theme-opt[data-theme="sunset"] { background: linear-gradient(135deg, #f97316, #e94b6f); }
+  .theme-opt[data-theme="lavender"] { background: linear-gradient(135deg, #9b6cd4, #e94b6f); }
+  .theme-opt[data-theme="black-gold"] { background: linear-gradient(135deg, #0a0a0a, #d4a373); }
+  .theme-opt[data-theme="pink-dream"] { background: linear-gradient(135deg, #ff4fa3, #b06cd4); }
+
+  /* ==================== TOAST ==================== */
+  .toast {
+    position: fixed; bottom: 30px; left: 50%;
+    transform: translateX(-50%) translateY(150px) scale(0.8);
+    background: var(--gradient-primary);
+    color: white; padding: 15px 30px;
+    border-radius: 50px; font-weight: 700;
+    z-index: 10000; opacity: 0;
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    box-shadow: 0 15px 45px rgba(233,75,111,0.5);
+    font-size: 0.95rem;
+    pointer-events: none;
+    max-width: 90vw;
+    text-align: center;
+  }
+  .toast.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0) scale(1);
+  }
+
+  /* ==================== EMPTY STATE ==================== */
+  .empty-state {
+    text-align: center; padding: 50px 20px;
+    color: var(--text-soft);
+    animation: fadeIn 0.6s ease;
+  }
+  .empty-state .empty-heart {
+    font-size: 3rem; color: var(--border);
+    margin-bottom: 15px;
+    animation: heartbeat 2s infinite;
+    display: inline-block;
+  }
+  .empty-state p { font-size: 0.95rem; }
+
+  /* ==================== RESPONSIVE ==================== */
+  @media (max-width: 700px) {
+    section { padding: 55px 18px; }
+    .quiz-box { padding: 32px 22px; }
+    .question-text { font-size: 1.15rem; }
+    .generator { padding: 45px 22px; }
+    .message-display { font-size: 1.02rem; padding: 28px 20px; }
+    .counter-item { min-width: 95px; padding: 20px 15px; }
+    .counter-num { font-size: 1.9rem; }
+    .fab-plus { bottom: 20px; left: 20px; width: 58px; height: 58px; }
+    .fab-menu { bottom: 90px; left: 20px; }
+    .fab-item { font-size: 0.88rem; padding: 11px 16px 11px 12px; }
+    .memory-grid { gap: 7px; }
+    .rps-btn { width: 88px; height: 88px; font-size: 1.9rem; }
+    .admin-panel { padding: 32px 22px; }
+    .form-box { padding: 32px 22px; }
+    .nav-menu { width: 300px; right: -320px; padding: 80px 20px 30px; }
+    .topbar { padding: 10px 15px; }
+    .user-badge { padding: 5px 10px 5px 5px; font-size: 0.78rem; }
+    .main-heart { width: 70px; height: 70px; }
+    .main-heart::before, .main-heart::after { width: 70px; height: 70px; }
+    .main-heart::before { top: -35px; }
+    .main-heart::after { left: 35px; }
+    header { min-height: 70vh; padding: 40px 15px; }
+    .love-note-final { padding: 45px 25px; }
+    .love-note-final::before { font-size: 5rem; }
+  }
+
+  @media (max-width: 400px) {
+    .splash-btn { min-width: 150px; padding: 17px 30px; font-size: 1rem; }
+    .rps-btn { width: 78px; height: 78px; font-size: 1.7rem; }
+  }
+
+  /* ==================== PREFERS REDUCED ==================== */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+/* ===== v2: modes, order, fortune, admin tabs ===== */
+body[data-mode="couple"] [data-for="single"],body[data-mode="single"] [data-for="couple"]{display:none!important}
+#mainWrap{display:flex;flex-direction:column}
+body[data-mode="couple"] #mood{order:1}body[data-mode="couple"] #counter{order:2}body[data-mode="couple"] #generator{order:3}
+body[data-mode="couple"] #notes{order:4}body[data-mode="couple"] #questions{order:5}body[data-mode="couple"] #quiz{order:6}
+body[data-mode="couple"] #games{order:7}body[data-mode="couple"] #tips{order:8}body[data-mode="couple"] #letter{order:9}
+body[data-mode="single"] #singlesSection{order:1}body[data-mode="single"] #fortune{order:2}body[data-mode="single"] #mood{order:3}
+body[data-mode="single"] #games{order:4}body[data-mode="single"] #quiz{order:5}body[data-mode="single"] #questions{order:6}body[data-mode="single"] #tips{order:7}
+.fortune-card{max-width:560px;margin:0 auto;background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:32px 24px;text-align:center;box-shadow:var(--shadow)}
+.fortune-text{min-height:70px;font-size:1.15rem;line-height:2;color:var(--text);margin-bottom:20px;transition:opacity .4s}
+.admin-tabs{display:flex;gap:6px;flex-wrap:wrap;margin:16px 0;position:sticky;top:0;z-index:5;background:var(--card);padding:8px 0}
+.admin-tab{flex:1;min-width:70px;padding:10px 8px;border:1px solid var(--border);background:var(--card2);color:var(--text);border-radius:var(--radius-sm);cursor:pointer;font:inherit;font-size:.85rem;transition:var(--trans-fast)}
+.admin-tab.active{background:var(--gradient-primary);color:#fff;border-color:transparent}
+.admin-section[data-tab]{display:none}.admin-section[data-tab].show{display:block}
+.admin-search{margin-bottom:10px}
+.admin-bars{display:flex;flex-direction:column;gap:10px;margin:8px 0 4px}
+.admin-bar{display:flex;align-items:center;gap:10px;font-size:.85rem}
+.admin-bar .tr{flex:1;height:12px;background:var(--bg2);border-radius:99px;overflow:hidden}
+.admin-bar .fl{height:100%;background:var(--gradient-primary);border-radius:99px;transition:width .6s}
+
+/* ===== v3 ===== */
+header{position:relative;overflow:hidden}
+header::before{content:"";position:absolute;inset:-20%;background:radial-gradient(circle at 20% 30%,var(--primary-light),transparent 45%),radial-gradient(circle at 80% 70%,var(--accent),transparent 40%);opacity:.35;filter:blur(30px);animation:aur 12s ease-in-out infinite alternate}
+@keyframes aur{to{transform:translate(4%,-3%) scale(1.1)}}
+.hero-art{width:min(440px,90%);height:auto;display:block;margin:0 auto 6px;position:relative}
+.header-content{position:relative}
+body[data-mode="couple"] #mood{order:1}body[data-mode="couple"] #music{order:2}body[data-mode="couple"] #counter{order:3}body[data-mode="couple"] #generator{order:4}body[data-mode="couple"] #notes{order:5}body[data-mode="couple"] #questions{order:6}body[data-mode="couple"] #anime{order:7}body[data-mode="couple"] #quiz{order:8}body[data-mode="couple"] #games{order:9}body[data-mode="couple"] #tips{order:10}body[data-mode="couple"] #letter{order:11}
+body[data-mode="single"] #singlesSection{order:1}body[data-mode="single"] #partners{order:2}body[data-mode="single"] #fortune{order:3}body[data-mode="single"] #music{order:4}body[data-mode="single"] #anime{order:5}body[data-mode="single"] #mood{order:6}body[data-mode="single"] #games{order:7}body[data-mode="single"] #quiz{order:8}body[data-mode="single"] #questions{order:9}body[data-mode="single"] #tips{order:10}
+.player{display:flex;gap:18px;align-items:center;max-width:620px;margin:0 auto 18px;background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:20px;box-shadow:var(--shadow)}
+.disc{width:84px;height:84px;flex:none;border-radius:50%;background:conic-gradient(var(--primary),var(--primary-light),var(--accent),var(--primary));display:grid;place-items:center;color:#fff;font-size:1.8rem;box-shadow:var(--glow)}
+.disc.spin{animation:spin 4s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}
+.p-info{flex:1;display:flex;flex-direction:column;gap:6px;min-width:0}.p-info span{color:var(--text-soft);font-size:.85rem}.p-info input[type=range]{width:100%;accent-color:var(--primary)}
+.p-ctl{display:flex;gap:10px;justify-content:center}.p-ctl button{width:42px;height:42px;border-radius:50%;border:0;background:var(--gradient-primary);color:#fff;cursor:pointer;font-size:1rem}
+.plist{max-width:620px;margin:0 auto}.trk{display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:var(--radius-sm);cursor:pointer;border:1px solid transparent}.trk:hover,.trk.on{background:var(--card2);border-color:var(--border)}.trk span{color:var(--text-soft);font-size:.8rem;margin-inline-start:auto}
+.guide{max-width:620px;margin:16px auto;background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:12px 18px}.guide summary{cursor:pointer;font-weight:700}.guide ol{margin:10px 18px;line-height:2;color:var(--text-soft)}
+.mini-form{max-width:620px;margin:12px auto;display:grid;gap:8px}.mini-form label{font-size:.8rem;color:var(--text-soft)}.mini-form input,.mini-form textarea,.mini-form select{width:100%;padding:10px 12px;border-radius:var(--radius-sm);border:1px solid var(--border);background:var(--card2);color:var(--text);font:inherit}
+.agrid,.pgrid{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));margin-top:16px}
+.acard,.pcard{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-sm);transition:var(--trans);display:flex;flex-direction:column}.acard:hover,.pcard:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg)}
+.acard .cv{height:260px;width:100%;object-fit:cover;background:var(--gradient)}.acard .bd,.pcard .bd{padding:14px;display:flex;flex-direction:column;gap:8px}.acard p,.pcard p{color:var(--text-soft);font-size:.88rem;line-height:1.9}
+.chip{display:inline-block;padding:3px 10px;border-radius:99px;background:var(--bg2);color:var(--primary-dark);font-size:.75rem;margin:2px}
+.abtn{display:inline-block;padding:8px 14px;border-radius:99px;background:var(--gradient-primary);color:#fff;text-decoration:none;font-size:.82rem;border:0;cursor:pointer;font-family:inherit}
+.pcard.m{}.pcard.l{grid-column:span 2}.pcard .bn{width:100%;object-fit:cover;background:var(--gradient)}.pcard.s .bn{height:90px}.pcard.m .bn{height:130px}.pcard.l .bn{height:200px}
+.pcard .av{width:76px;height:76px;border-radius:50%;object-fit:cover;border:4px solid var(--card);margin:-38px 14px 0;background:var(--bg3);position:relative}.pcard.l .av{width:96px;height:96px;margin-top:-48px}
+@media(max-width:560px){.pcard.l{grid-column:span 1}}
+.catch-box{position:relative;height:260px;background:var(--bg2);border-radius:var(--radius);overflow:hidden;margin:12px 0}.catch-box i{position:absolute;font-style:normal;font-size:2rem;cursor:pointer;user-select:none;animation:pop .2s}
+@keyframes pop{from{transform:scale(0)}}.g-row{display:flex;gap:10px;justify-content:center;align-items:center;flex-wrap:wrap;margin-top:12px}.g-out{min-height:90px;display:grid;place-items:center;text-align:center;font-size:1.2rem;line-height:2;padding:14px;background:var(--card2);border-radius:var(--radius);margin:12px 0}
+.react-box{height:160px;display:grid;place-items:center;border-radius:var(--radius);background:#e94b6f;color:#fff;font-size:1.1rem;cursor:pointer;margin:12px 0;user-select:none}.react-box.go{background:#2d8b4a}
+.fortune-card{background:var(--card)}
+
+/* ===== v4 ===== */
+body,button,input,textarea,select{font-family:var(--font,'Vazirmatn'),'Vazirmatn',sans-serif}
+body{padding-top:84px}.topbar,.nav-menu,.overlay{display:none!important}
+@property --a{syntax:'<angle>';initial-value:0deg;inherits:false}@keyframes rot{to{--a:360deg}}
+#fbar{position:fixed;top:12px;left:50%;transform:translateX(-50%);z-index:900;width:min(1180px,calc(100% - 20px));transition:top .4s;animation:barDrop 1.1s cubic-bezier(.2,1.5,.3,1) both}
+@keyframes barDrop{from{transform:translate(-50%,-160%) scale(.7);opacity:0}}
+#fbar.sm{top:6px}#fbar.sm .fb-in{padding:4px 8px;box-shadow:var(--shadow)}
+.fb-in{position:relative;display:flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;background:color-mix(in srgb,var(--card) 70%,transparent);-webkit-backdrop-filter:blur(20px) saturate(1.7);backdrop-filter:blur(20px) saturate(1.7);box-shadow:var(--shadow-lg);transition:.4s}
+.fb-in::before{content:"";position:absolute;inset:-2px;border-radius:inherit;padding:2px;background:conic-gradient(from var(--a),transparent 0,var(--primary) 20%,var(--accent) 40%,transparent 60%);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;animation:rot 5s linear infinite;pointer-events:none}
+.fb-logo{display:flex;align-items:center;gap:6px;font-weight:900;color:var(--primary);cursor:pointer;white-space:nowrap}
+.fb-links{flex:1;display:flex;gap:2px;overflow-x:auto;position:relative;scrollbar-width:none;padding:4px}.fb-links::-webkit-scrollbar{display:none}
+.fb-ind{position:absolute;top:4px;bottom:4px;left:0;width:0;border-radius:99px;background:var(--gradient-primary);box-shadow:var(--glow);transition:transform .6s cubic-bezier(.34,1.5,.4,1),width .6s cubic-bezier(.34,1.5,.4,1)}
+.fb-l{position:relative;z-index:1;background:none;border:0;border-radius:99px;padding:8px 14px;display:flex;align-items:center;gap:6px;color:var(--text-soft);cursor:pointer;font-size:.85rem;white-space:nowrap;transition:color .3s,transform .3s cubic-bezier(.34,1.56,.64,1)}
+.fb-l i{font-style:normal;transition:transform .5s cubic-bezier(.34,1.56,.64,1)}.fb-l:hover{color:var(--primary);transform:translateY(-3px)}.fb-l:hover i{transform:scale(1.4) rotate(-12deg)}
+.fb-l.on{color:#fff}.fb-l.on i{animation:ib .7s}@keyframes ib{0%{transform:scale(1)}40%{transform:scale(1.7) rotate(15deg)}100%{transform:scale(1)}}
+.fb-mode{width:38px;height:38px;border-radius:50%;border:0;background:var(--gradient-accent);color:#fff;cursor:pointer;font-size:1.1rem;transition:transform .6s cubic-bezier(.34,1.56,.64,1)}.fb-mode:hover{transform:rotate(180deg) scale(1.1)}
+.fb-in .user-badge{margin:0}
+@media(max-width:760px){.fb-l span,.fb-logo span{display:none}.fb-l.on span{display:inline}.fb-l{padding:8px 11px}}
+#mainWrap>section{display:none}
+#mainWrap>section.pg-on{display:block;animation:pgIn .85s cubic-bezier(.2,.9,.3,1) both}
+@keyframes pgIn{from{opacity:0;transform:translateY(50px) scale(.95);filter:blur(14px)}}
+@keyframes rise{from{opacity:0;transform:translateY(34px) scale(.9)}}
+.pg-on :is(.agrid,.pgrid,.plist,.quick-questions,.tabs,.mood-options,.singles-grid,.tips-grid)>*{animation:rise .7s both}
+.pg-on :is(.agrid,.pgrid,.plist,.quick-questions,.tabs,.mood-options,.singles-grid,.tips-grid)>*:nth-child(1){animation-delay:.1s}.pg-on :is(.agrid,.pgrid,.plist,.quick-questions,.tabs,.mood-options,.singles-grid,.tips-grid)>*:nth-child(2){animation-delay:.18s}.pg-on :is(.agrid,.pgrid,.plist,.quick-questions,.tabs,.mood-options,.singles-grid,.tips-grid)>*:nth-child(3){animation-delay:.26s}.pg-on :is(.agrid,.pgrid,.plist,.quick-questions,.tabs,.mood-options,.singles-grid,.tips-grid)>*:nth-child(4){animation-delay:.34s}.pg-on :is(.agrid,.pgrid,.plist,.quick-questions,.tabs,.mood-options,.singles-grid,.tips-grid)>*:nth-child(n+5){animation-delay:.42s}
+.pg-on .section-title{background:linear-gradient(90deg,var(--primary),var(--accent),var(--primary-light),var(--primary));background-size:300%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 5s linear infinite,rise .8s both}
+@keyframes shine{to{background-position:300% 0}}
+#home h1,#singleHero h1{background:linear-gradient(90deg,var(--primary),var(--accent),var(--primary-light),var(--primary));background-size:300%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 6s linear infinite}
+.hero-art{animation:floaty 5s ease-in-out infinite}@keyframes floaty{50%{transform:translateY(-12px)}}
+body:not([data-page="home"]) #home,body:not([data-page="home"]) #singleHero{display:none!important}
+.chips{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-bottom:12px}
+.cat-chip{padding:8px 18px;border-radius:99px;border:1px solid var(--border);background:var(--card);color:var(--text);cursor:pointer;font:inherit;transition:.35s cubic-bezier(.34,1.56,.64,1)}.cat-chip:hover{transform:translateY(-3px) scale(1.06)}.cat-chip.on{background:var(--gradient-primary);color:#fff;box-shadow:var(--glow);border-color:transparent}
+.trk em{font-style:normal;font-size:.7rem;padding:2px 8px;border-radius:99px;background:var(--bg2);color:var(--primary-dark)}.p-info small{color:var(--text-soft);text-align:center}
+
+/* ==================== v4 POLISH / SMOOTH UI ==================== */
+:root{--ease-smooth:cubic-bezier(.22,.61,.36,1);--ease-spring:cubic-bezier(.16,1,.3,1)}
+body{scroll-behavior:smooth}
+#fbar{top:14px;width:min(1280px,calc(100% - 28px));animation:navIn .8s var(--ease-spring) both}
+@keyframes navIn{from{opacity:0;transform:translate(-50%,-28px) scale(.97);filter:blur(8px)}to{opacity:1;transform:translate(-50%,0) scale(1);filter:blur(0)}}
+.fb-in{padding:8px 10px;gap:10px;border:1px solid color-mix(in srgb,var(--border) 75%,transparent);background:color-mix(in srgb,var(--card) 78%,transparent);box-shadow:0 18px 60px rgba(40,12,30,.14),inset 0 1px 0 rgba(255,255,255,.4);}
+.fb-in::before{animation:rot 9s linear infinite;opacity:.65}
+.fb-links{min-width:0;gap:4px}
+.fb-l{padding:9px 13px;font-weight:700;transition:transform .35s var(--ease-spring),color .25s ease,background .25s ease}
+.fb-l:hover{transform:translateY(-2px)}
+.fb-l.on{background:linear-gradient(135deg,color-mix(in srgb,var(--primary) 88%,transparent),color-mix(in srgb,var(--primary-dark) 88%,transparent));box-shadow:0 8px 24px color-mix(in srgb,var(--primary) 28%,transparent)}
+.fb-ind{display:none}
+.fb-actions{display:flex;align-items:center;gap:7px;flex:0 0 auto}
+.fb-mode,.fb-menu{height:40px;border:1px solid color-mix(in srgb,var(--border) 70%,transparent);cursor:pointer;font-family:inherit;font-weight:900;display:flex;align-items:center;justify-content:center;transition:transform .4s var(--ease-spring),box-shadow .3s ease,filter .3s ease}
+.fb-mode{width:auto;min-width:112px;padding:0 13px;border-radius:999px;background:var(--gradient-accent);color:#fff;gap:7px;box-shadow:0 8px 25px color-mix(in srgb,var(--accent) 25%,transparent)}
+.fb-mode:hover{transform:translateY(-2px) scale(1.03);filter:saturate(1.08);box-shadow:0 12px 30px color-mix(in srgb,var(--accent) 32%,transparent)}
+.fb-mode .mode-icon{font-size:1rem}.fb-mode .mode-label{font-size:.78rem}
+.fb-menu{width:40px;border-radius:50%;background:var(--card);color:var(--primary);font-size:1.05rem}
+.fb-menu:hover{transform:translateY(-2px) rotate(6deg);background:var(--primary);color:#fff;box-shadow:var(--glow)}
+.fb-in .user-badge{margin:0;padding:4px 10px 4px 4px;background:color-mix(in srgb,var(--bg2) 88%,transparent);border-color:var(--border)}
+.topbar{display:none!important}
+header{min-height:78vh;padding:120px 20px 70px;background:radial-gradient(circle at 50% 35%,color-mix(in srgb,var(--primary) 12%,transparent),transparent 38%),var(--gradient);isolation:isolate}
+header::before{animation:auroraA 14s ease-in-out infinite alternate}
+header::after{animation:auroraB 18s ease-in-out infinite alternate}
+@keyframes auroraA{0%{transform:translate3d(0,0,0) scale(1)}50%{transform:translate3d(-35px,24px,0) scale(1.08)}100%{transform:translate3d(22px,-18px,0) scale(.98)}}
+@keyframes auroraB{0%{transform:translate3d(0,0,0) scale(1)}50%{transform:translate3d(30px,-25px,0) scale(1.06)}100%{transform:translate3d(-20px,18px,0) scale(.97)}}
+.header-content{animation:heroIn 1s var(--ease-spring) both}
+@keyframes heroIn{from{opacity:0;transform:translateY(35px) scale(.96);filter:blur(10px)}to{opacity:1;transform:translateY(0) scale(1);filter:blur(0)}}
+.main-heart{box-shadow:var(--glow),0 0 110px color-mix(in srgb,var(--primary) 42%,transparent);will-change:transform}
+section{scroll-margin-top:105px}
+.nav-menu{transition:right .55s var(--ease-spring);box-shadow:-24px 0 70px rgba(30,10,25,.25)}
+.nav-link{transition:transform .35s var(--ease-spring),background .25s ease,color .25s ease}
+.nav-link:hover{transform:translateX(-8px) scale(1.01)}
+.singles-grid,.agrid,.pgrid,.plist,.quick-questions,.tips-grid{contain:layout paint}
+.single-card,.mood-card,.form-box,.game-panel,.love-card,.pcard,.acard{transition:transform .45s var(--ease-spring),box-shadow .45s var(--ease-spring),border-color .3s ease;will-change:transform}
+.single-card:hover,.pcard:hover,.acard:hover,.love-card:hover{transform:translateY(-8px) scale(1.012)}
+button,a,.tab,.mood-opt,.rps-btn,.ttt-cell{ -webkit-tap-highlight-color:transparent }
+@media(max-width:900px){#fbar{top:9px;width:calc(100% - 14px)}.fb-l{padding:8px 10px}.fb-l span{display:none}.fb-l.on span{display:inline}.fb-mode{min-width:40px;width:40px;padding:0}.fb-mode .mode-label{display:none}header{padding-top:105px}}
+@media(max-width:560px){.fb-in{padding:7px}.fb-logo span{display:none}.fb-links{gap:2px}.fb-l{font-size:.78rem;padding:8px}.fb-actions{gap:5px}.fb-in .user-badge span{display:none}.fb-in .user-badge{padding:4px}.fb-menu{width:38px;height:38px}header{min-height:72vh;padding:100px 16px 55px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
+</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Vazirmatn&family=Lalezar&family=Harmattan&family=Noto+Naskh+Arabic&family=Markazi+Text&family=Reem+Kufi&family=Cairo&family=Tajawal&family=Lemonada&family=Aref+Ruqaa&family=Mirza&family=Rakkas&family=Katibeh&family=Changa&family=El+Messiri&family=Amiri&family=Almarai&family=Scheherazade+New&family=Baloo+Bhaijaan+2&family=Vibes&display=swap">
+<script>
+window.JB_CONFIG = {
+  BIN_ID: '6ac7c4b4ffd5d1605359bf6b',
+  KEY: '$2a$10$UxASVennmwrAXqpW/Cut.uhYRUiyIT/ae1lKNSpL0E.TksmIy3/bW'
+};
+</script>
+</head>
+<body>
+
+<!-- ==================== BG HEARTS ==================== -->
+<div class="bg-hearts" id="bgHearts"></div>
+<div id="fbar"><div class="fb-in" id="fbIn"><span class="fb-logo" onclick="showPage('home')"><i class="logo-heart"></i><span>قلب‌ها</span></span><div class="fb-links" id="fbLinks"></div><div class="fb-actions"><div class="user-badge" id="userBadge" onclick="openUserPanel()" style="display:none"><div class="user-avatar" id="userAvatar">؟</div><span id="userName">کاربر</span></div><button class="fb-mode" id="fbMode" onclick="switchMode()" title="تغییر بخش"><span class="mode-icon">⇄</span><span class="mode-label">تغییر بخش</span></button><button class="fb-menu" onclick="toggleMenu()" title="باز کردن منو">☰</button></div></div></div>
+
+<!-- ==================== SPLASH ==================== -->
+<div id="splash">
+  <div class="splash-inner">
+    <div class="splash-heart"></div>
+    <h1>به دنیای قلب‌ها خوش اومدی</h1>
+    <p class="q-sub">اول یه سوال... بگو ببینم</p>
+    <div class="splash-buttons">
+      <button class="splash-btn" onclick="chooseInRelationship()">رل دارم</button>
+      <button class="splash-btn single" onclick="chooseSingle()">سینگلم</button>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== NAV MENU ==================== -->
+<div class="overlay" id="overlay" onclick="toggleMenu()"></div>
+<nav class="nav-menu" id="navMenu">
+  <h3>منوی سایت</h3>
+  <button class="nav-link" onclick="switchMode(); toggleMenu()"><span class="ic">⇄</span> <span id="modeSwitchLbl">رفتن به بخش سینگل‌ها</span></button>
+  <button class="nav-link" onclick="scrollToTop(); toggleMenu()"><span class="ic">♥</span> خانه</button>
+  <button class="nav-link" onclick="scrollToId('music'); toggleMenu()"><span class="ic">♪</span> موزیک</button>
+  <button class="nav-link" onclick="scrollToId('anime'); toggleMenu()"><span class="ic">✦</span> انیمه</button>
+  <button data-for="single" class="nav-link" onclick="scrollToId('partners'); toggleMenu()"><span class="ic">♡</span> پارتنر یابی</button>
+  <button class="nav-link" onclick="scrollToId('mood'); toggleMenu()"><span class="ic">◐</span> حالت روحی</button>
+  <button class="nav-link" onclick="scrollToId('games'); toggleMenu()"><span class="ic">◈</span> بازی‌ها</button>
+  <button class="nav-link" onclick="scrollToId('quiz'); toggleMenu()"><span class="ic">✓</span> تست عشق</button>
+  <button data-for="couple" class="nav-link" onclick="scrollToId('generator'); toggleMenu()"><span class="ic">✉</span> پیام عاشقانه</button>
+  <button data-for="couple" class="nav-link" onclick="scrollToId('counter'); toggleMenu()"><span class="ic">♡</span> شمارنده عشق</button>
+  <button data-for="couple" class="nav-link" onclick="scrollToId('notes'); toggleMenu()"><span class="ic">✎</span> یادداشت‌ها</button>
+  <button class="nav-link" onclick="scrollToId('tips'); toggleMenu()"><span class="ic">★</span> رازهای عشق</button>
+  <button data-for="single" class="nav-link" onclick="scrollToId('singlesSection'); toggleMenu()"><span class="ic">♤</span> سینگل‌ها</button>
+</nav>
+
+<!-- ==================== HEADER ==================== -->
+<header id="home" data-for="couple">
+  <div class="header-content">
+    <svg class="hero-art" viewBox="0 0 400 170" aria-hidden="true"><defs><radialGradient id="mg"><stop offset="0" stop-color="#fff6d6"/><stop offset="1" stop-color="#ffd1dc" stop-opacity=".2"/></radialGradient></defs><circle cx="320" cy="45" r="30" fill="url(#mg)"/><g fill="var(--primary)" opacity=".85"><circle cx="170" cy="78" r="13"/><path d="M150 150c0-35 8-55 20-55s20 20 20 55z"/><circle cx="222" cy="82" r="12"/><path d="M204 150c0-32 7-50 18-50s19 18 19 50z"/></g><path d="M196 52c-6-12-24-4-14 10l14 14 14-14c10-14-8-22-14-10z" fill="#ff4f7b"><animate attributeName="opacity" values="1;.4;1" dur="1.6s" repeatCount="indefinite"/></path><g fill="var(--primary-light)" opacity=".7"><circle cx="60" cy="40" r="2"/><circle cx="110" cy="20" r="1.6"/><circle cx="270" cy="25" r="2"/><circle cx="360" cy="90" r="1.8"/><circle cx="30" cy="100" r="1.6"/></g><path d="M0 150h400v20H0z" fill="var(--primary)" opacity=".25"/></svg>
+    <div class="main-heart"></div>
+    <h1 id="headerTitle">دنیای عاشق‌ها</h1>
+    <p class="sub" id="headerSub">هر چیزی که یه عاشق می‌خواد، اینجاست</p>
+    <button class="btn-main" onclick="scrollToId('mood')">شروع کنیم</button>
+  </div>
+</header>
+
+<header id="singleHero" data-for="single">
+  <div class="header-content">
+    <svg class="hero-art" viewBox="0 0 400 170" aria-hidden="true"><circle cx="90" cy="40" r="26" fill="#fff6d6" opacity=".8"/><g fill="var(--primary)" opacity=".9"><circle cx="200" cy="88" r="13"/><path d="M180 152c0-38 9-58 20-58s20 20 20 58z"/></g><line x1="214" y1="92" x2="262" y2="50" stroke="var(--primary-light)" stroke-width="1.5"/><path d="M262 20c-18 0-26 26 0 34 26-8 18-34 0-34z" fill="#ff4f7b"><animateTransform attributeName="transform" type="translate" values="0 0;0 -6;0 0" dur="3s" repeatCount="indefinite"/></path><g fill="var(--primary-light)"><circle cx="320" cy="30" r="2"/><circle cx="350" cy="80" r="1.6"/><circle cx="40" cy="95" r="2"/><circle cx="150" cy="20" r="1.5"/></g><path d="M0 152h400v18H0z" fill="var(--primary)" opacity=".25"/></svg>
+    <div class="main-heart"></div>
+    <h1>یه قلب تنها، یه دنیا احتمال</h1>
+    <p class="sub">اینجا جاییه که عشق بعدی‌ات می‌تونه شروع بشه ♡</p>
+    <button class="btn-main" onclick="scrollToId('singlesSection')">دیدن سینگل‌ها</button>
+  </div>
+</header>
+<main id="mainWrap">
+<!-- ==================== MOOD ==================== -->
+<section id="mood" data-for="both">
+  <h2 class="section-title">حالت چطوره؟</h2>
+  <p class="section-sub">بگو الان چه حالی داری تا کمکت کنم</p>
+
+  <div class="mood-card">
+    <div class="mood-title">حالت رو انتخاب کن</div>
+    <div class="mood-desc">یه لحظه به قلبت گوش بده و بگو چی حس می‌کنی</div>
+
+    <div class="mood-options" id="moodOptions"></div>
+
+    <div class="mood-result" id="moodResult">
+      <div class="mr-title" id="moodResultTitle"></div>
+      <div class="mr-text" id="moodResultText"></div>
+      <div class="mr-tip" id="moodResultTip"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== GAMES ==================== -->
+<section id="games" data-for="both">
+  <h2 class="section-title">بازی‌های عاشقانه</h2>
+  <p class="section-sub">یازده بازی سرگرم‌کننده برای وقت‌هایی که با هم هستید</p>
+
+  <div class="tabs">
+    <button class="tab active" onclick="switchGame('rps', this)">سنگ کاغذ قیچی</button>
+    <button class="tab" onclick="switchGame('guess', this)">حدس عدد</button>
+    <button class="tab" onclick="switchGame('memory', this)">حافظه</button>
+    <button class="tab" onclick="switchGame('ttt', this)">دوز</button>
+    <button class="tab" onclick="switchGame('speed', this)">کوییز سریع</button><button class="tab" onclick="switchGame('catch', this)">صید قلب</button><button class="tab" onclick="switchGame('tod', this)">جرأت حقیقت</button><button class="tab" onclick="switchGame('react', this)">سرعت</button><button class="tab" onclick="switchGame('wyr', this)">انتخاب سخت</button><button class="tab" onclick="switchGame('calc', this)">سنجش عشق</button><button class="tab" onclick="switchGame('dice', this)">تاس</button>
+  </div>
+
+  <!-- RPS -->
+  <div class="game-panel active" id="game-rps">
+    <h3>سنگ، کاغذ، قیچی</h3>
+    <p class="game-hint">انتخاب کن و ببین کی برنده می‌شه</p>
+    <div class="rps-choices">
+      <button class="rps-btn" onclick="playRPS('سنگ')"><span>✊</span><span class="lbl">سنگ</span></button>
+      <button class="rps-btn" onclick="playRPS('کاغذ')"><span>✋</span><span class="lbl">کاغذ</span></button>
+      <button class="rps-btn" onclick="playRPS('قیچی')"><span>✌</span><span class="lbl">قیچی</span></button>
+    </div>
+    <div class="rps-result" id="rpsResult">
+      <div class="rps-battle">انتخاب کن تا شروع شه</div>
+    </div>
+    <div class="score-row">
+      <div class="score-box"><div class="n" id="rpsWin">0</div><div class="l">برد</div></div>
+      <div class="score-box"><div class="n" id="rpsLose">0</div><div class="l">باخت</div></div>
+      <div class="score-box"><div class="n" id="rpsDraw">0</div><div class="l">مساوی</div></div>
+    </div>
+  </div>
+
+  <!-- GUESS -->
+  <div class="game-panel" id="game-guess">
+    <h3>حدس عدد</h3>
+    <p class="game-hint">یه عدد بین ۱ تا ۱۰۰ در نظر گرفتم. حدس بزن!</p>
+    <div class="guess-input">
+      <input type="number" id="guessInput" placeholder="عددت..." min="1" max="100" onkeypress="if(event.key==='Enter')checkGuess()">
+      <button onclick="checkGuess()">حدس بزن</button>
+    </div>
+    <div class="guess-feedback" id="guessFeedback"></div>
+    <button class="btn-quiz btn-back" onclick="resetGuess()">شروع دوباره</button>
+    <div class="guess-history" id="guessHistory"></div>
+    <div class="guess-feedback" style="margin-top:18px" id="guessTries"></div>
+  </div>
+
+  <!-- MEMORY -->
+  <div class="game-panel" id="game-memory">
+    <h3>بازی حافظه</h3>
+    <p class="game-hint">جفت قلب‌های یکسان رو پیدا کن</p>
+    <div class="memory-grid" id="memoryGrid"></div>
+    <div class="memory-status" id="memoryStatus">حرکت: 0</div>
+    <button class="btn-quiz btn-back" style="margin-top:20px" onclick="initMemory()">شروع دوباره</button>
+  </div>
+
+  <!-- TTT -->
+  <div class="game-panel" id="game-ttt">
+    <h3>دوز</h3>
+    <p class="game-hint">تو قلب (♥) هستی، کامپیوتر ستاره (★)</p>
+    <div class="ttt-board" id="tttBoard"></div>
+    <div class="ttt-status" id="tttStatus">نوبت توئه</div>
+    <button class="btn-quiz btn-back" style="margin-top:20px" onclick="initTTT()">شروع دوباره</button>
+  </div>
+
+  <!-- SPEED -->
+  <div class="game-panel" id="game-speed">
+    <h3>کوییز سریع</h3>
+    <p class="game-hint">۱۵ ثانیه وقت داری، هر چی سریع‌تر جواب بده</p>
+    <div class="speed-timer" id="speedTimer">15</div>
+    <div class="speed-quiz-q" id="speedQ">برای شروع دکمه رو بزن</div>
+    <div class="speed-quiz-opts" id="speedOpts"></div>
+    <div class="speed-status" id="speedStatus"></div>
+    <button class="btn-quiz btn-back" style="margin-top:25px" onclick="startSpeedQuiz()">شروع بازی</button>
+  </div>
+
+<div class="game-panel" id="game-catch"><h3>صید قلب‌ها</h3><p class="game-hint">۲۰ ثانیه وقت داری قلب‌ها رو بگیری</p><div class="catch-box" id="catchBox"></div><div class="g-row"><b id="catchScore">امتیاز: ۰</b><button class="btn-main" onclick="startCatch()">شروع</button></div></div>
+<div class="game-panel" id="game-tod"><h3>جرأت یا حقیقت</h3><p class="game-hint">یکی رو انتخاب کن</p><div class="g-out" id="todOut">؟</div><div class="g-row"><button class="btn-main" onclick="todPick('t')">حقیقت</button><button class="btn-main" onclick="todPick('d')">جرأت</button></div></div>
+<div class="game-panel" id="game-react"><h3>تست سرعت</h3><p class="game-hint">وقتی رنگ قلب سبز شد سریع بزن</p><div class="react-box" id="reactBox" onclick="reactClick()">برای شروع بزن</div></div>
+<div class="game-panel" id="game-wyr"><h3>کدوم رو انتخاب می‌کنی؟</h3><p class="game-hint">انتخاب‌های سخت عاشقانه</p><div class="g-out" id="wyrQ">؟</div><div class="g-row"><button class="btn-main" onclick="wyrNext()">سوال بعدی</button></div></div>
+<div class="game-panel" id="game-calc"><h3>سنجش عشق</h3><p class="game-hint">دو اسم رو بنویس و درصد عشق رو ببین</p><div class="g-row"><input class="admin-input" id="cA" placeholder="اسم اول"><input class="admin-input" id="cB" placeholder="اسم دوم"></div><div class="g-out" id="calcOut">؟٪</div><div class="g-row"><button class="btn-main" onclick="calcLove()">محاسبه</button></div></div>
+<div class="game-panel" id="game-dice"><h3>تاس عاشقانه</h3><p class="game-hint">تاس بنداز و کاری که میاد رو انجام بده</p><div class="g-out" id="diceOut">🎲</div><div class="g-row"><button class="btn-main" onclick="rollDice()">تاس بنداز</button></div></div>
+</section>
+
+<!-- ==================== LOVE QUIZ ==================== -->
+<section id="quiz" data-for="both">
+  <h2 class="section-title">تست عشق</h2>
+  <p class="section-sub">به سوالات با صداقت جواب بده و ببین چقدر عاشقی</p>
+
+  <div class="quiz-box">
+    <div class="quiz-progress"><div class="quiz-progress-bar" id="progressBar"></div></div>
+    <div id="quizContainer"></div>
+    <div class="quiz-result" id="quizResult">
+      <div class="result-score" id="resultScore">0%</div>
+      <div class="result-label" id="resultLabel"></div>
+      <p class="result-message" id="resultMessage"></p>
+      <button class="btn-quiz btn-next" onclick="restartQuiz()">دوباره انجام بده</button>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== GENERATOR ==================== -->
+<section id="generator" data-for="couple">
+  <h2 class="section-title">پیام عاشقانه بساز</h2>
+  <p class="section-sub">یه پیام قشنگ برای عشقت</p>
+
+  <div class="generator">
+    <h2>دوستت دارم، به هزار زبان</h2>
+    <p class="intro">دکمه رو بزن و یه پیام تصادفی بگیر</p>
+    <div class="message-display" id="messageDisplay">دکمه زیر رو بزن تا یه پیام قشنگ ببینی</div>
+    <button class="btn-generate" onclick="generateMessage()">پیام جدید</button>
+  </div>
+</section>
+
+<!-- ==================== COUNTER ==================== -->
+<section id="counter" data-for="couple">
+  <h2 class="section-title">شمارنده عشق</h2>
+  <p class="section-sub">هر تپش، یه قدم به عشق نزدیک‌تر</p>
+
+  <div class="counter-box">
+    <h3>قلب‌هایی که تا حالا تپیدن</h3>
+    <p class="hint">دکمه رو بزن و بذار قلبت بشماره</p>
+    <div class="love-counter">
+      <div class="counter-item"><div class="counter-num" id="countNum">0</div><div class="counter-lbl">تپش</div></div>
+      <div class="counter-item"><div class="counter-num" id="countLevel">0</div><div class="counter-lbl">سطح عشق</div></div>
+    </div>
+    <button class="btn-heart" onclick="beatHeart()">قلبم رو بزن</button>
+  </div>
+</section>
+
+<!-- ==================== NOTES ==================== -->
+<section id="notes" data-for="couple">
+  <h2 class="section-title">دفتر خاطرات عاشقانه</h2>
+  <p class="section-sub">هر چی تو دلت هست رو اینجا بنویس</p>
+
+  <div class="note-area">
+    <textarea id="noteInput" placeholder="یادداشتت رو اینجا بنویس..."></textarea>
+    <button class="btn-form" onclick="addNote()">ذخیره یادداشت</button>
+    <div class="notes-list" id="notesList"></div>
+  </div>
+</section>
+
+<!-- ==================== QUICK QUESTIONS ==================== -->
+<section id="questions" data-for="both">
+  <h2 class="section-title">سوال‌های عاشقانه</h2>
+  <p class="section-sub">بدون فکر کردن جواب بده</p>
+
+  <div class="quick-questions">
+    <div class="q-card">
+      <div class="q-text">اگه مجبور باشی بین عشق و پول یکی رو انتخاب کنی؟</div>
+      <div class="q-buttons">
+        <button class="q-btn" onclick="answer(this, 'قطعاً عشق. پول میاد و میره، ولی عشق می‌مونه.')">عشق</button>
+        <button class="q-btn" onclick="answer(this, 'پول لازمه، ولی بدون عشق هیچ معنایی نداره.')">پول</button>
+      </div>
+      <div class="q-result"></div>
+    </div>
+    <div class="q-card">
+      <div class="q-text">اولین قرار عاشقانه‌ت رو کجا می‌بری؟</div>
+      <div class="q-buttons">
+        <button class="q-btn" onclick="answer(this, 'کافه‌ای دنج، با موسیقی آروم و کلی حرف.')">کافه</button>
+        <button class="q-btn" onclick="answer(this, 'قدم زدن زیر بارون، بدون مقصد.')">پیاده‌روی</button>
+      </div>
+      <div class="q-result"></div>
+    </div>
+    <div class="q-card">
+      <div class="q-text">به نظرت عشق واقعی چقدر دووم می‌آره؟</div>
+      <div class="q-buttons">
+        <button class="q-btn" onclick="answer(this, 'تا وقتی که هر دو بخواین. عشق یه انتخابه.')">همیشه</button>
+        <button class="q-btn" onclick="answer(this, 'تا وقتی که بهش رسیدگی کنی. مثل یه گل.')">بستگی داره</button>
+      </div>
+      <div class="q-result"></div>
+    </div>
+    <div class="q-card">
+      <div class="q-text">اگه عشقت یه روز ازت دور بشه، چیکار می‌کنی؟</div>
+      <div class="q-buttons">
+        <button class="q-btn" onclick="answer(this, 'می‌جنگم براش. تا آخرین نفس.')">می‌جنگم</button>
+        <button class="q-btn" onclick="answer(this, 'دعاش می‌کنم و منتظر می‌مونم. دل که به زور نیست.')">صبر می‌کنم</button>
+      </div>
+      <div class="q-result"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== TIPS ==================== -->
+<section id="tips" data-for="both">
+  <h2 class="section-title">رازهای یه عشق موندگار</h2>
+  <p class="section-sub">چیزهایی که هر عاشقی باید بدونه</p>
+
+  <div class="love-cards">
+    <div class="love-card">
+      <div class="card-icon">01</div>
+      <h3>زبان عشق</h3>
+      <p>هر کسی یه‌جور عشقش رو نشون می‌ده. زبان عشق شریکت رو پیدا کن.</p>
+    </div>
+    <div class="love-card">
+      <div class="card-icon">02</div>
+      <h3>گوش دادن</h3>
+      <p>بزرگ‌ترین هدیه، گوش دادنه. بدون قضاوت. بدون راه‌حل.</p>
+    </div>
+    <div class="love-card">
+      <div class="card-icon">03</div>
+      <h3>فضا دادن</h3>
+      <p>عشق واقعی یعنی کنار کسی باشی ولی بذاری خودش هم باشه.</p>
+    </div>
+    <div class="love-card">
+      <div class="card-icon">04</div>
+      <h3>یاد گرفتن</h3>
+      <p>عشق یه مهارته، نه فقط یه احساس. باید تمرین کنی.</p>
+    </div>
+    <div class="love-card">
+      <div class="card-icon">05</div>
+      <h3>قدردانی</h3>
+      <p>چیزهای کوچیک رو ببین. یه پیام، یه لبخند، یه فنجون چای.</p>
+    </div>
+    <div class="love-card">
+      <div class="card-icon">06</div>
+      <h3>بخشیدن</h3>
+      <p>هیچ عشقی بدون بخشش دووم نمی‌آره. بخشیدن یعنی انتخاب کردن، باز هم.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SINGLES SECTION ==================== -->
+<section id="singlesSection" data-for="single">
+  <h2 class="section-title">سینگل‌های اطراف</h2>
+  <p class="section-sub">آدم‌های مجرد که دنبال عشق می‌گردن</p>
+
+  <div class="tabs" style="margin-bottom:25px">
+    <button class="tab active" onclick="switchSingleTab('browse', this)">مشاهده</button>
+    <button class="tab" onclick="switchSingleTab('register', this)">ثبت‌نام</button>
+    <button class="tab" onclick="switchSingleTab('login', this)">ورود</button>
+  </div>
+
+  <!-- Browse -->
+  <div class="tab-panel active" id="single-tab-browse">
+    <div class="singles-grid" id="singlesGrid"></div>
+  </div>
+
+  <!-- Register -->
+  <div class="tab-panel" id="single-tab-register">
+    <div class="form-box">
+      <h3>ثبت‌نام سینگل</h3>
+      <p class="form-sub">مشخصاتت رو وارد کن تا بقیه ببیننت</p>
+
+      <div class="form-row-2">
+        <div class="form-group">
+          <label>نام</label>
+          <input type="text" class="form-input" id="regName" placeholder="نام شما">
+        </div>
+        <div class="form-group">
+          <label>سن</label>
+          <input type="number" class="form-input" id="regAge" placeholder="مثلاً 22" min="15" max="80">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>جنسیت</label>
+        <select class="form-select" id="regGender">
+          <option value="male">پسر</option>
+          <option value="female">دختر</option>
+        </select>
+      </div>
+
+      <div class="form-row-2">
+        <div class="form-group">
+          <label>شماره تماس</label>
+          <input type="tel" class="form-input" id="regPhone" placeholder="09123456789">
+        </div>
+        <div class="form-group">
+          <label>آیدی (اختیاری)</label>
+          <input type="text" class="form-input" id="regID" placeholder="@username">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>شهر</label>
+        <input type="text" class="form-input" id="regCity" placeholder="مثلاً تهران">
+      </div>
+
+      <div class="form-group">
+        <label>لینک عکس پروفایل</label>
+        <input type="url" class="form-input" id="regPhoto" placeholder="https://...">
+      </div>
+
+      <div class="form-group">
+        <label>چیزهایی که داری / علاقه‌مندی‌ها</label>
+        <input type="text" class="form-input" id="regInterests" placeholder="مثلاً موسیقی، ورزش، سفر">
+      </div>
+
+      <div class="form-group">
+        <label>توضیحات درباره خودت</label>
+        <textarea class="form-textarea" id="regBio" placeholder="یه کم از خودت بگو..."></textarea>
+      </div>
+
+      <div class="form-group">
+        <label>رمز عبور</label>
+        <input type="password" class="form-input" id="regPass" placeholder="برای ورود بعدی">
+      </div>
+
+      <button class="btn-form" onclick="registerSingle()">ثبت‌نام کن</button>
+      <div class="form-error" id="regError"></div>
+      <div class="form-switch">قبلاً ثبت‌نام کردی؟ <a onclick="switchSingleTab('login')">وارد شو</a></div>
+    </div>
+  </div>
+
+  <!-- Login -->
+  <div class="tab-panel" id="single-tab-login">
+    <div class="form-box">
+      <h3>ورود به حساب</h3>
+      <p class="form-sub">نام و رمزت رو وارد کن</p>
+
+      <div class="form-group">
+        <label>نام</label>
+        <input type="text" class="form-input" id="loginName" placeholder="نامت">
+      </div>
+
+      <div class="form-group">
+        <label>رمز عبور</label>
+        <input type="password" class="form-input" id="loginPass" placeholder="رمزت">
+      </div>
+
+      <button class="btn-form" onclick="loginSingle()">ورود</button>
+      <div class="form-error" id="loginError"></div>
+      <div class="form-switch">حساب نداری؟ <a onclick="switchSingleTab('register')">ثبت‌نام کن</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== FINAL NOTE ==================== -->
+<section id="letter" data-for="couple">
+  <div class="love-note-final">
+    <p>
+      عشق یعنی وقتی همه خوابن، تو بیدار باشی و به اون فکر کنی.
+      یعنی وقتی همه رفتن، تو بمونی. یعنی وقتی سختته، باز بخندی
+      چون اون باعث می‌شه بخندی.
+    </p>
+    <div class="signature">— برای تو، که قلبم رو دزدیدی</div>
+  </div>
+</section>
+
+
+<section id="music" data-for="both"><h2 class="section-title">موزیک عاشقانه</h2><p class="section-sub">دسته‌ی دلخواهت رو انتخاب کن و با هم گوش بدید</p>
+<div class="player"><div class="disc" id="disc">♪</div><div class="p-info"><b id="pTitle">یه آهنگ انتخاب کن</b><span id="pArtist"></span><small id="pTime">0:00 / 0:00</small>
+<input type="range" id="pBar" value="0" min="0" max="100" oninput="seekAudio(this.value)"><div class="p-ctl"><button onclick="stepTrack(-1)">⏮</button><button id="pPlay" onclick="togglePlay()">▶</button><button onclick="stepTrack(1)">⏭</button></div></div></div>
+<div class="chips" id="musicCats"></div><input class="admin-input" id="musicSearch" placeholder="جستجوی آهنگ یا خواننده..." oninput="renderList('music')" style="max-width:620px;margin:0 auto 12px;display:block"><div class="plist" id="musicList"></div>
+
+</section>
+
+<section id="anime" data-for="both"><h2 class="section-title">انیمه</h2><p class="section-sub">انیمه‌های عاشقانه و دیدنی، با لینک دانلود</p>
+<input class="admin-input" id="animeSearch" placeholder="جستجو در انیمه‌ها..." oninput="renderList('anime')"><div class="agrid" id="animeList"></div></section>
+
+<section id="partners" data-for="single"><h2 class="section-title">پارتنر یابی</h2><p class="section-sub">پروفایل‌های انتخاب‌شده رو ببین و کسی رو پیدا کن که به دلت می‌شینه</p>
+<input class="admin-input" id="partnerSearch" placeholder="جستجو با نام یا علاقه..." oninput="renderList('partner')"><div class="pgrid" id="partnerList"></div>
+</section>
+<section id="files" data-for="both"><h2 class="section-title">فایل‌ها</h2><p class="section-sub">فایل‌هایی که ادمین گذاشته؛ دانلود کن</p><div class="agrid" id="fileList"></div></section>
+<section id="fortune" data-for="single">
+  <h2 class="section-title">فال عاشقانه</h2>
+  <p class="section-sub">یه لحظه چشماتو ببند و به عشق فکر کن...</p>
+  <div class="fortune-card"><div id="fortuneText" class="fortune-text">برای دیدن فال امروزت دکمه رو بزن ♥</div>
+  <button class="btn-main" onclick="drawFortune()">فال امروز من</button></div>
+</section>
+</main>
+<!-- ==================== FOOTER ==================== -->
+<footer>
+  <div class="foot-heart">♥</div>
+  <p>ساخته شده توسط تیم نگافند | ngafnd </p>
+    <p>شماره تماس| 09381238075 </p>
+     <p>ایدی روبیکا|@LoVeCoMbo</p>
+</footer>
+
+<!-- ==================== FAB (+) ==================== -->
+<button class="fab-plus" id="fabPlus" onclick="toggleFab()">+</button>
+<div class="fab-menu" id="fabMenu">
+  <button class="fab-item" onclick="openAdmin(); closeFab()">
+    <span class="ic">⚙</span> پنل ادمین
+  </button>
+  <button class="fab-item" onclick="openThemePicker(); closeFab()">
+    <span class="ic">◐</span> تغییر تم
+  </button>
+  <button class="fab-item" onclick="randomMessage(); closeFab()">
+    <span class="ic">♥</span> پیام تصادفی
+  </button>
+  <button class="fab-item" onclick="scrollToTop(); closeFab()">
+    <span class="ic">↑</span> بالا
+  </button>
+  <button class="fab-item" onclick="backToSplash(); closeFab()">
+    <span class="ic">⟲</span> انتخاب دوباره
+  </button>
+</div>
+
+<!-- ==================== ADMIN PANEL ==================== -->
+<div class="admin-overlay" id="adminOverlay">
+  <div class="admin-panel">
+    <button class="admin-close" onclick="closeAdmin()">×</button>
+
+    <!-- Login -->
+    <div class="admin-login" id="adminLogin">
+      <h2 style="justify-content:center">ورود ادمین</h2>
+      <p class="admin-sub">رمز عبور رو وارد کن</p>
+      <input type="password" id="adminPass" placeholder="رمز عبور" onkeypress="if(event.key==='Enter')tryLogin()">
+      <br>
+      <button class="admin-btn" onclick="tryLogin()">ورود</button>
+      <div class="admin-error" id="adminError"></div>
+      
+    </div>
+
+    <!-- Content -->
+    <div class="admin-content" id="adminContent">
+      <h2>پنل ادمین <span class="admin-badge">فعال</span></h2>
+      <p class="admin-sub">مدیریت کامل سایت</p>
+
+      <!-- Stats -->
+      <div class="admin-stats" data-keep>
+        <div class="admin-stat"><div class="n" id="statNotes">0</div><div class="l">یادداشت‌ها</div></div>
+        <div class="admin-stat"><div class="n" id="statMessages">0</div><div class="l">پیام‌ها</div></div>
+        <div class="admin-stat"><div class="n" id="statSingles">0</div><div class="l">سینگل‌ها</div></div>
+        <div class="admin-stat"><div class="n" id="statVisits">0</div><div class="l">بازدید</div></div>
+      </div>
+
+      <div class="admin-tabs" id="adminTabs">
+        <button class="admin-tab active" onclick="adminTab('stats',this)">آمار</button>
+        <button class="admin-tab" onclick="adminTab('look',this)">ظاهر</button>
+        <button class="admin-tab" onclick="adminTab('content',this)">محتوا</button>
+        <button class="admin-tab" onclick="adminTab('singles',this)">سینگل‌ها</button><button class="admin-tab" onclick="adminTab('partner',this)">پارتنرها</button><button class="admin-tab" onclick="adminTab('music',this)">موزیک</button><button class="admin-tab" onclick="adminTab('anime',this)">انیمه</button><button class="admin-tab" onclick="adminTab('file',this)">فایل‌ها</button>
+        <button class="admin-tab" onclick="adminTab('security',this)">امنیت</button>
+        <button class="admin-tab" onclick="adminTab('tools',this)">ابزار</button>
+      </div>
+      <div class="admin-section" data-tab="stats"><h3>▣ آمار محتوا</h3><div class="admin-bars" id="extraStats"></div></div>
+      <div class="admin-section" data-tab="stats"><h3>♥ انتخاب‌های ورود</h3><div class="admin-bars" id="modeBars"></div></div>
+      <!-- Theme -->
+      <div class="admin-section" data-tab="look">
+        <h3>◐ انتخاب تم</h3>
+        <div class="theme-picker">
+          <button class="theme-opt" data-theme="light" onclick="setTheme('light')">روشن</button>
+          <button class="theme-opt" data-theme="dark" onclick="setTheme('dark')">تاریک</button>
+          <button class="theme-opt" data-theme="ocean" onclick="setTheme('ocean')">اقیانوس</button>
+          <button class="theme-opt" data-theme="forest" onclick="setTheme('forest')">جنگل</button>
+          <button class="theme-opt" data-theme="sunset" onclick="setTheme('sunset')">غروب</button>
+          <button class="theme-opt" data-theme="lavender" onclick="setTheme('lavender')">اسطوخودوس</button>
+          <button class="theme-opt" data-theme="black-gold" onclick="setTheme('black-gold')">مشکی طلایی</button>
+          <button class="theme-opt" data-theme="pink-dream" onclick="setTheme('pink-dream')">رز رویایی</button>
+        </div>
+      </div>
+
+      <div class="admin-section" data-tab="look"><h3>Aa فونت سایت</h3><select id="fontSel" class="admin-input" onchange="setFont(this.value)"></select><p id="fontPrev" style="font-size:1.2rem;margin-top:10px">نمونه متن: عشق یعنی با تو بودن ♥</p></div>
+      <!-- Text Editor -->
+      <div class="admin-section" data-tab="look">
+        <h3>✎ ویرایش متن سایت</h3>
+        <input type="text" class="admin-input" id="editTitle" placeholder="عنوان اصلی سایت">
+        <input type="text" class="admin-input" id="editSub" placeholder="زیرعنوان سایت">
+        <button class="admin-btn" onclick="saveTexts()">ذخیره متن‌ها</button>
+      </div>
+
+      <!-- Change Pass -->
+      <div class="admin-section" data-tab="security">
+        <h3>◈ تغییر رمز عبور</h3>
+        <input type="password" class="admin-input" id="newPass" placeholder="رمز جدید">
+        <button class="admin-btn" onclick="changePassword()">ذخیره رمز جدید</button>
+      </div>
+
+      <!-- Messages -->
+      <div class="admin-section" data-tab="content">
+        <h3>♥ افزودن پیام عاشقانه</h3>
+        <textarea class="admin-input" id="newMessage" placeholder="پیام جدید..." rows="3"></textarea>
+        <button class="admin-btn" onclick="addMessage()">افزودن پیام</button>
+        <div class="admin-list" id="adminMessages"></div>
+      </div>
+
+      <!-- Singles management -->
+      <div class="admin-section" data-tab="singles">
+        <h3>♤ مدیریت سینگل‌ها</h3>
+        <input type="text" class="admin-input admin-search" id="adminSearch" placeholder="جستجوی نام یا شهر..." oninput="renderAdminSingles()">
+        <button class="admin-btn secondary" onclick="addSingleByAdmin()">افزودن سینگل</button>
+        <div class="admin-list" id="adminSingles" style="margin-top:12px"></div>
+      </div>
+
+      <!-- Tools -->
+      <div class="admin-section" data-tab="tools">
+        <h3>⚒ ابزارها</h3>
+        <button class="admin-btn" onclick="exportData()">دریافت پشتیبان</button>
+        <button class="admin-btn danger" style="margin-top:8px" onclick="clearAllData()">پاک کردن همه داده‌ها</button>
+      </div>
+
+      <div class="admin-section" data-tab="partner"><h3>♡ مدیریت پارتنرها</h3><div class="mini-form" id="af-partner"></div><div class="admin-list" id="al-partner" style="margin-top:12px"></div></div><div class="admin-section" data-tab="music"><h3>♪ مدیریت موزیک</h3><details class="guide"><summary>📖 راهنمای آپلود موزیک</summary><ol><li>روی «انتخاب فایل» بزن و فایل mp3 یا m4a رو از گوشی/کامپیوتر انتخاب کن.</li><li>اسم آهنگ و خواننده رو بنویس و «افزودن» رو بزن.</li><li>یا به‌جای فایل، لینک مستقیم آهنگ (که آخرش .mp3 هست) رو بذار.</li><li>فایل‌ها فقط روی همین مرورگر ذخیره می‌شن؛ پاک کردن اطلاعات مرورگر اون‌ها رو پاک می‌کنه.</li></ol></details><div class="mini-form" id="af-music"></div><div class="admin-list" id="al-music" style="margin-top:12px"></div></div><div class="admin-section" data-tab="anime"><h3>✦ مدیریت انیمه (با لینک دانلود)</h3><div class="mini-form" id="af-anime"></div><div class="admin-list" id="al-anime" style="margin-top:12px"></div></div><div class="admin-section" data-tab="file"><h3>▤ مدیریت فایل‌ها</h3><div class="mini-form" id="af-file"></div><div class="admin-list" id="al-file" style="margin-top:12px"></div></div><button class="admin-btn" style="width:100%;margin-top:15px" onclick="logout()">خروج از پنل</button>
+    </div>
+  </div>
+</div>
+
+<!-- Toast -->
+<div class="toast" id="toast"></div>
+
+<script>
+/* ==================== DATA ==================== */
+const DEFAULT_PASS = 'love123';
+/* ==================== ONLINE DB (JSONBin) ==================== */
+const JB = {
+  url: () => `https://api.jsonbin.io/v3/b/${window.JB_CONFIG.BIN_ID}`,
+  headers: () => ({
+    'Content-Type': 'application/json',
+    'X-Access-Key': window.JB_CONFIG.KEY
+  }),
+  async load() {
+    try {
+      const r = await fetch(this.url() + '/latest', { headers: this.headers() });
+      if (!r.ok) throw new Error('load failed');
+      const d = await r.json();
+      return d.record || {};
+    } catch(e) { console.warn('JB load error:', e); return null; }
+  },
+  async save(data) {
+    try {
+      const r = await fetch(this.url(), {
+        method: 'PUT',
+        headers: this.headers(),
+        body: JSON.stringify(data)
+      });
+      return r.ok;
+    } catch(e) { console.warn('JB save error:', e); return false; }
+  }
+};
+
+let onlineReady = false;
+let onlineData = { singles: [], partners: [], messages: [], music: [], anime: [], files: [] };
+
+async function initOnline() {
+  const d = await JB.load();
+  if (!d) { console.log('اتصال ناموفق'); return; }
+  onlineData = Object.assign(onlineData, d);
+  if (Array.isArray(d.singles)) singles = d.singles;
+  if (Array.isArray(d.partners)) D.partner = d.partners;
+  if (Array.isArray(d.messages) && d.messages.length) messages = d.messages;
+  if (Array.isArray(d.music)) D.music = d.music;
+  if (Array.isArray(d.anime)) D.anime = d.anime;
+  if (Array.isArray(d.files)) D.file = d.files;
+  onlineReady = true;
+  try {
+    renderSingles();
+    renderList('partner'); renderList('music'); renderList('anime'); renderList('file');
+    if (typeof renderAdminMessages === 'function') renderAdminMessages();
+    if (typeof renderAdminSingles === 'function') renderAdminSingles();
+    if (typeof updateAdminStats === 'function') updateAdminStats();
+  } catch(e) { console.warn(e); }
+  console.log('✅ آنلاین آماده شد');
+}
+
+let onlineSyncChain = Promise.resolve();
+async function syncOnline() {
+  /* Never let a local-only mutation silently stop at localStorage. */
+  if (!onlineReady) {
+    await initOnline();
+    if (!onlineReady) return false;
+  }
+  onlineData.singles = Array.isArray(singles) ? singles : [];
+  onlineData.partners = Array.isArray(D.partner) ? D.partner : [];
+  onlineData.messages = Array.isArray(messages) ? messages : [];
+  onlineData.music = Array.isArray(D.music) ? D.music : [];
+  onlineData.anime = Array.isArray(D.anime) ? D.anime : [];
+  onlineData.files = Array.isArray(D.file) ? D.file : [];
+  onlineSyncChain = onlineSyncChain.catch(() => false).then(() => JB.save({...onlineData}));
+  const ok = await onlineSyncChain;
+  console.log(ok ? '✅ آنلاین همگام شد' : '❌ خطا در همگام‌سازی آنلاین');
+  return ok;
+}
+
+setInterval(async () => {
+  if (!onlineReady) return;
+  const d = await JB.load();
+  if (!d) return;
+  let needRender = false;
+  if (Array.isArray(d.singles) && d.singles.length !== singles.length) { singles = d.singles; needRender = true; }
+  if (Array.isArray(d.partners) && d.partners.length !== D.partner.length) { D.partner = d.partners; needRender = true; }
+  if (Array.isArray(d.messages) && d.messages.length !== messages.length) { messages = d.messages; needRender = true; }
+  if (Array.isArray(d.music) && d.music.length !== D.music.length) { D.music = d.music; needRender = true; }
+  if (Array.isArray(d.anime) && d.anime.length !== D.anime.length) { D.anime = d.anime; needRender = true; }
+  if (Array.isArray(d.files) && d.files.length !== D.file.length) { D.file = d.files; needRender = true; }
+  if (needRender) {
+    try {
+      renderSingles();
+      renderList('partner'); renderList('music'); renderList('anime'); renderList('file');
+      if (typeof renderAdminMessages === 'function') renderAdminMessages();
+      if (typeof renderAdminSingles === 'function') renderAdminSingles();
+      if (typeof updateAdminStats === 'function') updateAdminStats();
+    } catch(e) {}
+  }
+}, 15000);
+
+const DEFAULT_MESSAGES = [
+  'تو خورشیدی که حتی وقتی نیستی، زمینم رو روشن نگه می‌داری.',
+  'اگه عشق یه کتاب بود، تو تنها صفحه‌ای بودی که هیچ‌وقت نمی‌خواستم تمومش کنم.',
+  'هر شب که می‌خوابم، آرزو می‌کنم صبح بیدار شم و باز تو رو ببینم.',
+  'تو معنای تمام کلمه‌هایی هستی که بلد نیستم بگم.',
+  'دنیا بدون تو مثل یه آهنگ بدون ملودیه.',
+  'تو تنها آدمی هستی که وقتی بغلش می‌کنم، دنیا وایمیسته.',
+  'من عاشق تو نیستم. من خودِ تو هستم، فقط یه نسخه که تو رو کم داره.',
+  'اگه یه بار دیگه به دنیا بیام، بازم تو رو انتخاب می‌کنم.',
+  'هر ضربان قلبم اسم تو رو زمزمه می‌کنه.',
+  'تو نه اولین عشقی، نه آخرین. تو تنها عشقی.',
+  'بغلت که می‌کنم، ترس‌هام کوچیک می‌شن و عشق بزرگ‌تر.',
+  'هیچ فاصله‌ای نمی‌تونه این حس رو کم کنه.',
+  'اگه قرار بود یه ستاره رو برای تو انتخاب کنم، کل آسمون رو می‌دادم.',
+  'دلم برایت تنگ می‌شود حتی وقتی کنارمی.',
+  'هر روز صبح که بیدار می‌شم، اولین فکرم تویی.',
+  'تو بهترین اتفاقی هستی که هیچ‌وقت دنبالش نبودم.'
+];
+
+const MOODS = [
+  { id: 'happy', label: 'خوشحال', text: 'چه عالی! شادیت رو با عشقت تقسیم کن. یه پیام قشنگ براش بفرست.',
+    tip: 'لبخندت مسری‌ست. امروز یه لبخند به عشقت هدیه بده.' },
+  { id: 'sad', label: 'غمگین', text: 'دلت سنگینه؟ بدون که هر شبی یه صبح داره. بذار عشقت آرومت کنه.',
+    tip: 'بهش بگو حالت خوب نیست. گاهی فقط باید شنیده بشی.' },
+  { id: 'love', label: 'عاشق', text: 'قلبت پر از عشقه! امروز بهترین روز برای گفتن "دوستت دارم"ـه.',
+    tip: 'یه پیام بلند براش بنویس که چرا دوسش داری.' },
+  { id: 'angry', label: 'عصبانی', text: 'عصبانیت بخشی از هر رابطه‌ست. ولی یادت باشه قبل از حرف زدن، نفس بکش.',
+    tip: 'وقتی آروم شدی، با احترام حرفت رو بزن. نه با داد.' },
+  { id: 'lonely', label: 'تنها', text: 'حس تنهایی سخته. ولی این لحظه‌ها می‌گذرن. به عشقت پیام بده.',
+    tip: 'یه آهنگ آروم گوش بده و به خاطرات خوب فکر کن.' },
+  { id: 'confused', label: 'سردرگم', text: 'سردرگمی یعنی داری رشد می‌کنی. عجله نکن. جواب‌ها میان.',
+    tip: 'با عشقت حرف بزن. شاید جوابش رو اون داشته باشه.' },
+  { id: 'tired', label: 'خسته', text: 'استراحت کن. عشق واقعی صبر می‌کنه. تو هم به خودت وقت بده.',
+    tip: 'یه چای گرم درست کن و به عشقت فکر کن.' },
+  { id: 'excited', label: 'هیجان‌زده', text: 'هیجانت رو با عشقت قسمت کن! انرژی مثبتت مسریه.',
+    tip: 'بهش زنگ بزن و بگو چه خبره!' }
+];
+
+const SPEED_QUESTIONS = [
+  { q: 'رنگ مورد علاقه عاشق‌ها؟', opts: ['قرمز', 'آبی', 'سبز', 'زرد'], a: 0 },
+  { q: 'نماد عشق؟', opts: ['ستاره', 'قلب', 'ماه', 'خورشید'], a: 1 },
+  { q: 'روز عشق؟', opts: ['ولنتاین', 'کریسمس', 'نوروز', 'هالووین'], a: 0 },
+  { q: 'گل عاشقانه؟', opts: ['رز', 'لاله', 'آفتابگردان', 'ارکیده'], a: 0 },
+  { q: 'شیرین‌ترین چیز؟', opts: ['شکلات', 'عسل', 'بوسه', 'قند'], a: 2 },
+  { q: 'بهترین هدیه؟', opts: ['طلا', 'گل', 'وقت گذاشتن', 'پول'], a: 2 },
+  { q: 'زبان عشق یعنی؟', opts: ['حرف زدن', 'نشون دادن عشق', 'سفر', 'خواب'], a: 1 },
+  { q: 'قلب کجا قرار داره؟', opts: ['مغز', 'سینه', 'معده', 'کبد'], a: 1 },
+  { q: 'عشق واقعی چیه؟', opts: ['احساس', 'انتخاب', 'عادت', 'شانس'], a: 1 },
+  { q: 'بهترین کار برای عشق؟', opts: ['قدردانی', 'بی‌توجهی', 'غر زدن', 'قهر'], a: 0 }
+];
+
+const QUIZ_DATA = [
+  { q: 'وقتی اسمش رو روی گوشیت می‌بینی، قلبت چه‌کار می‌کنه؟',
+    options: [
+      { t: 'می‌ایسته، بعد با سرعت دو برابر می‌زنه', s: 4 },
+      { t: 'یه لبخند کوچیک میاد روی لبم', s: 3 },
+      { t: 'عادی‌ست، فقط یه نوتیفیکیشنه', s: 1 },
+      { t: 'دلم می‌ریزه، حتی بعد از این همه وقت', s: 5 }
+    ]
+  },
+  { q: 'اگه یه روز کامل با عشقت تنها باشی، چیکار می‌کنی؟',
+    options: [
+      { t: 'فقط بغلش می‌کنم و حرف می‌زنیم', s: 5 },
+      { t: 'می‌برمش یه جای خاص که همیشه آرزو داشت', s: 4 },
+      { t: 'فیلم می‌بینیم و غذا می‌خوریم', s: 3 },
+      { t: 'به کارهای خودم می‌رسم', s: 1 }
+    ]
+  },
+  { q: 'اولین چیزی که تو چشماش دیدی چی بود؟',
+    options: [
+      { t: 'آرامش، یه آرامش عجیب', s: 5 },
+      { t: 'خنده، یه خنده‌ی مسری', s: 4 },
+      { t: 'یه راز، یه چیزی که نمی‌گفت', s: 3 },
+      { t: 'یادم نمیاد، فقط می‌دونم دوسش داشتم', s: 4 }
+    ]
+  },
+  { q: 'وقتی باهاش قهر می‌کنی، چند ساعت طول می‌کشه تا آشتی کنی؟',
+    options: [
+      { t: 'چند دقیقه، طاقت ندارم', s: 5 },
+      { t: 'چند ساعت، تا آروم شم', s: 4 },
+      { t: 'یه روز یا بیشتر', s: 2 },
+      { t: 'قهر نمی‌کنیم، حرف می‌زنیم', s: 5 }
+    ]
+  },
+  { q: 'اگه بفهمی عشقت یه راز بزرگ ازت پنهون کرده؟',
+    options: [
+      { t: 'گوش می‌دم، شاید دلیلش موجه باشه', s: 4 },
+      { t: 'می‌شکنم، ولی بعد می‌بخشم', s: 3 },
+      { t: 'فرصت می‌دم توضیح بده', s: 5 },
+      { t: 'تموم می‌کنم، اعتماد که بره برنمی‌گرده', s: 1 }
+    ]
+  },
+  { q: 'به نظرت عشق واقعی چه‌شکلیه؟',
+    options: [
+      { t: 'یه آدم که همیشه هست، حتی وقتی نیست', s: 5 },
+      { t: 'یه حس که هر روز قوی‌تر میشه', s: 5 },
+      { t: 'یه قرارداد که باید نگهش داری', s: 3 },
+      { t: 'یه اتفاق که فقط یه بار می‌افته', s: 2 }
+    ]
+  },
+  { q: 'اگه عشقت یه کاری کنه که خوشت نیاد، چطور می‌گی؟',
+    options: [
+      { t: 'رو در رو، با آرامش می‌گم', s: 5 },
+      { t: 'غیرمستقیم اشاره می‌کنم', s: 3 },
+      { t: 'سکوت می‌کنم، خودش می‌فهمه', s: 2 },
+      { t: 'باهاش دعوا می‌کنم تا بفهمه', s: 1 }
+    ]
+  },
+  { q: 'آخرین بار کِی بهش گفتی دوستت دارم؟',
+    options: [
+      { t: 'همین امروز، چند بار', s: 5 },
+      { t: 'این هفته', s: 4 },
+      { t: 'یادم نیست، شاید خیلی وقت پیش', s: 1 },
+      { t: 'لازم نیست بگم، خودش می‌دونه', s: 2 }
+    ]
+  }
+];
+
+/* ==================== STATE ==================== */
+let messages = [...DEFAULT_MESSAGES];
+try {
+  const saved = JSON.parse(localStorage.getItem('loveMessages'));
+  if (Array.isArray(saved) && saved.length) messages = saved;
+} catch(e) {}
+
+let notes = [];
+try { notes = JSON.parse(localStorage.getItem('loveNotes')) || []; } catch(e) {}
+
+let singles = [];
+try { singles = JSON.parse(localStorage.getItem('loveSingles')) || []; } catch(e) {}
+
+let visits = parseInt(localStorage.getItem('loveVisits') || '0') + 1;
+localStorage.setItem('loveVisits', visits);
+
+let heartsTotal = parseInt(localStorage.getItem('loveHeartsTotal') || '0');
+
+let currentUser = null;
+try { currentUser = JSON.parse(localStorage.getItem('loveCurrentUser')); } catch(e) {}
+
+/* ==================== HELPERS ==================== */
+function $(id) { return document.getElementById(id); }
+function escapeHtml(str) {
+  const div = document.createElement('div');
+  div.textContent = str;
+  return div.innerHTML;
+}
+function scrollToId(id) {
+  const el = document.getElementById(id);
+  if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+function scrollToTop() {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+/* ==================== BG HEARTS ==================== */
+const bgHearts = $('bgHearts');
+const HEART_CHARS = ['♥', '♡', '❤', '❥', '❣'];
+
+function spawnBgHeart() {
+  if (document.hidden) return;
+  const h = document.createElement('div');
+  h.className = 'bg-heart';
+  h.textContent = HEART_CHARS[Math.floor(Math.random() * HEART_CHARS.length)];
+  h.style.left = Math.random() * 100 + '%';
+  h.style.fontSize = (14 + Math.random() * 30) + 'px';
+  h.style.animationDuration = (12 + Math.random() * 12) + 's';
+  h.style.animationDelay = Math.random() * 3 + 's';
+  bgHearts.appendChild(h);
+  setTimeout(() => h.remove(), 26000);
+}
+for (let i = 0; i < 8; i++) spawnBgHeart();
+setInterval(spawnBgHeart, 2200);
+
+/* ==================== MENU / FAB ==================== */
+function toggleMenu() {
+  $('navMenu').classList.toggle('open');
+  $('overlay').classList.toggle('open');
+}
+function toggleFab() {
+  $('fabPlus').classList.toggle('open');
+  $('fabMenu').classList.toggle('open');
+}
+function closeFab() {
+  $('fabPlus').classList.remove('open');
+  $('fabMenu').classList.remove('open');
+}
+
+/* ==================== SPLASH ==================== */
+function setMode(m) {
+  document.body.dataset.mode = m;
+  $('modeSwitchLbl').textContent = m === 'couple' ? 'رفتن به بخش سینگل‌ها' : 'رفتن به بخش عاشق‌ها';
+  window.scrollTo({ top: 0 });
+}
+function bumpMode(m) {
+  let st = {}; try { st = JSON.parse(localStorage.getItem('loveModeStats')) || {}; } catch(e) {}
+  st[m] = (st[m] || 0) + 1; localStorage.setItem('loveModeStats', JSON.stringify(st));
+}
+function switchMode() { document.body.dataset.mode === 'couple' ? chooseSingle() : chooseInRelationship(); }
+function chooseInRelationship() {
+  bumpMode('couple'); setMode('couple'); hideSplash(); showToast('خوش اومدی عاشق ♥');
+}
+function chooseSingle() {
+  bumpMode('single'); setMode('single'); hideSplash(); renderSingles(); showToast('به دنیای سینگل‌ها خوش اومدی ♡');
+}
+const fortunes = ['کسی که دنبالشی، همین نزدیکی‌هاست؛ فقط کمی صبر کن.','امروز لبخندت می‌تونه شروع یه قصه‌ی قشنگ باشه.','عشق وقتی میاد که انتظارش رو نداری.','قلبت آماده‌تر از اونیه که فکر می‌کنی.','یه پیام ساده امروز می‌تونه همه‌چیز رو عوض کنه.','اول عاشق خودت باش، بقیه خودشون میان.','یه نگاه، یه سلام، و یه شروع تازه در راهه.','اونی که برات مقدره، دیر میاد ولی درست میاد.'];
+function drawFortune() {
+  const el = $('fortuneText'); el.style.opacity = 0;
+  setTimeout(() => { el.textContent = '♥ ' + fortunes[Math.floor(Math.random() * fortunes.length)]; el.style.opacity = 1; }, 300);
+}
+function adminTab(name, btn) {
+  document.querySelectorAll('.admin-tab').forEach(t => t.classList.toggle('active', t === btn));
+  document.querySelectorAll('.admin-section[data-tab]').forEach(x => x.classList.toggle('show', x.dataset.tab === name));
+  if (name === 'stats') renderModeBars();
+}
+function renderModeBars() {
+  let st = {}; try { st = JSON.parse(localStorage.getItem('loveModeStats')) || {}; } catch(e) {}
+  const c = st.couple || 0, sg = st.single || 0, t = Math.max(c + sg, 1);
+  $('modeBars').innerHTML = [['رل دارم', c], ['سینگلم', sg]].map(([l, n]) =>
+    `<div class="admin-bar"><span style="width:70px">${l}</span><div class="tr"><div class="fl" style="width:${n / t * 100}%"></div></div><b>${n}</b></div>`).join('');
+}
+function hideSplash() {
+  $('splash').classList.add('hide');
+  document.body.classList.remove('no-scroll');
+}
+function backToSplash() {
+  $('splash').classList.remove('hide');
+  document.body.classList.add('no-scroll');
+}
+document.body.classList.add('no-scroll');
+document.body.dataset.mode = 'couple';
+
+/* ==================== THEME ==================== */
+function setTheme(theme) {
+  if (theme === 'light') {
+    document.documentElement.removeAttribute('data-theme');
+  } else {
+    document.documentElement.setAttribute('data-theme', theme);
+  }
+  localStorage.setItem('loveTheme', theme);
+  document.querySelectorAll('.theme-opt').forEach(o => {
+    o.classList.toggle('active', o.dataset.theme === theme);
+  });
+}
+setTheme(localStorage.getItem('loveTheme') || 'light');
+
+function openThemePicker() {
+  openAdmin();
+  setTimeout(() => {
+    const tp = document.querySelector('.theme-picker');
+    if (tp) tp.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }, 400);
+}
+
+/* ==================== TEXT EDITING ==================== */
+function loadTexts() {
+  const title = localStorage.getItem('loveTitle') || 'دنیای عاشق‌ها';
+  const sub = localStorage.getItem('loveSub') || 'هر چیزی که یه عاشق می‌خواد، اینجاست';
+  $('headerTitle').textContent = title;
+  $('headerSub').textContent = sub;
+  $('editTitle').value = title;
+  $('editSub').value = sub;
+}
+function saveTexts() {
+  const t = $('editTitle').value.trim();
+  const s = $('editSub').value.trim();
+  if (t) localStorage.setItem('loveTitle', t);
+  if (s) localStorage.setItem('loveSub', s);
+  loadTexts();
+  showToast('متن‌ها ذخیره شد');
+}
+loadTexts();
+
+/* ==================== MOOD ==================== */
+function renderMoods() {
+  const container = $('moodOptions');
+  container.innerHTML = MOODS.map(m =>
+    `<button class="mood-opt" data-mood="${m.id}" onclick="selectMood('${m.id}')">${m.label}</button>`
+  ).join('');
+}
+function selectMood(id) {
+  const mood = MOODS.find(m => m.id === id);
+  if (!mood) return;
+  document.querySelectorAll('.mood-opt').forEach(o => {
+    o.classList.toggle('selected', o.dataset.mood === id);
+  });
+  $('moodResultTitle').textContent = mood.label;
+  $('moodResultText').textContent = mood.text;
+  $('moodResultTip').textContent = mood.tip;
+  $('moodResult').classList.add('show');
+}
+renderMoods();
+
+/* ==================== GAMES SWITCH ==================== */
+function switchGame(name, btn) {
+  document.querySelectorAll('#games .tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.game-panel').forEach(p => p.classList.remove('active'));
+  btn.classList.add('active');
+  $('game-' + name).classList.add('active');
+}
+
+/* ==================== RPS ==================== */
+let rpsW = 0, rpsL = 0, rpsD = 0;
+function playRPS(user) {
+  const choices = ['سنگ', 'کاغذ', 'قیچی'];
+  const comp = choices[Math.floor(Math.random() * 3)];
+  const result = $('rpsResult');
+  let outcome;
+  if (user === comp) { outcome = 'مساوی'; rpsD++; }
+  else if (
+    (user === 'سنگ' && comp === 'قیچی') ||
+    (user === 'کاغذ' && comp === 'سنگ') ||
+    (user === 'قیچی' && comp === 'کاغذ')
+  ) { outcome = 'تو بردی!'; rpsW++; }
+  else { outcome = 'باختی!'; rpsL++; }
+
+  result.innerHTML = `
+    <div class="rps-battle">تو: <b>${user}</b> — کامپیوتر: <b>${comp}</b></div>
+    <div class="rps-outcome">${outcome}</div>
+  `;
+  $('rpsWin').textContent = rpsW;
+  $('rpsLose').textContent = rpsL;
+  $('rpsDraw').textContent = rpsD;
+}
+
+/* ==================== GUESS ==================== */
+let targetNum = Math.floor(Math.random() * 100) + 1;
+let guessTries = 0;
+let guessHistory = [];
+
+function checkGuess() {
+  const input = $('guessInput');
+  const val = parseInt(input.value);
+  if (isNaN(val) || val < 1 || val > 100) {
+    showToast('یه عدد بین ۱ تا ۱۰۰ وارد کن');
+    return;
+  }
+  guessTries++;
+  const fb = $('guessFeedback');
+  const hist = $('guessHistory');
+  const tries = $('guessTries');
+
+  let chipClass = '';
+  if (val === targetNum) {
+    fb.textContent = `آفرین! تو ${guessTries} تلاش پیداش کردی`;
+    chipClass = 'win';
+    guessHistory.push({ v: val, c: 'win' });
+    setTimeout(() => { if (confirm('دوباره بازی کنیم؟')) resetGuess(); }, 800);
+  } else if (val > targetNum) {
+    fb.textContent = 'برو پایین‌تر';
+    chipClass = 'high';
+    guessHistory.push({ v: val, c: 'high' });
+  } else {
+    fb.textContent = 'برو بالاتر';
+    chipClass = 'low';
+    guessHistory.push({ v: val, c: 'low' });
+  }
+
+  hist.innerHTML = guessHistory.map(g =>
+    `<div class="guess-chip ${g.c}">${g.v}</div>`
+  ).join('');
+  tries.textContent = 'تعداد تلاش: ' + guessTries;
+  input.value = '';
+  input.focus();
+}
+function resetGuess() {
+  targetNum = Math.floor(Math.random() * 100) + 1;
+  guessTries = 0;
+  guessHistory = [];
+  $('guessFeedback').textContent = '';
+  $('guessHistory').innerHTML = '';
+  $('guessTries').textContent = '';
+  $('guessInput').value = '';
+  showToast('بازی جدید شروع شد');
+}
+
+/* ==================== MEMORY ==================== */
+let memoryCards = [], flipped = [], matched = 0, moves = 0, lock = false;
+function initMemory() {
+  const symbols = ['♥', '★', '♦', '♣', '♪', '☀', '☁', '✿'];
+  memoryCards = [...symbols, ...symbols].sort(() => Math.random() - 0.5);
+  flipped = []; matched = 0; moves = 0; lock = false;
+  $('memoryGrid').innerHTML = memoryCards.map((s, i) =>
+    `<div class="memory-card" data-idx="${i}" onclick="flipMemory(${i})"></div>`
+  ).join('');
+  $('memoryStatus').textContent = 'حرکت: 0';
+}
+function flipMemory(i) {
+  if (lock) return;
+  const card = document.querySelector(`.memory-card[data-idx="${i}"]`);
+  if (!card || card.classList.contains('flipped') || card.classList.contains('matched')) return;
+  card.classList.add('flipped');
+  card.textContent = memoryCards[i];
+  flipped.push(i);
+  if (flipped.length === 2) {
+    moves++;
+    $('memoryStatus').textContent = 'حرکت: ' + moves;
+    lock = true;
+    const [a, b] = flipped;
+    if (memoryCards[a] === memoryCards[b]) {
+      setTimeout(() => {
+        document.querySelector(`.memory-card[data-idx="${a}"]`).classList.add('matched');
+        document.querySelector(`.memory-card[data-idx="${b}"]`).classList.add('matched');
+        matched++;
+        flipped = [];
+        lock = false;
+        if (matched === 8) {
+          setTimeout(() => showToast(`بردی! تو ${moves} حرکت`), 300);
+        }
+      }, 400);
+    } else {
+      setTimeout(() => {
+        document.querySelector(`.memory-card[data-idx="${a}"]`).classList.remove('flipped');
+        document.querySelector(`.memory-card[data-idx="${a}"]`).textContent = '';
+        document.querySelector(`.memory-card[data-idx="${b}"]`).classList.remove('flipped');
+        document.querySelector(`.memory-card[data-idx="${b}"]`).textContent = '';
+        flipped = []; lock = false;
+      }, 850);
+    }
+  }
+}
+initMemory();
+
+/* ==================== TTT ==================== */
+let tttBoard = ['','','','','','','','',''];
+let tttGameOver = false;
+const TTT_LINES = [[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]];
+
+function initTTT() {
+  tttBoard = ['','','','','','','','',''];
+  tttGameOver = false;
+  $('tttStatus').textContent = 'نوبت توئه';
+  renderTTT();
+}
+function renderTTT() {
+  $('tttBoard').innerHTML = tttBoard.map((v, i) =>
+    `<button class="ttt-cell ${v ? 'taken' : ''}" onclick="tttClick(${i})">${v}</button>`
+  ).join('');
+}
+function tttClick(i) {
+  if (tttGameOver || tttBoard[i] !== '') return;
+  tttBoard[i] = '♥';
+  let w = checkTTTWin();
+  if (w) { endTTT(w); return; }
+  if (!tttBoard.includes('')) { endTTT('draw'); return; }
+  $('tttStatus').textContent = 'کامپیوتر داره فکر می‌کنه...';
+  renderTTT();
+  setTimeout(() => {
+    const best = bestTTTMove();
+    tttBoard[best] = '★';
+    renderTTT();
+    w = checkTTTWin();
+    if (w) { endTTT(w); return; }
+    if (!tttBoard.includes('')) { endTTT('draw'); return; }
+    $('tttStatus').textContent = 'نوبت توئه';
+  }, 400);
+}
+function bestTTTMove() {
+  for (const [a,b,c] of TTT_LINES) {
+    const line = [tttBoard[a], tttBoard[b], tttBoard[c]];
+    if (line.filter(x => x === '★').length === 2 && line.includes('')) {
+      return [a,b,c][line.indexOf('')];
+    }
+  }
+  for (const [a,b,c] of TTT_LINES) {
+    const line = [tttBoard[a], tttBoard[b], tttBoard[c]];
+    if (line.filter(x => x === '♥').length === 2 && line.includes('')) {
+      return [a,b,c][line.indexOf('')];
+    }
+  }
+  if (tttBoard[4] === '') return 4;
+  const corners = [0,2,6,8].filter(i => tttBoard[i] === '');
+  if (corners.length) return corners[Math.floor(Math.random() * corners.length)];
+  const empty = tttBoard.map((v,i) => v === '' ? i : -1).filter(i => i >= 0);
+  return empty[Math.floor(Math.random() * empty.length)];
+}
+function checkTTTWin() {
+  for (const [a,b,c] of TTT_LINES) {
+    if (tttBoard[a] && tttBoard[a] === tttBoard[b] && tttBoard[a] === tttBoard[c]) return tttBoard[a];
+  }
+  return null;
+}
+function endTTT(winner) {
+  tttGameOver = true;
+  const status = $('tttStatus');
+  if (winner === '♥') status.textContent = 'بردی! آفرین';
+  else if (winner === '★') status.textContent = 'باختی. دوباره تلاش کن';
+  else status.textContent = 'مساوی شد';
+  for (const [a,b,c] of TTT_LINES) {
+    if (tttBoard[a] && tttBoard[a] === tttBoard[b] && tttBoard[a] === tttBoard[c]) {
+      const cells = document.querySelectorAll('.ttt-cell');
+      cells[a].classList.add('win');
+      cells[b].classList.add('win');
+      cells[c].classList.add('win');
+    }
+  }
+}
+initTTT();
+
+/* ==================== SPEED QUIZ ==================== */
+let speedIndex = 0, speedScore = 0, speedTime = 15;
+let speedTimer = null, speedRunning = false;
+
+function startSpeedQuiz() {
+  speedIndex = 0; speedScore = 0; speedTime = 15;
+  speedRunning = true;
+  clearInterval(speedTimer);
+  $('speedStatus').textContent = '';
+  $('speedTimer').textContent = speedTime;
+  $('speedTimer').classList.remove('warning');
+  speedTimer = setInterval(() => {
+    speedTime--;
+    $('speedTimer').textContent = speedTime;
+    if (speedTime <= 5) $('speedTimer').classList.add('warning');
+    if (speedTime <= 0) endSpeedQuiz();
+  }, 1000);
+  showSpeedQuestion();
+}
+function showSpeedQuestion() {
+  if (speedIndex >= SPEED_QUESTIONS.length) { endSpeedQuiz(); return; }
+  const q = SPEED_QUESTIONS[speedIndex];
+  $('speedQ').textContent = q.q;
+  $('speedOpts').innerHTML = q.opts.map((o, i) =>
+    `<button class="speed-opt" onclick="speedAnswer(${i})">${o}</button>`
+  ).join('');
+}
+function speedAnswer(i) {
+  if (!speedRunning) return;
+  const q = SPEED_QUESTIONS[speedIndex];
+  const opts = document.querySelectorAll('.speed-opt');
+  opts.forEach(o => o.style.pointerEvents = 'none');
+  if (i === q.a) {
+    opts[i].classList.add('correct');
+    speedScore++;
+  } else {
+    opts[i].classList.add('wrong');
+    opts[q.a].classList.add('correct');
+  }
+  setTimeout(() => { speedIndex++; showSpeedQuestion(); }, 700);
+}
+function endSpeedQuiz() {
+  clearInterval(speedTimer);
+  speedRunning = false;
+  $('speedTimer').textContent = '0';
+  $('speedTimer').classList.remove('warning');
+  $('speedQ').textContent = `بازی تموم شد! امتیاز: ${speedScore} از ${SPEED_QUESTIONS.length}`;
+  $('speedOpts').innerHTML = '';
+  $('speedStatus').textContent = speedScore >= 7 ? 'عالی بودی!' : 'دفعه بعد بهتر می‌شی';
+}
+
+/* ==================== LOVE QUIZ ==================== */
+let currentQ = 0;
+const answers = [];
+const quizContainer = $('quizContainer');
+const progressBar = $('progressBar');
+const quizResult = $('quizResult');
+
+function renderQuiz() {
+  if (currentQ >= QUIZ_DATA.length) { showResult(); return; }
+  const data = QUIZ_DATA[currentQ];
+  progressBar.style.width = ((currentQ / QUIZ_DATA.length) * 100) + '%';
+  let html = `<div class="quiz-step active">
+    <div class="question-num">سوال ${currentQ + 1} از ${QUIZ_DATA.length}</div>
+    <div class="question-text">${data.q}</div>
+    <div class="options">`;
+  data.options.forEach((opt, i) => {
+    const isSel = answers[currentQ] === i;
+    html += `<button class="option ${isSel ? 'selected' : ''}" onclick="selectOption(${i})">
+      <span class="option-letter">${String.fromCharCode(1575 + i)}</span>
+      <span>${opt.t}</span>
+    </button>`;
+  });
+  html += `</div><div class="quiz-nav">
+    ${currentQ > 0 ? '<button class="btn-quiz btn-back" onclick="prevQ()">قبلی</button>' : '<div></div>'}
+    <button class="btn-quiz btn-next" onclick="nextQ()" ${answers[currentQ] === undefined ? 'disabled' : ''}>
+      ${currentQ === QUIZ_DATA.length - 1 ? 'دیدن نتیجه' : 'بعدی'}
+    </button>
+  </div></div>`;
+  quizContainer.innerHTML = html;
+}
+function selectOption(i) { answers[currentQ] = i; renderQuiz(); }
+function nextQ() {
+  if (answers[currentQ] === undefined) return;
+  currentQ++; renderQuiz();
+}
+function prevQ() {
+  if (currentQ > 0) { currentQ--; renderQuiz(); }
+}
+function showResult() {
+  progressBar.style.width = '100%';
+  quizContainer.innerHTML = '';
+  let total = 0, max = 0;
+  answers.forEach((a, i) => { total += QUIZ_DATA[i].options[a].s; max += 5; });
+  const percent = Math.round((total / max) * 100);
+  let label, message;
+  if (percent >= 85) { label = 'عاشقِ تمام‌عیار'; message = 'قلبت یه اقیانوسه. کسی که تو رو داره، خوشبخت‌ترین آدم زمینه.'; }
+  else if (percent >= 65) { label = 'عاشق واقعی'; message = 'تو عشق رو می‌فهمی و براش ارزش قائلی. یه قدم دیگه تا کامل شدن فاصله داری.'; }
+  else if (percent >= 45) { label = 'در راه عشق'; message = 'دلت آماده‌ست، ولی هنوز یه کم محتاطی. بذار عشق راهش رو به قلبت پیدا کنه.'; }
+  else { label = 'قلبِ محتاط'; message = 'شاید هنوز زخم خوردی، شاید هنوز آماده نیستی. ولی عشق واقعی ارزش ریسک کردن رو داره.'; }
+  $('resultScore').textContent = percent + '٪';
+  $('resultLabel').textContent = label;
+  $('resultMessage').textContent = message;
+  quizResult.classList.add('active');
+}
+function restartQuiz() {
+  currentQ = 0;
+  answers.length = 0;
+  quizResult.classList.remove('active');
+  progressBar.style.width = '0%';
+  renderQuiz();
+}
+renderQuiz();
+
+/* ==================== MESSAGE GENERATOR ==================== */
+const messageDisplay = $('messageDisplay');
+let lastIndex = -1;
+function generateMessage() {
+  if (!messages.length) return;
+  let idx;
+  do { idx = Math.floor(Math.random() * messages.length); }
+  while (idx === lastIndex && messages.length > 1);
+  lastIndex = idx;
+  messageDisplay.classList.add('changing');
+  setTimeout(() => {
+    messageDisplay.textContent = messages[idx];
+    messageDisplay.classList.remove('changing');
+  }, 300);
+}
+function randomMessage() { generateMessage(); showToast('پیام جدید اومد'); }
+
+/* ==================== COUNTER ==================== */
+let count = 0, level = 0;
+function beatHeart() {
+  count++;
+  heartsTotal++;
+  localStorage.setItem('loveHeartsTotal', heartsTotal);
+  const cn = $('countNum');
+  cn.textContent = count;
+  cn.classList.add('pop');
+  setTimeout(() => cn.classList.remove('pop'), 400);
+  const newLevel = Math.floor(count / 10);
+  if (newLevel > level) {
+    level = newLevel;
+    const cl = $('countLevel');
+    cl.textContent = level;
+    cl.classList.add('pop');
+    setTimeout(() => cl.classList.remove('pop'), 400);
+  }
+}
+
+/* ==================== NOTES ==================== */
+function addNote() {
+  const input = $('noteInput');
+  const text = input.value.trim();
+  if (!text) { showToast('یادداشت خالیه'); return; }
+  const note = {
+    id: Date.now(),
+    text: text,
+    date: new Date().toLocaleDateString('fa-IR') + ' ' + new Date().toLocaleTimeString('fa-IR', { hour: '2-digit', minute: '2-digit' })
+  };
+  notes.unshift(note);
+  localStorage.setItem('loveNotes', JSON.stringify(notes));
+  input.value = '';
+  renderNotes();
+  showToast('یادداشت ذخیره شد');
+}
+function renderNotes() {
+  const list = $('notesList');
+  if (!notes.length) {
+    list.innerHTML = `<div class="empty-state">
+      <div class="empty-heart">♡</div>
+      <p>هنوز یادداشتی نداری</p>
+    </div>`;
+    return;
+  }
+  list.innerHTML = notes.map(n => `
+    <div class="note-item">
+      <div class="note-txt">
+        ${escapeHtml(n.text)}
+        <div class="note-date">${n.date}</div>
+      </div>
+      <button class="del-btn" onclick="deleteNote(${n.id})">حذف</button>
+    </div>
+  `).join('');
+}
+function deleteNote(id) {
+  notes = notes.filter(n => n.id !== id);
+  localStorage.setItem('loveNotes', JSON.stringify(notes));
+  renderNotes();
+  showToast('یادداشت حذف شد');
+}
+renderNotes();
+
+/* ==================== QUICK QUESTIONS ==================== */
+function answer(btn, text) {
+  const card = btn.closest('.q-card');
+  const result = card.querySelector('.q-result');
+  result.textContent = text;
+  result.classList.add('show');
+  card.querySelectorAll('.q-btn').forEach(b => {
+    b.style.opacity = '0.5';
+    b.style.pointerEvents = 'none';
+  });
+  btn.style.opacity = '1';
+  btn.style.background = 'var(--gradient-primary)';
+  btn.style.color = 'white';
+  btn.style.borderColor = 'transparent';
+}
+
+/* ==================== SINGLES ==================== */
+function switchSingleTab(name, btn) {
+  const tabs = document.querySelectorAll('#singlesSection .tab');
+  tabs.forEach(t => t.classList.remove('active'));
+  if (btn) btn.classList.add('active');
+  else {
+    tabs.forEach(t => {
+      if (t.textContent.includes(name === 'browse' ? 'مشاهده' : name === 'register' ? 'ثبت' : 'ورود')) {
+        t.classList.add('active');
+      }
+    });
+  }
+  document.querySelectorAll('#singlesSection .tab-panel').forEach(p => p.classList.remove('active'));
+  const panel = $('single-tab-' + name);
+  if (panel) panel.classList.add('active');
+  if (name === 'browse') renderSingles();
+}
+
+function renderSingles() {
+  const grid = $('singlesGrid');
+  if (!singles.length) {
+    grid.innerHTML = `<div class="empty-state" style="grid-column:1/-1">
+      <div class="empty-heart">♤</div>
+      <p>هنوز کسی ثبت‌نام نکرده. اولین نفر باش!</p>
+    </div>`;
+    return;
+  }
+  grid.innerHTML = singles.map(s => `
+    <div class="single-card">
+      <div class="avatar">
+        ${s.photo
+          ? `<img src="${escapeHtml(s.photo)}" alt="${escapeHtml(s.name)}" onerror="this.parentNode.innerHTML='${(s.name || '؟').charAt(0).toUpperCase()}'">`
+          : (s.name || '؟').charAt(0).toUpperCase()}
+      </div>
+      <div class="name">${escapeHtml(s.name || 'بی‌نام')}</div>
+      <div class="meta-row">
+        <span class="badge ${s.gender}">${s.gender === 'male' ? 'پسر' : 'دختر'}</span>
+        ${s.age ? `<span class="badge">${escapeHtml(String(s.age))} ساله</span>` : ''}
+      </div>
+      ${s.city ? `<div class="info-line"><span class="lbl">شهر:</span><span class="val">${escapeHtml(s.city)}</span></div>` : ''}
+      ${s.phone ? `<div class="info-line"><span class="lbl">تلفن:</span><span class="val">${escapeHtml(s.phone)}</span></div>` : ''}
+      ${s.id ? `<div class="info-line"><span class="lbl">آیدی:</span><span class="val">${escapeHtml(s.id)}</span></div>` : ''}
+      ${s.interests ? `<div class="info-line"><span class="lbl">علاقه:</span><span class="val">${escapeHtml(s.interests)}</span></div>` : ''}
+      ${s.bio ? `<div class="bio">${escapeHtml(s.bio)}</div>` : ''}
+    </div>
+  `).join('');
+}
+
+function registerSingle() {
+  const name = $('regName').value.trim();
+  const age = $('regAge').value.trim();
+  const gender = $('regGender').value;
+  const phone = $('regPhone').value.trim();
+  const id = $('regID').value.trim();
+  const city = $('regCity').value.trim();
+  const photo = $('regPhoto').value.trim();
+  const interests = $('regInterests').value.trim();
+  const bio = $('regBio').value.trim();
+  const pass = $('regPass').value.trim();
+
+  if (!name || !pass) {
+    $('regError').textContent = 'نام و رمز عبور الزامی‌ست';
+    return;
+  }
+  if (pass.length < 3) {
+    $('regError').textContent = 'رمز حداقل ۳ کاراکتر باشه';
+    return;
+  }
+  if (singles.find(s => s.name === name)) {
+    $('regError').textContent = 'این نام قبلاً ثبت شده';
+    return;
+  }
+
+  const newSingle = {
+    id: Date.now(),
+    name, age, gender, phone, id, city, photo, interests, bio, pass,
+    createdAt: new Date().toISOString()
+  };
+  singles.push(newSingle);
+  localStorage.setItem('loveSingles', JSON.stringify(singles));
+  currentUser = { name, id: newSingle.id };
+  localStorage.setItem('loveCurrentUser', JSON.stringify(currentUser));
+  updateUserBadge();
+  $('regError').textContent = '';
+  $('formSuccess') && ($('formSuccess').textContent = '');
+  ['regName','regAge','regPhone','regID','regCity','regPhoto','regInterests','regBio','regPass'].forEach(k => $(k).value = '');
+  syncOnline();
+  showToast('ثبت‌نام موفق!');
+  switchSingleTab('browse');
+  renderSingles();
+  renderAdminSingles();
+}
+
+function loginSingle() {
+  const name = $('loginName').value.trim();
+  const pass = $('loginPass').value.trim();
+  if (!name || !pass) {
+    $('loginError').textContent = 'نام و رمز رو وارد کن';
+    return;
+  }
+  const user = singles.find(s => s.name === name && s.pass === pass);
+  if (!user) {
+    $('loginError').textContent = 'نام یا رمز اشتباهه';
+    return;
+  }
+  currentUser = { name: user.name, id: user.id };
+  localStorage.setItem('loveCurrentUser', JSON.stringify(currentUser));
+  updateUserBadge();
+  $('loginError').textContent = '';
+  $('loginName').value = '';
+  $('loginPass').value = '';
+  showToast('خوش اومدی ' + user.name);
+  switchSingleTab('browse');
+  renderSingles();
+}
+
+function updateUserBadge() {
+  if (currentUser) {
+    $('userBadge').style.display = 'flex';
+    $('userName').textContent = currentUser.name;
+    $('userAvatar').textContent = currentUser.name.charAt(0).toUpperCase();
+  } else {
+    $('userBadge').style.display = 'none';
+  }
+}
+updateUserBadge();
+renderSingles();
+
+function openUserPanel() {
+  if (!currentUser) return;
+  if (confirm(`سلام ${currentUser.name}!\nمی‌خوای از حسابت خارج شی؟`)) {
+    currentUser = null;
+    localStorage.removeItem('loveCurrentUser');
+    updateUserBadge();
+    showToast('خارج شدی');
+  }
+}
+
+/* ==================== ADMIN ==================== */
+let adminLoggedIn = false;
+function openAdmin() {
+  setTimeout(() => adminTab("stats", document.querySelector(".admin-tab")), 0);
+  $('adminOverlay').classList.add('open');
+  closeFab();
+  if (!adminLoggedIn) {
+    $('adminLogin').style.display = 'block';
+    $('adminContent').classList.remove('show');
+  } else {
+    $('adminLogin').style.display = 'none';
+    $('adminContent').classList.add('show');
+    updateAdminStats();
+    setTimeout(() => initOnline(), 500);
+    renderAdminMessages();
+    renderAdminSingles();
+    renderAdminNotes();
+  }
+}
+function closeAdmin() { $('adminOverlay').classList.remove('open'); }
+
+function tryLogin() {
+  const pass = $('adminPass').value;
+  const savedPass = localStorage.getItem('loveAdminPass') || DEFAULT_PASS;
+  if (pass === savedPass) {
+    adminLoggedIn = true;
+    $('adminLogin').style.display = 'none';
+    $('adminContent').classList.add('show');
+    $('adminError').textContent = '';
+    $('adminPass').value = '';
+    updateAdminStats();
+    setTimeout(() => initOnline(), 500);
+    renderAdminMessages();
+    renderAdminSingles();
+    renderAdminNotes();
+    showToast('خوش اومدی ادمین');
+  } else {
+    $('adminError').textContent = 'رمز اشتباهه';
+  }
+}
+function logout() { adminLoggedIn = false; closeAdmin(); showToast('خارج شدی'); }
+
+function changePassword() {
+  const newPass = $('newPass').value.trim();
+  if (newPass.length < 3) { showToast('رمز حداقل ۳ کاراکتر'); return; }
+  localStorage.setItem('loveAdminPass', newPass);
+  $('newPass').value = '';
+  showToast('رمز عوض شد');
+}
+
+function updateAdminStats() {
+  $('statNotes').textContent = notes.length;
+  $('statMessages').textContent = messages.length;
+  $('statSingles').textContent = singles.length;
+  $('statVisits').textContent = visits;
+}
+
+function addMessage() {
+  const text = $('newMessage').value.trim();
+  if (!text) { showToast('پیام خالیه'); return; }
+  messages.push(text);
+  localStorage.setItem('loveMessages', JSON.stringify(messages));
+  $('newMessage').value = '';
+  renderAdminMessages();
+  updateAdminStats();
+  syncOnline();
+  showToast('پیام اضافه شد');
+}
+function renderAdminMessages() {
+  $('adminMessages').innerHTML = messages.map((m, i) => `
+    <div class="admin-list-item">
+      <div class="txt">${escapeHtml(m)}</div>
+      <button class="del" onclick="deleteMessage(${i})">حذف</button>
+    </div>
+  `).join('');
+}
+function deleteMessage(i) {
+  messages.splice(i, 1);
+  localStorage.setItem('loveMessages', JSON.stringify(messages));
+  renderAdminMessages();
+  updateAdminStats();
+  syncOnline();
+  showToast('پیام حذف شد');
+} 
+function renderAdminSingles() {
+  const list = $('adminSingles');
+  if (!singles.length) {
+    list.innerHTML = '<p style="color:var(--text-soft);font-size:0.85rem;text-align:center;padding:12px">هنوز کسی ثبت‌نام نکرده</p>';
+    return;
+  }
+  const q = ($('adminSearch') ? $('adminSearch').value : '').trim();
+  const shown = singles.filter(s => !q || (s.name + ' ' + (s.city || '')).includes(q));
+  list.innerHTML = shown.map(s => `
+    <div class="admin-list-item">
+      <div class="txt"><b>${escapeHtml(s.name)}</b> (${s.gender === 'male' ? 'پسر' : 'دختر'}) ${s.age ? '- ' + s.age + ' ساله' : ''}</div>
+      <button class="del" onclick="deleteSingle(${s.id})">حذف</button>
+    </div>
+  `).join('');
+}
+
+async function deleteSingle(id) {
+  if (!confirm('این کاربر حذف بشه؟')) return;
+  const keyId = String(id);
+  const before = singles.length;
+  singles = singles.filter(s => String(s.id) !== keyId);
+  if (singles.length === before) { showToast('این کاربر پیدا نشد'); return; }
+  localStorage.setItem('loveSingles', JSON.stringify(singles));
+  if (currentUser && String(currentUser.id) === keyId) {
+    currentUser = null;
+    localStorage.removeItem('loveCurrentUser');
+    updateUserBadge();
+  }
+  renderAdminSingles();
+  renderSingles();
+  updateAdminStats();
+  await syncOnline();
+  showToast('کاربر از سایت حذف شد ♥');
+}
+function addSingleByAdmin() {
+  const name = prompt('نام کاربر:');
+  if (!name) return;
+  const gender = confirm('دختر باشه؟ (OK = دختر، Cancel = پسر)') ? 'female' : 'male';
+  const age = prompt('سن:') || '';
+  const city = prompt('شهر:') || '';
+  const phone = prompt('شماره تماس:') || '';
+  const newSingle = {
+    id: Date.now(), name, age, gender, city, phone,
+    photo: '', interests: '', bio: '',
+    pass: '123',
+    createdAt: new Date().toISOString()
+  };
+  singles.push(newSingle);
+  localStorage.setItem('loveSingles', JSON.stringify(singles));
+  renderAdminSingles();
+  renderSingles();
+  updateAdminStats();
+  syncOnline();
+  showToast('کاربر اضافه شد (رمز پیش‌فرض: 123)');
+}
+
+function renderAdminNotes() {
+  const list = $('adminNotes');
+  if (!notes.length) {
+    list.innerHTML = '<p style="color:var(--text-soft);font-size:0.85rem;text-align:center;padding:12px">یادداشتی نیست</p>';
+    return;
+  }
+  list.innerHTML = notes.map(n => `
+    <div class="admin-list-item">
+      <div class="txt">${escapeHtml(n.text)}</div>
+      <button class="del" onclick="deleteNote(${n.id});renderAdminNotes();updateAdminStats()">حذف</button>
+    </div>
+  `).join('');
+}
+// Add a placeholder section for admin notes
+const adminNotesSection = document.createElement('div');
+adminNotesSection.className = 'admin-section';
+adminNotesSection.innerHTML = `<h3>✎ مدیریت یادداشت‌ها</h3><div class="admin-list" id="adminNotes"></div>`;
+const toolsSection = $('adminContent').querySelector('.admin-section:last-of-type');
+if (toolsSection) $('adminContent').insertBefore(adminNotesSection, toolsSection);
+
+function exportData() {
+  const data = { messages, notes, singles: singles.map(s => ({ ...s, pass: '***' })), visits, heartsTotal, exportedAt: new Date().toISOString() };
+  const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'love-backup-' + Date.now() + '.json';
+  a.click();
+  URL.revokeObjectURL(url);
+  showToast('پشتیبان دانلود شد');
+}
+async function clearAllData() {
+  if (!confirm('مطمئنی می‌خوای همه داده‌ها پاک شن؟')) return;
+  localStorage.removeItem('loveNotes');
+  localStorage.removeItem('loveMessages');
+  localStorage.removeItem('loveSingles');
+  localStorage.removeItem('loveHeartsTotal');
+  localStorage.removeItem('loveCurrentUser');
+  notes = [];
+  messages = [...DEFAULT_MESSAGES];
+  singles = [];
+  heartsTotal = 0;
+  currentUser = null;
+  updateUserBadge();
+  renderNotes();
+  renderAdminMessages();
+  renderAdminSingles();
+  renderAdminNotes();
+  renderSingles();
+  updateAdminStats();
+  for (const t of Object.keys(D)) { D[t] = []; saveD(t); }
+  try { const db = await idb(); await new Promise(resolve => { const tx=db.transaction('f','readwrite'); tx.objectStore('f').clear(); tx.oncomplete=resolve; tx.onerror=resolve; }); } catch(e) {}
+  renderList('partner'); renderList('music'); renderList('anime'); renderList('file');
+  await syncOnline();
+  showToast('همه داده‌ها از سایت هم پاک شد ♥');
+}
+
+$('adminOverlay').addEventListener('click', function(e) {
+  if (e.target === this) closeAdmin();
+});
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    closeAdmin();
+    closeFab();
+    $('navMenu').classList.remove('open');
+    $('overlay').classList.remove('open');
+  }
+});
+
+/* ==================== TOAST ==================== */
+let toastTimer;
+function showToast(msg) {
+  const t = $('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => t.classList.remove('show'), 2500);
+}
+
+/* ==================== INIT ==================== */
+updateAdminStats();
+setTimeout(() => initOnline(), 500);
+
+/* ===== v3: storage, music, anime, partners, games ===== */
+let _db; function idb(){return _db||(_db=new Promise((res,rej)=>{const r=indexedDB.open('loveDB',1);r.onupgradeneeded=()=>r.result.createObjectStore('f');r.onsuccess=()=>res(r.result);r.onerror=()=>rej(r.error)}))}
+async function idbPut(k,v){try{const d=await idb();return new Promise(r=>{const t=d.transaction('f','readwrite');t.objectStore('f').put(v,k);t.oncomplete=()=>r(true);t.onerror=()=>r(false)})}catch(e){return false}}
+async function idbGet(k){try{const d=await idb();return new Promise(r=>{const q=d.transaction('f').objectStore('f').get(k);q.onsuccess=()=>r(q.result);q.onerror=()=>r(null)})}catch(e){return null}}
+async function idbDel(k){try{const d=await idb();d.transaction('f','readwrite').objectStore('f').delete(k)}catch(e){}}
+function toDataURL(f,max=900){return new Promise(res=>{const r=new FileReader();r.onload=()=>{const im=new Image();im.onload=()=>{const k=Math.min(1,max/Math.max(im.width,im.height)),c=document.createElement('canvas');c.width=im.width*k;c.height=im.height*k;c.getContext('2d').drawImage(im,0,0,c.width,c.height);res(c.toDataURL('image/jpeg',.82))};im.onerror=()=>res('');im.src=r.result};r.readAsDataURL(f)})}
+const BLANK='data:image/gif;base64,R0lGODlhAQABAAAAACw=';
+const TYPES={
+ music:{key:'loveTracks',req:'title',f:[{k:'title',l:'نام آهنگ'},{k:'artist',l:'خواننده'},{k:'cat',l:'دسته',t:'cat'},{k:'url',l:'لینک مستقیم آهنگ (اختیاری)'},{k:'file',l:'یا انتخاب فایل صوتی',t:'audio'}]},
+ anime:{key:'loveAnime',req:'title',f:[{k:'title',l:'نام انیمه'},{k:'genre',l:'ژانر'},{k:'rating',l:'امتیاز (مثلا 8.5)'},{k:'desc',l:'توضیحات',t:'area'},{k:'cover',l:'لینک عکس کاور'},{k:'coverF',l:'یا آپلود کاور',t:'img'},{k:'dl',l:'لینک دانلود'},{k:'watch',l:'لینک تماشای آنلاین'}]},
+ file:{key:'loveFiles',req:'title',f:[{k:'title',l:'عنوان فایل'},{k:'desc',l:'توضیحات',t:'area'},{k:'url',l:'لینک دانلود (اختیاری)'},{k:'file',l:'یا آپلود فایل',t:'file'}]},
+ partner:{key:'lovePartners',req:'name',f:[{k:'name',l:'نام'},{k:'age',l:'سن'},{k:'phone',l:'شماره تلفن'},{k:'social',l:'آیدی شبکه‌های اجتماعی'},{k:'interests',l:'علاقه‌ها (با کاما جدا کن)'},{k:'desc',l:'توضیحات',t:'area'},{k:'photo',l:'لینک عکس پروفایل'},{k:'photoF',l:'یا آپلود عکس',t:'img'},{k:'banner',l:'لینک بنر'},{k:'bannerF',l:'یا آپلود بنر',t:'img'},{k:'size',l:'اندازه کارت',t:'size'}]}
+};
+const D={};for(const t in TYPES){try{D[t]=JSON.parse(localStorage.getItem(TYPES[t].key))||[]}catch(e){D[t]=[]}}
+function saveD(t){try{localStorage.setItem(TYPES[t].key,JSON.stringify(D[t]))}catch(e){showToast('حافظه پر شده')}}
+function mountForm(t,box,p){$(box).innerHTML=TYPES[t].f.map(f=>{const id=p+'_'+f.k;const L=`<label>${f.l}</label>`;
+ if(f.t==='area')return L+`<textarea id="${id}" rows="3"></textarea>`;
+ if(f.t==='audio')return L+`<input type="file" id="${id}" accept="audio/*">`;
+ if(f.t==='cat')return L+`<select id="${id}">${Object.entries(CATN).map(([v,n])=>`<option value="${v}">${n}</option>`).join('')}</select>`;
+ if(f.t==='file')return L+`<input type="file" id="${id}">`;
+ if(f.t==='img')return L+`<input type="file" id="${id}" accept="image/*">`;
+ if(f.t==='size')return L+`<select id="${id}"><option value="s">کوچک</option><option value="m" selected>متوسط</option><option value="l">بزرگ</option></select>`;
+ return L+`<input type="text" id="${id}">`}).join('')+`<button class="abtn" onclick="submitForm('${t}','${p}','${box}')">افزودن</button>`}
+async function submitForm(t,p,box){const T=TYPES[t],it={id:Date.now()};
+ for(const f of T.f){const el=$(p+'_'+f.k);if(!el)continue;
+  if(f.t==='img'||f.t==='audio'||f.t==='file'){const fl=el.files[0];if(fl){const key=t+'_'+it.id+'_'+f.k;const ok=await idbPut(key,f.t==='img'?await toDataURL(fl):fl);if(ok){it[f.k+'Key']=key;it.fname=fl.name;it.fsize=fl.size}}}else it[f.k]=el.value.trim()}
+ if(!it[T.req]){showToast('فیلد اصلی خالیه');return}
+ if(t==='music')it.dur=await getDur(it);
+ if(t==='file'&&!it.url&&!it.fileKey){showToast('فایل یا لینک لازمه');return}
+ if(t==='music'&&!it.url&&!it.fileKey){showToast('فایل یا لینک آهنگ لازمه');return}
+ D[t].push(it);saveD(t);mountForm(t,box,p);renderList(t);await syncOnline();showToast('اضافه شد ♥')}
+ syncOnline();
+async function delItem(t,id){
+ if(!D[t]) return;
+ if(!confirm('حذف بشه؟')) return;
+ const keyId=String(id);
+ const it=D[t].find(x=>String(x.id)===keyId);
+ if(it){for(const k in it){if(k.endsWith('Key')) await idbDel(it[k]);}}
+ D[t]=D[t].filter(x=>String(x.id)!==keyId);
+ saveD(t);
+ renderList(t);
+ await syncOnline();
+ showToast('حذف شد ♥');
+}
+function setSize(id,v){const it=D.partner.find(x=>String(x.id)===String(id));if(!it)return;it.size=v;saveD('partner');renderList('partner');syncOnline()}
+function im(it,u,f,c){const k=it[f+'Key'];return `<img class="${c}" alt="" ${k?`data-k="${k}" src="${BLANK}"`:`src="${escapeHtml(it[u]||BLANK)}"`} onerror="this.style.visibility='hidden'">`}
+async function hydrate(){for(const el of document.querySelectorAll('img[data-k]')){const v=await idbGet(el.dataset.k);if(v)el.src=v}}
+function togglePhone(b,v){b.textContent=b.dataset.o==='1'?v:'نمایش شماره';b.dataset.o=b.dataset.o==='1'?'0':'1'}
+function renderList(t){const E=escapeHtml;let h='';
+ if(t==='music'){h=visIdx().map(i=>{const m=D.music[i];return `<div class="trk ${i===cur?'on':''}" onclick="playTrack(${i})">♪ <b>${E(m.title)}</b><em>${E(CATN[m.cat]||'')}</em><span>${E(m.artist||'')} · ${fmt(m.dur)}</span></div>`}).join('')||'<p style="text-align:center;color:var(--text-soft)">آهنگی پیدا نشد</p>';$('musicList').innerHTML=h;drawCats()}
+ if(t==='file'){$('fileList').innerHTML=D.file.map(f=>`<div class="acard"><div class="bd"><div style="font-size:2.4rem">▤</div><b>${E(f.title)}</b><p>${E(f.desc||'')}</p>${f.fsize?`<span class="chip">${(f.fsize/1048576).toFixed(2)} MB</span>`:''}<div><button class="abtn" onclick="dlFile(${f.id})">دانلود</button></div></div></div>`).join('')||'<p style="text-align:center;color:var(--text-soft);grid-column:1/-1">هنوز فایلی گذاشته نشده</p>'}
+ if(t==='anime'){const q=($('animeSearch').value||'').trim();h=D.anime.filter(a=>!q||(a.title+(a.genre||'')).includes(q)).map(a=>`<div class="acard">${im(a,'cover','coverF','cv')}<div class="bd"><b>${E(a.title)}</b><div>${a.genre?`<span class="chip">${E(a.genre)}</span>`:''}${a.rating?`<span class="chip">★ ${E(a.rating)}</span>`:''}</div><p>${E(a.desc||'')}</p><div>${a.dl?`<a class="abtn" target="_blank" rel="noopener" href="${E(a.dl)}">دانلود</a> `:''}${a.watch?`<a class="abtn" target="_blank" rel="noopener" href="${E(a.watch)}">تماشا</a>`:''}</div></div></div>`).join('')||'<p style="text-align:center;color:var(--text-soft);grid-column:1/-1">هنوز انیمه‌ای اضافه نشده؛ از پنل ادمین اضافه کن</p>';$('animeList').innerHTML=h}
+ if(t==='partner'){const q=($('partnerSearch').value||'').trim();h=D.partner.filter(p=>!q||(p.name+(p.interests||'')).includes(q)).map(p=>`<div class="pcard ${p.size||'m'}">${im(p,'banner','bannerF','bn')}${im(p,'photo','photoF','av')}<div class="bd"><b>${E(p.name)}${p.age?' ، '+E(p.age)+' ساله':''}</b><div>${(p.interests||'').split(/[,،]/).filter(x=>x.trim()).map(x=>`<span class="chip">${E(x.trim())}</span>`).join('')}</div><p>${E(p.desc||'')}</p>${p.social?`<p>🔗 ${E(p.social)}</p>`:''}${p.phone?`<button class="abtn" data-o="1" onclick="togglePhone(this,'${E(p.phone)}')">نمایش شماره</button>`:''}</div></div>`).join('')||'<p style="text-align:center;color:var(--text-soft);grid-column:1/-1">هنوز پروفایلی نیست؛ اولین نفر باش</p>';$('partnerList').innerHTML=h}
+ const al=$('al-'+t);if(al)al.innerHTML=D[t].map(x=>`<div class="admin-list-item"><div class="txt"><b>${E(x.title||x.name)}</b></div>${t==='partner'?`<select onchange="setSize(${x.id},this.value)"><option value="s" ${x.size==='s'?'selected':''}>کوچک</option><option value="m" ${x.size!=='s'&&x.size!=='l'?'selected':''}>متوسط</option><option value="l" ${x.size==='l'?'selected':''}>بزرگ</option></select>`:''}<button class="del" onclick="delItem('${t}',${x.id})">حذف</button></div>`).join('')||'<p style="text-align:center;color:var(--text-soft);font-size:.85rem">خالیه</p>';
+ hydrate()}
+/* player */
+const au=new Audio();let cur=-1;
+async function playTrack(i){const m=D.music[i];if(!m)return;cur=i;let src=m.url;if(m.fileKey){const b=await idbGet(m.fileKey);if(b)src=URL.createObjectURL(b)}
+ au.src=src;au.play().catch(()=>showToast('پخش نشد'));$('pTitle').textContent=m.title;$('pArtist').textContent=m.artist||'';renderList('music')}
+function togglePlay(){if(cur<0&&D.music.length)return playTrack(0);au.paused?au.play():au.pause()}
+function stepTrack(d){const v=visIdx();if(!v.length)return;let p=v.indexOf(cur);playTrack(v[(p+d+v.length)%v.length])}
+function seekAudio(v){if(au.duration)au.currentTime=au.duration*v/100}
+au.onplay=()=>{$('pPlay').textContent='⏸';$('disc').classList.add('spin')};au.onpause=()=>{$('pPlay').textContent='▶';$('disc').classList.remove('spin')};
+au.ontimeupdate=()=>{if(au.duration)$('pBar').value=au.currentTime/au.duration*100};au.onended=()=>stepTrack(1);
+/* games */
+const R=a=>a[Math.floor(Math.random()*a.length)];
+let cs=0,ct=null,cm=null;
+function startCatch(){clearInterval(ct);clearInterval(cm);cs=0;$('catchScore').textContent='امتیاز: 0';$('catchBox').innerHTML='';let left=20;
+ cm=setInterval(()=>{const e=document.createElement('i');e.textContent=R(['💖','💗','💘','💝','🖤']);e.style.left=Math.random()*88+'%';e.style.top=Math.random()*82+'%';e.onclick=()=>{if(e.textContent==='🖤')cs=Math.max(0,cs-2);else cs++;$('catchScore').textContent='امتیاز: '+cs;e.remove()};$('catchBox').appendChild(e);setTimeout(()=>e.remove(),1400)},550);
+ ct=setInterval(()=>{if(--left<=0){clearInterval(ct);clearInterval(cm);$('catchBox').innerHTML='';showToast('تموم شد! امتیاز: '+cs)}},1000)}
+const TR=['بزرگ‌ترین ترست در رابطه چیه؟','اولین چیزی که از من یادته؟','چه چیزی تو رو بیشتر از همه خوشحال می‌کنه؟','یه راز کوچیک که هیچ‌کس نمی‌دونه بگو.','قشنگ‌ترین خاطره‌ات چیه؟'],DR=['یه پیام عاشقانه بنویس و بفرست.','۱۰ ثانیه بدون پلک زدن به چشمام نگاه کن.','یه آهنگ عاشقانه بخون.','از ته دل یه تعریف بکن.','یه نقاشی قلب بکش و نشون بده.'];
+function todPick(k){$('todOut').textContent=(k==='t'?'حقیقت: ':'جرأت: ')+R(k==='t'?TR:DR)}
+let rt=0,rw=null;
+function reactClick(){const b=$('reactBox');if(b.classList.contains('go')){b.classList.remove('go');b.textContent=Math.round(performance.now()-rt)+' میلی‌ثانیه! دوباره بزن';rw=null;return}
+ if(rw){clearTimeout(rw);rw=null;b.textContent='زود زدی! دوباره';return}
+ b.textContent='صبر کن...';rw=setTimeout(()=>{b.classList.add('go');b.textContent='الان!';rt=performance.now();rw=null},1000+Math.random()*2500)}
+const WY=['یه شام رمانتیک تو خونه یا یه پیک‌نیک توی طبیعت؟','هدیه‌ی دست‌ساز یا هدیه‌ی گرون؟','یه سفر ناگهانی یا یه سفر برنامه‌ریزی‌شده؟','نامه‌ی عاشقانه یا پیام صوتی؟','تماشای فیلم کنار هم یا قدم زدن زیر بارون؟','عشق در نگاه اول یا عشق بعد از دوستی طولانی؟'];
+function wyrNext(){$('wyrQ').textContent=R(WY)}
+function calcLove(){const a=$('cA').value.trim(),b=$('cB').value.trim();if(!a||!b)return showToast('دو تا اسم بنویس');let h=0;for(const c of [a,b].sort().join('♥'))h=(h*31+c.charCodeAt(0))%101;h=Math.max(h,41);$('calcOut').textContent=h+'٪ ♥ '+(h>85?'عشق واقعی!':h>65?'خیلی بهم میاید':'با هم بیشتر آشنا شید')}
+const DI=['یه بغل طولانی بده 🤗','یه خاطره‌ی قشنگ تعریف کن 💭','یه بوس روی دست 💋','دو تا تعریف از طرف مقابل بگو ✨','با هم یه سلفی بگیرید 📸','یه آرزو برای آینده بگو 🌠'];
+function rollDice(){$('diceOut').textContent='🎲 '+R(DI)}
+
+const CATN={funk:'Funk',phonk:'Phonk',sad:'Sad',iranian:'Iranian',trend:'Trend'};let musicCat='all';
+function fmt(x){if(!x)return'--:--';x=Math.round(x);return Math.floor(x/60)+':'+String(x%60).padStart(2,'0')}
+function visIdx(){const q=(($('musicSearch')||{}).value||'').trim().toLowerCase();return D.music.map((m,i)=>i).filter(i=>{const m=D.music[i];return(musicCat==='all'||m.cat===musicCat)&&(!q||((m.title||'')+(m.artist||'')).toLowerCase().includes(q))})}
+function drawCats(){$('musicCats').innerHTML=[['all','همه'],...Object.entries(CATN)].map(([v,n])=>`<button class="cat-chip ${musicCat===v?'on':''}" onclick="musicCat='${v}';renderList('music')">${n}</button>`).join('')}
+async function getDur(it){return new Promise(async r=>{let u=it.url;if(it.fileKey){const b=await idbGet(it.fileKey);if(b)u=URL.createObjectURL(b)}if(!u)return r(0);const a=new Audio();a.preload='metadata';const t=setTimeout(()=>r(0),4000);a.onloadedmetadata=()=>{clearTimeout(t);r(isFinite(a.duration)?a.duration:0)};a.onerror=()=>{clearTimeout(t);r(0)};a.src=u})}
+async function dlFile(id){const f=D.file.find(x=>x.id===id);if(!f)return;if(f.fileKey){const b=await idbGet(f.fileKey);if(!b)return showToast('فایل پیدا نشد');const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download=f.fname||f.title;a.click()}else if(f.url)window.open(f.url,'_blank','noopener')}
+au.ontimeupdate=()=>{if(au.duration){$('pBar').value=au.currentTime/au.duration*100;$('pTime').textContent=fmt(au.currentTime)+' / '+fmt(au.duration)}};
+/* fonts */
+const FONTS=['Vazirmatn', 'Lalezar', 'Harmattan', 'Noto Naskh Arabic', 'Markazi Text', 'Reem Kufi', 'Cairo', 'Tajawal', 'Lemonada', 'Aref Ruqaa', 'Mirza', 'Rakkas', 'Katibeh', 'Changa', 'El Messiri', 'Amiri', 'Almarai', 'Scheherazade New', 'Baloo Bhaijaan 2', 'Vibes'];
+function setFont(f){document.documentElement.style.setProperty('--font',`'${f}'`);try{localStorage.setItem('loveFont',f)}catch(e){}if($('fontPrev'))$('fontPrev').style.fontFamily=`'${f}'`;if($('fontSel'))$('fontSel').value=f}
+/* floating bar */
+const BAR={couple:[['home','⌂','خانه'],['mood','◐','حالت'],['music','♪','موزیک'],['counter','♡','شمارنده'],['generator','✉','پیام'],['notes','✎','یادداشت'],['questions','؟','سوال‌ها'],['anime','✦','انیمه'],['quiz','✓','تست عشق'],['games','◈','بازی'],['tips','★','رازها'],['files','▤','فایل‌ها']],
+ single:[['home','⌂','خانه'],['singlesSection','♤','سینگل‌ها'],['partners','♡','پارتنر یابی'],['fortune','✧','فال'],['music','♪','موزیک'],['anime','✦','انیمه'],['mood','◐','حالت'],['games','◈','بازی'],['quiz','✓','تست عشق'],['questions','؟','سوال‌ها'],['tips','★','رازها'],['files','▤','فایل‌ها']]};
+function buildBar(){$('fbLinks').innerHTML='<span class="fb-ind" id="fbInd"></span>'+BAR[document.body.dataset.mode].map(([id,ic,l])=>`<button class="fb-l" data-p="${id}" onclick="showPage('${id}')"><i>${ic}</i><span>${l}</span></button>`).join('')}
+function moveInd(){const b=document.querySelector('.fb-l.on'),i=$('fbInd');if(!b||!i)return;i.style.width=b.offsetWidth+'px';i.style.transform=`translateX(${b.offsetLeft}px)`;b.scrollIntoView({inline:'center',block:'nearest',behavior:'smooth'})}
+function showPage(id){document.body.dataset.page=id;document.querySelectorAll('#mainWrap>section').forEach(x=>x.classList.toggle('pg-on',x.id===id||(id==='home'&&x.id==='letter')));document.querySelectorAll('.fb-l').forEach(b=>b.classList.toggle('on',b.dataset.p===id));moveInd();window.scrollTo({top:0,behavior:'smooth'})}
+scrollToId=function(id){const e=document.getElementById(id);if(e&&e.closest('#mainWrap'))showPage(id);else if(e)e.scrollIntoView({behavior:'smooth'})};
+const _sm=setMode;setMode=function(m){_sm(m);buildBar();showPage('home')};
+function burst(x,y,n=10){for(let i=0;i<n;i++){const e=document.createElement('span');e.textContent=['♥','💖','✨','💗'][i%4];e.style.cssText=`position:fixed;left:${x}px;top:${y}px;z-index:2000;pointer-events:none;font-size:${12+Math.random()*14}px`;document.body.appendChild(e);const a=Math.random()*6.28,d=40+Math.random()*80;e.animate([{transform:'translate(0,0) scale(1)',opacity:1},{transform:`translate(${Math.cos(a)*d}px,${Math.sin(a)*d-30}px) scale(.3)`,opacity:0}],{duration:900+Math.random()*500,easing:'cubic-bezier(.2,.8,.3,1)'}).onfinish=()=>e.remove()}}
+document.addEventListener('click',e=>{if(e.target.closest('button,.fb-l,.trk,.q-btn'))burst(e.clientX,e.clientY,8)});
+let _lt=0;document.addEventListener('pointermove',e=>{const n=Date.now();if(n-_lt<90||e.pointerType==='touch')return;_lt=n;const h=document.createElement('span');h.textContent='♥';h.style.cssText=`position:fixed;left:${e.clientX}px;top:${e.clientY}px;color:var(--primary);font-size:11px;z-index:2000;pointer-events:none`;document.body.appendChild(h);h.animate([{opacity:.8,transform:'translateY(0)'},{opacity:0,transform:'translateY(24px) scale(.4)'}],{duration:800}).onfinish=()=>h.remove()});
+window.addEventListener('scroll',()=>$('fbar').classList.toggle('sm',scrollY>30));
+/* init */
+mountForm('music','af-music','am');mountForm('anime','af-anime','aa');mountForm('partner','af-partner','ap');
+['music','anime','partner'].forEach(renderList);
+const _uas=updateAdminStats;updateAdminStats=function(){_uas();$('extraStats').innerHTML=[['موزیک',D.music.length],['انیمه',D.anime.length],['پارتنرها',D.partner.length]].map(([l,n])=>`<div class="admin-bar"><span style="width:70px">${l}</span><div class="tr"><div class="fl" style="width:${Math.min(100,n*10)}%"></div></div><b>${n}</b></div>`).join('');['music','anime','partner'].forEach(renderList)};
+
+/* ===== v4 content ===== */
+$('fbIn').insertBefore($('userBadge'),$('fbMode'));
+$('fontSel').innerHTML=FONTS.map(f=>`<option>${f}</option>`).join('');setFont(localStorage.getItem('loveFont')||'Vazirmatn');
+mountForm('file','af-file','af');renderList('file');
+document.body.dataset.page='home';buildBar();showPage('home');
+const QS=[['وقتی ناراحتی، دوست داری چی‌کار کنه؟',['بغلم کنه و گوش بده','حواسمو پرت کنه','تنهام بذاره','هیچی']],['اهمیت اعتماد توی رابطه؟',['همه‌چیزه','خیلی مهمه','مهمه ولی نه همه‌چی','زیاد مهم نیست']],['وقتی دعوا می‌کنید، اول کی آشتی می‌کنه؟',['هر کی زودتر','من با کمال میل','صبر می‌کنم تا آروم بشه','نمی‌دونم']],['چقدر از آینده‌تون با هم حرف می‌زنید؟',['همیشه','زیاد','گاهی','تقریبا هیچ‌وقت']],['هدیه‌ی ایده‌آل برات چیه؟',['یه نامه‌ی دست‌نویس','یه خاطره‌ی تازه','یه هدیه‌ی خاص','فرقی نداره']],['وقتی بهت پیام نمیده، چه حسی داری؟',['می‌فهمم سرش شلوغه','یه کم دلتنگ می‌شم','نگران می‌شم','ناراحت و عصبی']],['برای عشق حاضری چی‌کار کنی؟',['هر کاری','تغییرات مثبت','یه کم کوتاه بیام','خیلی کم']],['خنده کنار هم چقدر مهمه؟',['حیاتیه','خیلی','معمولیه','مهم نیست']],['به دوستای طرف مقابل چطور نگاه می‌کنی؟',['دوستشون دارم','احترام می‌ذارم','کم‌حرف‌ام','راحت نیستم']],['اگه اشتباه کنی؟',['فوری عذرخواهی می‌کنم','بعد یه مدت می‌گم','توجیه می‌کنم','انکار می‌کنم']],['وقت با هم بودن چطوره؟',['هر لحظه‌اش جادوئیه','خوبه','گاهی خسته‌کننده‌ست','کم پیش میاد']],['حریم شخصی توی رابطه؟',['محترمه','مهمه ولی منعطف','کم‌رنگه','وجود نداره']],['قشنگ‌ترین قرار؟',['زیر بارون قدم زدن','شام دونفره','سینما','هرجا باشه']],['عشق یعنی؟',['امنیت و آرامش','هیجان و شور','همراهی تا آخر','نمی‌دونم']],['اگه طرفت بد روزی داشته باشه؟',['کنارشم بدون حرف','براش کاری می‌کنم','بهش فضا می‌دم','نمی‌دونم چی بگم']]];
+QS.forEach(([q,o])=>QUIZ_DATA.push({q,options:o.map((t,i)=>({t,s:[5,4,2,1][i]}))}));
+restartQuiz();
+SPEED_QUESTIONS.push({q:'نماد عشق چیه؟',opts:['قلب','ستاره','ماه','خورشید'],a:0},{q:'رنگ سنتی عشق؟',opts:['سبز','قرمز','زرد','آبی'],a:1},{q:'روز عشق (ولنتاین) چه روزیه؟',opts:['۱۴ فوریه','۱ ژانویه','۱۴ مارس','۱ می'],a:0},{q:'«مجنون» عاشق چه کسی بود؟',opts:['شیرین','لیلی','ویس','رودابه'],a:1},{q:'فرهاد برای کی کوه کند؟',opts:['لیلی','عذرا','شیرین','زلیخا'],a:2},{q:'گل عشق کدومه؟',opts:['رز','لاله','نرگس','سوسن'],a:0},{q:'اسم الهه‌ی عشق در روم؟',opts:['آتنا','ونوس','هرا','دمتر'],a:1},{q:'پیمان عشق با چی بسته می‌شه؟',opts:['حلقه','کلید','ساعت','کتاب'],a:0});
+const MORE=['هر روز بیشتر از دیروز دوستت دارم.','تو بهترین اتفاق زندگی منی.','کنارت، دنیا جای قشنگ‌تریه.','چشمات خونه‌ی منه.','دلتنگی یعنی هر لحظه تو رو خواستن.','با تو حتی سکوت هم زیباست.','قلبم هر بار با دیدنت از نو شروع می‌شه.','تو مثل ماهی توی شب‌های تاریک من.','دست‌هات رو که می‌گیرم، همه‌چیز آروم می‌شه.','عشق من به تو بی‌پایانه.','تو آرزوی همیشگی منی.','اسم تو قشنگ‌ترین آهنگ دنیاست.','بودنت بهانه‌ی زنده بودنمه.','با تو هر مسیری قشنگه.','دوستت دارم، از اون جنس که تموم نمی‌شه.','لبخندت خورشید منه.','تو نیمه‌ی گمشده‌ی من بودی.','هر روز با فکر تو شروع می‌شه.','عشق یعنی من و تو، برای همیشه.','قلب من فقط برای تو می‌تپه.'];
+MORE.forEach(m=>{if(!messages.includes(m))messages.push(m)});
+fortunes.push('کسی هست که همین الان داره به تو فکر می‌کنه.','این هفته یه آشنایی تازه سر راهته.','با اعتماد به نفس قدم بردار؛ عشق دوست‌دارش داره.','لبخند بزن؛ شاید همون یه نفر ببینتش.','آینده‌ات پر از عشقه، فقط صبور باش.','یه اتفاق کوچیک امروز قلبت رو گرم می‌کنه.');
+TR.push('بزرگ‌ترین آرزوت چیه؟','چی باعث می‌شه دلت بلرزه؟','آخرین باری که گریه کردی کی بود؟');DR.push('یه شعر عاشقانه بخون.','یه ادا دربیار تا طرف بخنده.','با صدای بلند بگو دوستت دارم.');
+WY.push('عاشق یه نفر آروم یا یه نفر پرانرژی؟','تلفنی حرف زدن یا نامه نوشتن؟','ازدواج زود یا بعد از ثبات؟','قرار توی کافه یا توی پارک؟');
+DI.push('یه آهنگ برای هم انتخاب کنید 🎵','دست همدیگه رو ۳۰ ثانیه بگیرید 🤝','یه شعر کوتاه بگو 📜','یه اسم بامزه برای طرف بذار 🧸');
+const QQ=[['شب بارونی؟','قدم زدن','فیلم دیدن','زیر بارون عالیه!','کنار هم تو خونه گرم‌تره.'],['هدیه؟','دست‌ساز','گرون‌قیمت','دست‌ساز از ته دل می‌آد.','گاهی یه هدیه‌ی خاص قشنگه.'],['صبح یا شب؟','صبح','شب','صبح با تو شروع قشنگیه.','شب‌ها با تو رمانتیک‌تره.'],['دریا یا کوه؟','دریا','کوه','دریا آرومه.','کوه جادوییه.'],['پیام یا تماس؟','پیام','تماس','پیام‌ها ماندگارن.','صدات رو شنیدن بی‌نظیره.'],['شکلات یا گل؟','شکلات','گل','شیرین مثل خودت!','گل نماد عشقه.'],['سفر دو نفره یا مهمونی؟','سفر','مهمونی','سفر خاطره می‌سازه.','با آدم‌ها بیشتر خوش می‌گذره.'],['اول عشق یا دوستی؟','عشق','دوستی','عشق همه‌چیزه.','دوستی پایه‌ی عشقه.'],['شام شمع‌دار؟','آره','نه','عالیه!','ساده هم زیباست.'],['عکس یادگاری؟','زیاد','کم','هر لحظه ثبت بشه!','لحظه رو زندگی کن.']];
+document.querySelector('.quick-questions').insertAdjacentHTML('beforeend',QQ.map(([q,a,b,ra,rb])=>`<div class="q-card"><div class="q-text">${q}</div><div class="q-buttons"><button class="q-btn" onclick="answer(this,'${ra}')">${a}</button><button class="q-btn" onclick="answer(this,'${rb}')">${b}</button></div><div class="q-result"></div></div>`).join(''));
+/* download quiz result */
+$('quizResult').insertAdjacentHTML('beforeend',' <button class="btn-quiz btn-back" onclick="downloadResult()">دانلود نتیجه</button>');
+function downloadResult(){const c=document.createElement('canvas');c.width=1080;c.height=1350;const x=c.getContext('2d');const g=x.createLinearGradient(0,0,1080,1350);g.addColorStop(0,'#ff8aa8');g.addColorStop(1,'#b8234a');x.fillStyle=g;x.fillRect(0,0,1080,1350);x.fillStyle='rgba(255,255,255,.12)';for(let i=0;i<14;i++){x.font=(60+i*9)+'px serif';x.fillText('♥',(i*173)%1000,(i*251)%1300+60)}
+x.direction='rtl';x.textAlign='center';x.fillStyle='#fff';const ff=getComputedStyle(document.body).fontFamily;x.font='700 70px '+ff;x.fillText('نتیجه‌ی تست عشق',540,200);x.font='900 260px '+ff;x.fillText($('resultScore').textContent,540,560);x.font='700 90px '+ff;x.fillText($('resultLabel').textContent,540,740);x.font='400 52px '+ff;
+const w=$('resultMessage').textContent.split(' ');let l='',y=860;for(const t of w){if(x.measureText(l+' '+t).width>880){x.fillText(l,540,y);y+=84;l=t}else l=l?l+' '+t:t}x.fillText(l,540,y);x.font='400 40px '+ff;x.fillText(new Date().toLocaleDateString('fa-IR')+'  ♥  قلب‌ها',540,1260);
+c.toBlob(b=>{const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='love-test-result.png';a.click()})}
+</script>
+
+
+<!-- ==================== ADD-ON: visual polish + love calculator (additive only) ==================== -->
+<style>
+#lvProg{position:fixed;top:0;right:0;left:0;height:3px;z-index:1001;background:var(--gradient-primary);transform:scaleX(0);transform-origin:right;pointer-events:none;box-shadow:0 0 10px var(--primary)}
+.lv-fab{position:fixed;right:20px;z-index:800;width:52px;height:52px;border:0;border-radius:50%;cursor:pointer;font-size:1.3rem;color:#fff;background:var(--gradient-primary);box-shadow:var(--shadow),var(--glow);transition:transform .3s cubic-bezier(.34,1.56,.64,1),opacity .3s}
+.lv-fab:hover{transform:translateY(-3px) scale(1.08)}
+#lvCalcBtn{bottom:20px}
+#lvTop{bottom:84px;opacity:0;pointer-events:none;width:44px;height:44px;font-size:1.1rem}
+#lvTop.show{opacity:1;pointer-events:auto}
+.lv-rip{position:absolute;border-radius:50%;background:rgba(255,255,255,.45);transform:scale(0);animation:lvRip .6s ease-out forwards;pointer-events:none}
+@keyframes lvRip{to{transform:scale(3.2);opacity:0}}
+.lv-heart{position:fixed;z-index:9990;pointer-events:none;color:var(--primary);font-size:16px;animation:lvBurst .9s ease-out forwards}
+@keyframes lvBurst{from{opacity:1;transform:translate(0,0) scale(.6)}to{opacity:0;transform:translate(var(--dx),var(--dy)) scale(1.4) rotate(var(--r))}}
+#lvModal{position:fixed;inset:0;z-index:9500;display:none;align-items:center;justify-content:center;padding:16px;background:rgba(20,5,12,.55);backdrop-filter:blur(8px)}
+#lvModal.open{display:flex;animation:fadeIn .3s}
+.lv-box{width:min(420px,100%);max-height:92vh;overflow:auto;background:var(--card);color:var(--text);border:1px solid var(--border);border-radius:var(--radius-lg);padding:26px 22px;box-shadow:var(--shadow-lg);text-align:center;animation:rise .5s cubic-bezier(.34,1.56,.64,1)}
+.lv-box h3{font-size:1.25rem;margin-bottom:6px}
+.lv-box p.sub{color:var(--text-soft);font-size:.88rem;margin-bottom:16px}
+.lv-box input{width:100%;margin-bottom:10px;padding:12px 14px;border-radius:var(--radius-sm);border:1px solid var(--border);background:var(--card2);color:var(--text);font:inherit;text-align:center}
+.lv-box input:focus{outline:2px solid var(--primary-light);border-color:var(--primary)}
+.lv-go,.lv-sec{width:100%;padding:12px;border:0;border-radius:var(--radius-sm);font:inherit;font-weight:700;cursor:pointer;position:relative;overflow:hidden}
+.lv-go{background:var(--gradient-primary);color:#fff;box-shadow:var(--shadow-sm)}
+.lv-sec{background:var(--card2);color:var(--text);border:1px solid var(--border);margin-top:8px}
+#lvRes{display:none;margin-top:18px}
+#lvRes.show{display:block;animation:rise .5s}
+.lv-ring{--p:0;width:140px;height:140px;margin:0 auto 10px;border-radius:50%;display:grid;place-items:center;background:conic-gradient(var(--primary) calc(var(--p)*1%),var(--border-soft) 0)}
+.lv-ring span{width:112px;height:112px;border-radius:50%;background:var(--card);display:grid;place-items:center;font-size:1.9rem;font-weight:900;color:var(--primary)}
+#lvMsg{font-weight:500;line-height:1.9}
+.lv-quote{margin-top:18px;padding-top:14px;border-top:1px dashed var(--border);font-size:.85rem;color:var(--text-soft);line-height:1.9}
+@media (prefers-reduced-motion:reduce){.lv-heart,.lv-rip{display:none}}
+</style>
+<div id="lvProg"></div>
+<button class="lv-fab" id="lvTop" title="بالای صفحه" aria-label="بالای صفحه">↑</button>
+<button class="lv-fab" id="lvCalcBtn" title="درصد عشق" aria-label="درصد عشق">♥</button>
+<div id="lvModal" role="dialog" aria-modal="true">
+  <div class="lv-box">
+    <h3>درصد عشق ♥</h3>
+    <p class="sub">اسم خودت و اسم عشقت رو بنویس تا ببینیم چقدر بهم میاین (جنبه‌ی سرگرمی داره 😉)</p>
+    <input id="lvN1" maxlength="30" placeholder="اسم تو" autocomplete="off">
+    <input id="lvN2" maxlength="30" placeholder="اسم عشقت" autocomplete="off">
+    <button class="lv-go" id="lvGo">محاسبه کن</button>
+    <div id="lvRes">
+      <div class="lv-ring" id="lvRing"><span id="lvPct">0%</span></div>
+      <div id="lvMsg"></div>
+      <button class="lv-sec" id="lvCopy">کپی نتیجه</button>
+    </div>
+    <div class="lv-quote" id="lvQuote"></div>
+    <button class="lv-sec" id="lvClose">بستن</button>
+  </div>
+</div>
+<script>
+(function(){
+  var $=function(i){return document.getElementById(i)};
+  var calm=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var toast=function(m){try{showToast(m)}catch(e){}};
+  /* scroll progress + back-to-top */
+  var prog=$('lvProg'),top=$('lvTop'),tick=false;
+  function onScroll(){
+    var h=document.documentElement,max=h.scrollHeight-h.clientHeight;
+    prog.style.transform='scaleX('+(max>0?Math.min(1,h.scrollTop/max):0)+')';
+    top.classList.toggle('show',h.scrollTop>400);tick=false;
+  }
+  addEventListener('scroll',function(){if(!tick){tick=true;requestAnimationFrame(onScroll)}},{passive:true});
+  top.addEventListener('click',function(){scrollTo({top:0,behavior:calm?'auto':'smooth'})});
+  /* heart burst on click + ripple on buttons */
+  document.addEventListener('pointerdown',function(e){
+    var b=e.target.closest&&e.target.closest('button,.btn,.splash-btn');
+    if(b&&!calm){var r=b.getBoundingClientRect(),s=Math.max(r.width,r.height),d=document.createElement('i');
+      d.className='lv-rip';d.style.cssText='width:'+s+'px;height:'+s+'px;left:'+(e.clientX-r.left-s/2)+'px;top:'+(e.clientY-r.top-s/2)+'px';
+      if(getComputedStyle(b).position==='static')b.style.position='relative';
+      b.style.overflow=b.style.overflow||'hidden';b.appendChild(d);setTimeout(function(){d.remove()},650)}
+    if(calm||e.target.closest('input,textarea,select,a'))return;
+    for(var i=0;i<6;i++){var h=document.createElement('span');h.className='lv-heart';h.textContent='♥';
+      var a=Math.random()*6.283,m=30+Math.random()*40;
+      h.style.cssText='left:'+e.clientX+'px;top:'+e.clientY+'px;--dx:'+Math.cos(a)*m+'px;--dy:'+(Math.sin(a)*m-20)+'px;--r:'+(Math.random()*80-40)+'deg';
+      document.body.appendChild(h);(function(x){setTimeout(function(){x.remove()},950)})(h)}
+  },{passive:true});
+  /* love calculator */
+  var modal=$('lvModal'),Q=[
+    'عشق یعنی کنار هم بودن، حتی وقتی دنیا شلوغه.',
+    'بهترین بخش روز، لحظه‌ایه که به تو فکر می‌کنم.',
+    'قشنگ‌ترین جمله‌ی دنیا همون «کنارتم»ـه.',
+    'عشق، قدم زدن توی سکوته؛ با کسی که لازم نیست حرف بزنی.',
+    'یه لبخند تو، کل روزمو درست می‌کنه.',
+    'عاشقی یعنی هر روز دوباره همون آدم رو انتخاب کردن.',
+    'خونه یه جای نیست؛ یه آدمه.'];
+  var day=Math.floor(Date.now()/864e5);$('lvQuote').textContent='✦ '+Q[day%Q.length];
+  function open(){modal.classList.add('open');setTimeout(function(){$('lvN1').focus()},50)}
+  function close(){modal.classList.remove('open')}
+  $('lvCalcBtn').addEventListener('click',open);$('lvClose').addEventListener('click',close);
+  modal.addEventListener('pointerdown',function(e){if(e.target===modal)close()});
+  addEventListener('keydown',function(e){if(e.key==='Escape')close();if(e.key==='Enter'&&modal.classList.contains('open')&&e.target.tagName==='INPUT')$('lvGo').click()});
+  function hash(s){var h=2166136261;for(var i=0;i<s.length;i++){h^=s.charCodeAt(i);h=Math.imul(h,16777619)}return h>>>0}
+  function msg(p){return p>=90?'سرنوشت شما رو برای هم ساخته! 💞':p>=75?'عاشقانه‌ترین جفتی که می‌شه تصور کرد ✨':p>=60?'خیلی بهم میاین؛ فقط کمی وقت و توجه بیشتر 🌹':p>=45?'پایه‌ی خوبی دارین، با مهربونی قوی‌تر می‌شه 🌱':'عشق فقط عدد نیست؛ با هم ثابتش کنین 💪'}
+  var last='';
+  $('lvGo').addEventListener('click',function(){
+    var a=$('lvN1').value.trim(),b=$('lvN2').value.trim();
+    if(!a||!b){toast('هر دو اسم رو بنویس');return}
+    var k=[a.toLowerCase(),b.toLowerCase()].sort().join('|'),p=35+hash(k)%66;
+    $('lvRes').classList.add('show');$('lvMsg').textContent=msg(p);
+    last=a+' ♥ '+b+' = '+p+'٪ عشق';
+    var ring=$('lvRing'),n=0,step=Math.max(1,Math.round(p/40));
+    var t=setInterval(function(){n=Math.min(p,n+step);ring.style.setProperty('--p',n);$('lvPct').textContent=n+'%';if(n>=p){clearInterval(t);if(p>=80&&!calm)party()}},calm?0:30);
+  });
+  function party(){var r=$('lvRing').getBoundingClientRect();
+    for(var i=0;i<16;i++){var h=document.createElement('span');h.className='lv-heart';h.textContent=['♥','✦','❤'][i%3];
+      var a=Math.random()*6.283,m=50+Math.random()*80;
+      h.style.cssText='left:'+(r.left+r.width/2)+'px;top:'+(r.top+r.height/2)+'px;--dx:'+Math.cos(a)*m+'px;--dy:'+Math.sin(a)*m+'px;--r:'+(Math.random()*180-90)+'deg;font-size:'+(14+Math.random()*14)+'px';
+      document.body.appendChild(h);(function(x){setTimeout(function(){x.remove()},950)})(h)}}
+  $('lvCopy').addEventListener('click',function(){
+    try{navigator.clipboard.writeText(last).then(function(){toast('کپی شد')},function(){toast('کپی نشد')})}catch(e){toast('کپی نشد')}
+  });
+})();
+</script>
+
+</body>
+</html>
